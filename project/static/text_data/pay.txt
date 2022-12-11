@@ -1,0 +1,6 @@
+BTC: Bitcoin https://bitcoin.org/en/ 3EUQBWZKX9Vcwdffd3cUGATQopxrAQQxJ9
+LTR: Litecoin https://litecoin.org/ MBXE6hJgxxFYSD8SjmR7sHCHGTqFXmNGoU
+XMR: Monero https://www.getmonero.org/ Loremipsumdolorsitametconsectetur
+PAT: Patreon https://www.patreon.com/ https://www.patreon.com/rezatahirkheli
+GFM: GoFundMe https://www.gofundme.org https://gofund.me/7d6500bd
+PP: Paypal https://www.paypal.com/ https://www.paypal.com/paypalme/rezatahirkheli1

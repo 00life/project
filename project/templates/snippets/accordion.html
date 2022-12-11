@@ -1,0 +1,41 @@
+<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" id="result_btn" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+
+          <div id="results_content">
+            {%if results%}
+            <dl>
+              <dt>Questions you got wrong:</dt> <br>
+              <dd style="margin-left:40px">
+                <table>
+                  {%for num,given,ques,wrong,right in results%}
+                  <tr>
+                      <td style="display:inline-flex;">Question #{{num}}: &nbsp</td>
+                      <td style="display:inline-flex;">({{given}}). &nbsp</td>
+                      <td style="display:inline-flex;">{{ques}} &nbsp</td>
+                      <td style="display:inline-flex;">Your answered: &nbsp</td>
+                      <td style="color:red;font-weight:bold;display:inline-flex;">'{{wrong}}'. &nbsp</td>
+                      <td style="display:inline-flex;">The correct answer: &nbsp</td>
+                      <td style="color:green;font-weight:bold;display:inline-flex">'{{right}}'.</td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </dd>
+            </dl>
+          {%endif%}
+          </div>
+
+        <div id="close">
+          <label for="result_btn" class="abs_pos" onclick="close_result_func()">Close &nbsp<i class="fas fa-times"></i></label>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+ 

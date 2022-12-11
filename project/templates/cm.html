@@ -1,0 +1,1444 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/cm.css')}}">{% endblock stylesheet %}
+{% set Apps = "active" %}
+{% extends "layout.html" %}
+{% block title %} Class Manager {% endblock title %}
+
+{% block content %}
+
+<form action="" method="POST">
+
+<div id="body_container" class="body_container" style="user-select:none;">
+
+    <div id="output_class_data" class="output_class_data" style="display:flex;flex-direction:column;width:100%;margin:0 2px;">
+
+        <div class="student_navbar">
+            <label class="nav_buttons" onclick="status_func()" style="float:left;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/status.png')}}" alt="status" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);">
+                    <span id="status_nav"></span>
+                </div>
+                <div style="margin-top: -5px;">Status</div>
+            </label>
+            
+            <!-- hidden checkbox hddn_edit -->
+            <input type="checkbox" id="hddn_edit" style="display:none">
+            <label class="nav_buttons" onclick="edit_view_func()" style="float:left;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/edit.png')}}" alt="edit" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Edit</div>
+            </label>
+            
+            <!-- hidden checkbox hddn_pass_alert -->
+            <input type="checkbox" id="hddn_pass_alert" style="display:none">
+            <label class="nav_buttons" onclick="pass_alert_func()" style="float:left; position: relative;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/alert.png')}}" alt="alert" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Alert</div>
+            </label>
+    
+            <table id="tbl_pass_alert">
+                <tr>
+                    <th>Alert (min)</th>
+                    <td><input type="number" id="alert_start" name="alert_start" value="{{alert_start}}" style="width: 50px;"></td>
+                    <td><input type="number" id="alert_end" name="alert_end" value="{{alert_end}}" style="width: 50px;"></td>
+                </tr>
+            </table>
+            
+            <!-- semi-hidden icon button statusbar_input_table -->
+            <div style="display:flex; height: 100%;float: right; margin-left: 5px; align-items: center; justify-content: center;">
+                <img src="{{url_for('static', filename='img/list.png')}}" alt="list2" id="statusbar_input_table" onclick="input_table_func()" style="display:none;cursor:pointer;margin:auto; max-height:20px;width:auto;filter:drop-shadow(1px 1px 0 black);"></img>
+            </div>
+            
+            <label class="nav_buttons" onclick="clear_cache_func()" style="float:right;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/cashe.png')}}" alt="cashe" style="max-height:20px;width:auto;filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Cashe</div>
+            </label>
+            
+            <!-- hidden checkbox hddn_all_check -->
+            <input id="hddn_all_check" name="hddn_all_check" type="checkbox" style="display:none;">
+            <label class="nav_buttons" onclick="check_func()" style="float:right;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/check.png')}}" alt="check" style="max-height:20px;width:auto;filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Check</div>
+            </label>
+
+            <label class="nav_buttons" onclick="rand_func()" style="float:right;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/random.png')}}" alt="random" style="max-height:20px;width:auto;filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Random</div>
+            </label>
+
+            <label class="nav_buttons" onclick="xmlCM_func()" style="float:right; position: relative;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/sync.png')}}" alt="sync" style="max-height:20px;width:auto;filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Update</div>
+            </label>
+
+        </div><!-- end student_navbar -->
+        
+        <div id="snackbar" style="z-index:3;"></div>
+        
+        <!-- hidden checkbox status-->
+        <input type="checkbox" id="hddn_status" style="display:none">
+        <div class="dropdown_status">
+            <div style="display:block; padding:5px 5px;">
+                <label for="" style="font-size:large;float:left;cursor:pointer;" onclick="report_func()">Report &nbsp<i class="fas fa-share-square"></i></label>
+                <label for="hddn_status" style="font-size:large;float:right;cursor:pointer;">Close &nbsp<i class="fas fa-window-close"></i></label>
+            </div>
+            <br>
+            <div style="display:block;margin-left: 10px;">
+                <span><strong id="missing_title"></strong></span>
+            </div>
+            <div style="display:block;margin-left: 30px;">
+                <span id="missing_names"></span>
+            </div>
+            <div style="display:block;margin-left: 10px;">
+                <span><strong id="attn_A_title"></strong></span>
+            </div>
+            <div style="display:block;margin-left: 30px;">
+                <span id="attn_A"></span>
+            </div>
+            <div style="display:block;margin-left: 10px;">
+                <span><strong id="attn_L_title"></strong></span>
+            </div>
+            <div style="display:block;margin-left: 30px;">
+                <span id="attn_L"></span>
+            </div>
+            <div style="display:block;margin-left: 10px;">
+                <span><strong id="stat_pass_title"></strong></span>
+            </div>
+            <div style="display:block;margin-left: 30px;">
+                <span id="stat_pass"></span>
+            </div>
+            <div style="display:block;margin-left: 10px;">
+                <span><strong id="stat_notes_title"></strong></span>
+            </div>
+            <div style="display:block;margin-left: 30px;">
+                <span id="stat_notes"></span>
+            </div>
+            <!-- hidden textbox hddn_report -->
+            <textarea name="hddn_report" id="hddn_report" style="display:none;">{{hddn_report}}</textarea>
+        </div>
+        
+        <div class="student_container" style="display:block;max-height:auto;text-align:center; user-select:none;">
+            
+            {% for name_space in name_list %}
+            {% set name = name_space|replace(' ','_') %}
+                <div id="student{{name}}" class="student">
+                    <table class="output_students" style="width:100%; height: 100%;">
+                        <tr>
+                            <td><input type="checkbox" class="check" id="check_box{{name}}" name="check_box" value="{{name}}" onclick="savecheck_func(this.id.slice(9,))"></td>
+                            <td style="position:relative;">
+                                <select id="attn{{name}}" onchange="get_attn_func(this.id.slice(4,))" style="font-size:xx-small; float:right;border-radius:2px;cursor:pointer;z-index: 1;">
+                                    <option value="P" title="Present">P</option>
+                                    <option value="L" title="Late">L</option>
+                                    <option value="A" title="Absent">A</option>
+                                    <option value="LR" title="Late with Reason">LR</option>
+                                    <option value="S" title="Signed Out">S</option>
+                                </select>
+                                <span class="infoCircle" style="position:absolute; cursor:pointer;top: 19px; right:0;z-index:1;" onclick="func_studentStat('{{name}}')"><i id="info_icon" class="fas fa-info-circle"></i></span>
+                                
+                            </td>
+                            
+                        </tr>
+                        
+
+                        <tr id="timer{{name}}" class="timer"><td colspan="2"><span id="time_val{{name}}"></span><span>&nbsp min</span></td></tr>
+                        
+                        <tr style="height:100%;"><td colspan="2" style="position: relative;"><img class="profile_pic" src="{{url_for('static', filename='img/profile1.png')}}" alt="Profile1"></td></tr>
+                        <tr><td colspan="2" style="position:relative;"><center><p class="student_name" title="{{name_space}}">{{name_space}}</p></center></td></tr>
+                        <tr style="width:100%;" >
+                            <td>
+                                <!-- hidden checkbox pass_btn -->
+                                <input type="checkbox" id="hddn_pass_btn{{name}}" style="display:none">
+                                <input type="button" id="pass_btn{{name}}" value="Pass" onclick="pass_btn_func(this.id.slice(8,))" onmousedown="reason_func(this.id.slice(8,))" onmouseup="longpress_clear_func()" onmouseout="longpress_clear_func()"style="border: 2px solid black;width:60px;">
+                            </td>
+                            <td><input type="button" id="notes{{name}}" value="Note" onclick="modal_view_func(this.id.slice(5,))" style="border: 2px solid black;width:60px;"></td>
+                        </tr>
+                        <!-- semi-hidden textbox reason -->
+                        <tr id="reason{{name}}" style="display:none;position:absolute;z-index:1;">
+                            <td colspan="1"><input type="text" id="reason_box{{name}}" class="reason_box" placeholder="Bathroom" onkeydown="return event.key != 'Enter';" style="bottom:-30px;width:87px;"></td>
+                            <td><input type="button" value="..." onclick="reason_close_func('{{name}}')"></td>
+                        </tr>
+                        <!-- hidden textbox time_go, reason, time_back-->
+                        <tr style="display:none;">
+                            <td style="position:absolute;bottom:200px;">{{name}} go<br><input class="hddn_time_go" id="hddn_time_go{{name}}" type="text" ></td> <br>
+                            <td style="position:absolute;bottom:150px;">{{name}} reason<br><input class="hddn_reason" id="hddn_reason{{name}}" type="text" ></td> <br>
+                            <td style="position:absolute;bottom:100px;">{{name}} back<br><input class="hddn_time_back" id="hddn_time_back{{name}}" type="text"></td> <br>
+                            <td style="position:absolute;bottom:50px;">{{name}} area<br><textarea id="area_stdNotes{{name}}"></textarea></td> <br>
+                        </tr>
+                    </table> 
+                    
+                </div>
+            {%endfor%}
+            
+            <div id="modal_view">
+                <table>
+                    <tr>
+                        <th style="min-width:100px;"><label for="input_custom">Add Custom Comments:</label></th>
+                        <td style="width:100%;"><textarea id="input_custom" name="input_custom" onchange="input_custom_func()" style="width:100%;height:100%;border-radius:2px">{{input_custom}}</textarea></td>
+                        <td style="min-width: 70px;">
+                            <!-- hidden checkbox modal view -->
+                            <input id="hddn_modal_view" type="checkbox" style="display:none">
+                            <label onclick="modal_view_func()" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table style="background-color:aliceblue;width:100%;border-radius: 10px; box-shadow: 0 0 2px 2px blue">
+                    <tr><th>Edit Notes:</th><th></th></tr>
+                    <tr><td colspan="2"><textarea name="hddn_notes_list" id="hddn_notes_list" rows="5" style="width:100%; border-radius:3px;">{{hddn_notes_list}}</textarea></td></tr>
+                    <tr>
+                        <td></td>
+                        <th>
+                            <label for="self">Self</label>
+                            <input type="radio" id="self" name="person" value="[Self]">
+                            &nbsp
+                            <label for="class">Class</label>
+                            <input type="radio" id="class" name="person" value="[Class]">
+                            &nbsp
+                            <label id="modal_name" for="student">Student</label>
+                            <input type="radio" id="student" name="person" value="[Student]" checked>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px;"><input type="button" value="Custom" onclick="add_custom_func()" style="width:100%;"></td>
+                        <td><select id="output_custom" style="width:100%;border-radius:3px"></select>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px;"><input type="button" value="Add Note"  onclick="add_note_func()" style="width:100%;height:45px;"></td>
+                        <td><textarea id="add_note_text"type="text" wrap="hard" onkeydown="return event.key != 'Enter';" style="width:100%;border-radius:3px"></textarea>
+                    </tr>
+                    <tr><td colspan="2">&nbsp</td></tr>
+                </table>
+
+                <br>
+
+            </div>
+            
+            <div id="edit_view">
+                <table style="width: 100%;">
+                    <tr>
+                        <td align="right">
+                            <!-- hidden checkbox edit view -->
+                            <input id="hddn_edit_view" type="checkbox" style="display:none">
+                            <label for="hddn_edit_view" onclick="edit_view_close_func()" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label>
+                        </td>
+                    </tr>
+                    <tr><th>Edit Notes:</th></tr>
+                    <tr>
+                        <td colspan="3" style="background-color:aliceblue;width:100%;box-shadow: 0 0 2px 2px blue">
+                            <textarea rows="4" id="copy_edit_notes" style="width:100%;"></textarea><!--onchange="modify_notes_func()"-->
+                        </td>
+                    </tr>
+                    <tr><th>Edit Attendance:</th></tr>
+                    <tr>
+                        <td colspan="3" style="background-color:aliceblue;width:100%; box-shadow: 0 0 2px 2px blue">
+                            <textarea rows="4" name="hddn_attn_list" id="hddn_attn_list" style="width:100%;">{{hddn_attn_list}}</textarea>
+                        </td>
+                    </tr>
+                    <tr><th>Edit HallPass:</th></tr>
+                    <tr>
+                        <td colspan="3" style="background-color:aliceblue;width:100%; box-shadow: 0 0 2px 2px blue">
+                            <textarea rows="4" name="hddn_pass_list" id="hddn_pass_list" style="width:100%;">{{hddn_pass_list}}</textarea>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp</td></tr>
+                </table>
+            </div>
+
+            <div id="set_view">
+                <table style="width: 100%; margin-bottom: 10px;">
+                    <tr>
+                        <td align="left"><strong>Settings:</strong></td>
+                        <td align="right">
+                            <!-- hidden checkbox edit view -->
+                            <input id="hddn_set_view" type="checkbox" style="display:none">
+                            <label for="hddn_set_view" onclick="set_view_close_func()" style="font-size:large;cursor:pointer;">Close &nbsp</label><i class="fas fa-window-close"></i>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div id="setting_space_container" style="display:flex">
+
+                    <div id="setting_space_left" style="margin-right:5px;">
+
+                        <div class="setting_left_container" align="left">
+                            <table style="display:inline-flex">
+                                <th>Email Provider:</th>
+                                <tr>
+                                    <td>
+                                        <label for="hotmail">Hotmail</label>
+                                        <input type="radio" id="hotmail" name="eprovide" value="hotmail" checked>
+                                        &nbsp
+                                        <label for="google">Google</label>
+                                        <input type="radio" id="google" name="eprovide" value="google">
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div id="email_input" style="display:inline-flex;min-width:calc(100% - 165px); flex-wrap:wrap;">
+                                <table style="display:inline-flex;">
+                                    <tr><th>Sender's Email</th></tr>
+                                    <tr><td><input type="email" name="from_email" value="{{from_email}}"></td></tr>
+                                </table>
+                                <table style="display:inline-flex;">
+                                    <tr><th>Recipient's Email</th></tr>
+                                    <tr><td><input type="email" name="to_email" value="{{to_email}}"></td></tr>
+                                </table>
+                                <table style="display:inline-flex;">
+                                    <tr><th>Subject:</th></tr>
+                                    <tr><td><input type="text" name="subject" value="{{subject}}"></td></tr>
+                                </table>
+                                <table style="display:inline-flex;">
+                                    <tr><th>Password</th></tr>
+                                    <tr><td><input name="epwd" type="password" value="{{epwd}}"></td></tr>
+                                </table>
+                            </div><!--end email_input-->
+                            
+                            <br style="display:block;">
+                            <table style="display:inline-flex;">
+                                <tr><th><input type="checkbox" id="email_report" name="email_report"></th><th>&nbsp Email Report</th></tr>
+                            </table>
+                            <table style="display:inline-flex;">
+                                <tr><th><input type="checkbox" id="download_report" checked></th><th>&nbsp Download Report</th></tr>
+                            </table>
+                        </div><!--end setting_left_container-->
+
+                    </div><!--end setting_space_left-->
+
+                    <div id="setting_space_right" style="margin-left:5px;">
+
+                        <div class="setting_right_container" align="left">
+                            <table style="display:block;">
+                                <tr>
+                                    <th>Ready Wait (sec):&nbsp</th>
+                                    <td><input id="readyWait" type="number" value="999" style="width: 50px;" onchange="pass_active_func()"></td>
+                                </tr>
+                            </table>
+                            <table style="display:block;">
+                                <tr>
+                                    <th>Students Allowed:&nbsp</th>
+                                    <td><input id="allowNum" type="number" value="1" style="width: 40px;" onchange="pass_active_func()"></td>
+                                </tr>
+                            </table>
+                            <table style="display:block;">
+                                <tr>
+                                    <th>Pwd Enabled:&nbsp</th>
+                                    <td><input id="pwd_enable" type="checkbox" onchange="pass_active_func()" checked></td>
+                                </tr>
+                            </table>
+                            <table style="display:block"><tr><th>Student Passwords:</th></tr></table>
+                            <table style="display:block; max-height:34%; margin-top:5px; overflow-y:scroll; box-shadow:0 0 2px grey; border-radius:2px; padding:2px;">
+                                {% for name_space in name_list %}
+                                {% set name = name_space|replace(' ','_') %}
+                                    <tr>
+                                        <td>{{name_space}}</td>
+                                        <td><input id="{{name}}pwd" type="text" value="{{name|first}}{{name|last}}" style="width: 100px;" onchange="pass_active_func()"></td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div><!--end setting_right_container-->
+
+                    </div><!--end setting_space_right-->
+
+                </div><!--end setting_space_container-->
+                
+            </div><!--end set_view-->
+
+            <input type="checkbox" id="checkbox_stat_view" style="display:none;"><!--hddn_checkbox-->
+            <div class="container_stat_view" style="display:flex; width:100%; justify-content:center;">
+
+                <div id="stat_view" style="
+                display:none;
+                position:fixed;
+                background: linear-gradient(to left, white, cornsilk 150%);
+                width: 60%;
+                height: 70%;
+                box-shadow: 0 0 2px 1px grey;
+                border-radius:2px;
+                z-index:2;
+                top:130px;
+                overflow-y:auto;
+                ">
+                    <div style="display:flex; flex-wrap:wrap-reverse; margin-top:10px;">
+                        <div style="display:flex; flex-grow:1; justify-content:flex-start; align-items:center; margin:0 10px;">
+                            <input id="statName" type="text" style="width:150px; font-weight:bold; text-align:center;" disabled>
+                        </div>
+                        <div style="display:flex; justify-content:flex-end; flex-grow:1; margin:0 10px;">
+                            <label for="checkbox_stat_view" style="font-size:large;cursor:pointer; display:flex; align-items:center; height:min-content; font-weight:normal;" onclick="(()=>document.getElementById('stat_view').style.display='none')()">
+                                <span style="margin-right:5px;">Close</span><i class="fas fa-window-close"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="content_stat_view" style="display:flex; height: 85%; margin:0 10px; flex-wrap:wrap;">
+
+                        <div style="flex-grow:1; justify-content:center; overflow-y:auto;">
+                            <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+                                <input type="button" value="7-day" style="width:65px; font-weight:bold; margin:0 2px" onclick="call_showTrend('seven')">
+                                <input type="button" value="14-day" style="width:65px; font-weight:bold; margin:0 2px" onclick="call_showTrend('fourteen')">
+                                <input type="button" value="30-day" style="width:65px; font-weight:bold; margin:0 2px" onclick="call_showTrend('thirty')">
+                            </div>
+
+                            <div style="background-color:whitesmoke; border-radius:2px; box-shadow: 0 0 2px 1px grey; margin-right:10px; margin-left:1px; margin-top:5px;">
+                                <div style="font-weight:bold; text-align:left;">Trends:</div>
+                                <div style="width:100%; display:flex; justify-content:flex-start; flex-wrap:wrap;">
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" value="Avg Pass Time:" style="width:120px;" disabled></td>
+                                            <td><input type="text" id="duration" style="width:5ch; text-align:center;" disabled></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" value="min" style="width:60px;" disabled></td>
+                                            <td>per trip</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div style="width:100%; display:flex; justify-content:flex-start; flex-wrap:wrap;">
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="1topBehave" style="width:120px;" disabled></td>
+                                            <td><input type="text" id="1topNum" style="width:5ch; text-align:center;" disabled></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="1times" style="width:60px;" disabled></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div style="width:100%; display:flex; justify-content:flex-start; flex-wrap:wrap;">
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="2topBehave" style="width:120px;" disabled></td>
+                                            <td><input type="text" id="2topNum" style="width:5ch; text-align:center;" disabled></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="2times" style="width:60px;" disabled></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div style="width:100%; display:flex; justify-content:flex-start; flex-wrap:wrap;">
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="3topBehave" style="width:120px;" disabled></td>
+                                            <td><input type="text" id="3topNum" style="width:5ch; text-align:center;" disabled></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="3times" style="width:60px;" disabled></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div style="width:100%; display:flex; justify-content:flex-start; flex-wrap:wrap;">
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="4topBehave" style="width:120px;" disabled disabled></td>
+                                            <td><input type="text" id="4topNum" style="width:5ch; text-align:center;" disabled disabled></td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td><input type="text" id="4times" style="width:60px;" disabled disabled></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="flex-grow: 1;">
+                            <div style="display:flex; font-weight:bold; align-items:center; justify-content:center; background-color:rgba(0,0,0,0.3); border-radius:2px;">
+                                <div style="flex-grow:1; display:flex; justify-content:flex-start;">
+                                    <input type="button" value="Submit" onclick="func_saveStdNote()">
+                                </div>
+                                <div style="color:white; text-shadow: 1px 0px black, -1px 0px black, 0px 1px black,  0px -1px black,
+                                1px 1px black, -1px -1px black,-1px 1px black, 1px -1px black; padding-right:10px;"><span>Notes on the student:</span></div>
+                            </div>
+                            <textarea id="area_stdNotes" style="resize:none; width:100% ;height:80%; border:2px solid blue; border-radius:2px;"></textarea>
+                        </div>
+                    
+                    </div><!--content_stat_view-->
+                </div><!--end stat_view-->
+            </div><!--container_stat_view-->
+
+        </div><!--end student_container-->
+    </div><!--end output_class_data-->
+
+    <div id="container_input_class_data">
+        <!-- hidden checkbox input_students -->
+        <input type="checkbox" id='hddn_input_students' style="display:none;">
+        <div id="input_class_data" style="width:fit-content;transition: 0.5s all;">
+            
+            <table class="input_students" style="margin:auto;width:240px;">
+                <tr>
+                    <td align="left">
+                        <img src="{{url_for('static', filename='img/clss.png')}}" alt="clss" title="Class #" onclick="createSTD_func()" style="cursor: pointer;margin:5px 10px;max-height:20px; width:auto;filter:drop-shadow(1px 1px 0 black);"></img>
+                        <span id="std" style="user-select:all;">{{hddn_std}}</span>
+                    </td>
+                    <td align="right">
+                        <img src="{{url_for('static', filename='img/cog.png')}}" alt="cog" title="Settings" onclick="settings_func()" style="cursor: pointer;margin:5px 10px;max-height:20px; width:auto;filter:drop-shadow(1px 1px 0 black);"></img>
+                        <img src="{{url_for('static', filename='img/list.png')}}" alt="list1" title="Toggle Table" onclick="input_table_func()" style="cursor: pointer;margin:5px 10px;max-height:20px; width:auto;filter:drop-shadow(1px 1px 0 black);"></img>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Save File" onclick="func_saveLoadData('save')" style="width:100%;"><!--anchor_save_file(); -->
+                    </td>
+                    <td>
+                        <input type="button" value="Load File" onclick="(()=>document.getElementById('load_file').click())();" style="width:100%;"><!--click_load_func();-->
+                        <input id="load_file" type="file" onchange="func_saveLoadData('load')" style="display:none;width:100%">
+                    </td>
+                </tr>
+                <tr><th colspan="2"><center>Teacher's Name:</center></th></tr>
+                <tr><td colspan="2"><input type="text" id="teacher" name="teacher" value="{{teacher}}"></td></tr>
+                <tr>
+                    <th><center>Class Code</center></th>
+                    <th><center>Date</center></th>
+                </tr>
+                <tr>
+                    <td colspan="1"><input type="text" id="class_code" name="class_code" value="{{class_code}}"></td>
+                    <td colspan="1"><input type="date" id="date_today" name="date_today" style="width:120px;text-align:right;"></td>
+                </tr>
+                <tr>
+                    <th><center>Start Time</center></th>
+                    <th><center>End Time</center></th></tr>
+                <tr>
+                    <td><input type="time" id="start_time" name="start_time" style="text-align:right;"></td>
+                    <td><input type="time" id="end_time" name="end_time" style="text-align:right;"></td>
+                </tr>
+                <tr><th colspan="2"><Center>Students List</Center></th></tr>
+                <tr>
+                    <td><input type="button" value="Clear" onclick="clear_names_func()" style="width: 100%;"></td>
+                    <td><input type="submit" id="add_btn" value="Submit" style="width: 100%;"></td>
+                </tr>
+                <tr >
+                    <td colspan="2">
+                        <textarea id="names" name="names" style="height:200px;width:100%;">{{names}}</textarea>
+                    </td>
+                </tr>
+                <!-- hidden textbox hddn_std -->
+                <input id="hddn_std" name="hddn_std" type="text" value="{{hddn_std}}" style="display:none;">
+                <!-- hidden checkbox hddn_check_std -->
+                <input type="checkbox" id="hddn_check_std" name="hddn_check_std" style="display:none">
+            </table>
+
+        </div><!--end input_class_data-->
+    </div><!--end container_input_class_data-->
+</div><!--end body_container-->
+
+</form>
+
+<br><br>
+
+<audio id="clickAudio" controls preload="auto" style="display: none;">
+    <source src="{{url_for('static',filename='audio/click.wav')}}" type="audio/wav"></audio>
+<script type="text/javascript" language="javascript">
+
+// ### Global Variables ###
+var names = []; var pass_active = false;
+var name_text = document.getElementById('names').value;
+for(name of name_text.split('\n')){names.push(name.split(/\s+/).join("_"))};
+setInterval(function(){myTimer_func();xmlCM_func()}, 1000);
+var longPress;
+
+//### Start Up ###
+(function IIFE_defaults(){
+ var date_today ="{{date_today}}"=="None"?"":"{{date_today}}";
+ document.getElementById("date_today").value = date_today;
+ var start_time = "{{start_time}}"=="None"?"":"{{start_time}}";
+ document.getElementById("start_time").value = start_time;
+ var end_time = "{{end_time}}"=="None"?"":"{{end_time}}";
+ document.getElementById("end_time").value = end_time;
+ document.getElementById("input_custom").value = "class disruption\ninappropriate language\ndevice distraction\nstudent distraction\nworking quietly\nintelligent behavior\nimpressive effort";
+})();
+
+(function IIFE_listeners(){
+    var label = document.querySelectorAll("label");
+    for(let i=0;i<label.length;i++){label[i].addEventListener("click",()=>document.getElementById("clickAudio").play());};//endfor
+    var btn = document.querySelectorAll("input[type='button']");
+    for(let i=0;i<btn.length;i++){btn[i].addEventListener("click",()=>document.getElementById("clickAudio").play());};//endfor
+    document.querySelector("img[alt='clss']").addEventListener("click",()=>document.getElementById("clickAudio").play());
+    var infoCircle = document.querySelectorAll(".infoCircle");
+    for(let i=0;i<infoCircle.length;i++){infoCircle[i].addEventListener("click",()=>document.getElementById("clickAudio").play());};//endfor
+    
+    document.querySelector("img[alt='cog']").addEventListener("click",()=>document.getElementById("clickAudio").play());
+    document.querySelector("img[alt='list1']").addEventListener("click",()=>document.getElementById("clickAudio").play());
+    document.querySelector("img[alt='list2']").addEventListener("click",()=>document.getElementById("clickAudio").play());
+
+    var mediaQuery1 = window.matchMedia("(max-width:644px)");
+    mediaQuery1.addListener(mediaQuery=>document.getElementById("stat_view").style.width = mediaQuery1.matches?"90%":"60%");
+    var mediaQuery2 = window.matchMedia("(min-width:644px)");
+    mediaQuery2.addListener(mediaQuery=>document.getElementById("stat_view").style.width = mediaQuery2.matches?"90%":"60%");
+})();
+
+
+(function startup_func(){//IIFE (e.g. only used once function)
+    for(name of names){
+        getbool = sessionStorage.getItem("check"+name) ?? JSON.stringify(false);
+        try{document.getElementById('check_box'+name).checked = JSON.parse(getbool)}catch{};
+        var display = sessionStorage.getItem("display"+name);
+        try{document.getElementById('timer'+name).style.display = display}catch{};
+        var hddn_btn_ele = JSON.parse(sessionStorage.getItem("hddn_btn_element"+name));
+        try{document.getElementById("hddn_pass_btn"+name).checked = hddn_btn_ele}catch{};
+        var hddn_time_go = JSON.parse(sessionStorage.getItem("hddn_time_go"+name));
+        try{document.getElementById("hddn_time_go"+name).value = hddn_time_go}catch{};
+        var hddn_time_back = JSON.parse(sessionStorage.getItem("hddn_time_back"+name));
+        try{document.getElementById("hddn_time_back"+name).value = hddn_time_back}catch{};
+        var attn_value = sessionStorage.getItem("attn"+name);
+        try{document.getElementById("attn"+name).value = attn_value}catch{};
+        var std = sessionStorage.getItem("std");
+        try{document.getElementById("std").innerHTML = std}catch{};
+    }; //endfor
+
+    if("{{hddn_all_check}}" == "on"){document.getElementById("hddn_all_check").checked = true}
+    else if ("{{hddn_all_check}}" == "off"){document.getElementById("hddn_all_check").checked = false};
+
+    try{document.getElementById("{{eprovide}}").checked = true}catch{};
+    if("{{email_report}}" == "on"){document.getElementById("email_report").checked = true}
+    else{document.getElementById("email_report").checked = false};
+
+    if("{{hddn_check_std}}" == "on"){document.getElementById("hddn_check_std").checked = true}
+    else if ("{{hddn_check_std}}" == "off"){document.getElementById("hddn_check_std").checked = false};
+
+    input_custom_func();
+    absent_func();
+
+}());//endstartup_func
+
+function savecheck_func(name){
+    var checked = document.getElementById('check_box'+name).checked;
+    sessionStorage.setItem("check"+name,JSON.stringify(checked));
+};
+
+function status_func(){
+    document.getElementById("hddn_status").click();
+    status_report_func();
+    close_fields_func("hddn_status");
+};
+
+function status_report_func(){
+    var abs_students = [];
+    var late_students = [];
+    var pass = [];
+    var notes = [];
+    var attn_list = document.getElementById("hddn_attn_list").value.split("\n");
+    var pass_list = document.getElementById("hddn_pass_list").value.split("\n");
+    var notes_list = document.getElementById("hddn_notes_list").value.split("\n");
+    for(attn of attn_list){
+        if(attn.search("[A]") != -1 && attn.search("[A]") < 3){
+            abs_students.push(`[${attn.slice(4,)}]`);
+        }
+        else if(attn.search("[L]") != -1 && attn.search("[L]") < 3){
+            late_students.push(`[${attn.slice(4,)}]`);}
+    };//end for
+   
+    if(abs_students.length > 0){
+        document.getElementById("attn_A_title").innerHTML = "&nbsp ABSENT:";
+        document.getElementById("attn_A").innerHTML = abs_students.join(" ");}
+    else{
+        document.getElementById("attn_A_title").innerHTML = "";
+        document.getElementById("attn_A").innerHTML = "";};
+
+    if(late_students.length > 0){
+        document.getElementById("attn_L_title").innerHTML = "&nbsp LATE:";
+        document.getElementById("attn_L").innerHTML = late_students.join(" ");}
+    else{
+        document.getElementById("attn_L_title").innerHTML = "";
+        document.getElementById("attn_L").innerHTML = "";};
+    
+    if(pass_list.length > 0  && pass_list[0] != ""){
+        document.getElementById("stat_pass_title").innerHTML = "&nbsp PASS:";
+        document.getElementById("stat_pass").innerHTML = pass_list.join("<br>");}
+    else{
+        document.getElementById("stat_pass_title").innerHTML = "";
+        document.getElementById("stat_pass").innerHTML = "";};
+
+    if(notes_list.length > 0 && notes_list[0] != ""){
+        document.getElementById("stat_notes_title").innerHTML = "&nbsp NOTES:";
+        document.getElementById("stat_notes").innerHTML = notes_list.join("<br>");}
+    else{
+        document.getElementById("stat_notes_title").innerHTML = "";
+        document.getElementById("stat_notes").innerHTML = "";};
+ };
+
+ function report_func(){
+    var teacher = document.getElementById("teacher").value;
+    var class_code= document.getElementById("class_code").value;
+    var date = document.getElementById("date_today").value;
+    var start = document.getElementById("start_time").value;
+    var end = document.getElementById("end_time").value;
+    var miss = document.getElementById("missing_names").innerHTML;
+    var abs = document.getElementById("attn_A").innerHTML;
+    var late = document.getElementById("attn_L").innerHTML;
+    var pass = document.getElementById("stat_pass").innerHTML;
+    var note = document.getElementById("stat_notes").innerHTML;
+
+    var report =    "Date: "+date+"\n" 
+                    + "Teacher: "+teacher+"\n"
+                    + "Class: "+class_code+" ("+start+"  "+end+")"+"\n\n"
+                    + "Absent: \n"+abs+"\n"
+                    + "Late: \n"+late+"\n\n"
+                    + "Hall Pass: \n"+pass.split("<br>").join("\n")+"\n\n"
+                    + "Teacher Notes: \n"+note.split("<br>").join("\n")+"\n\n"
+                    + 'Classroom Manager:\nrezatahirkheli.herokuapp.com/cm'
+    
+    if(document.getElementById("download_report").checked == true){
+        var file = new Blob([report], {type: 'text'});
+        var anchor = document.createElement("a");
+        anchor.href = URL.createObjectURL(file);
+        anchor.download = "report.txt";
+        anchor.click();};
+    if(document.getElementById("email_report").checked == true){
+        document.getElementById("hddn_report").innerHTML = report;
+        document.getElementById("add_btn").click();};
+};
+
+function pass_alert_func(){
+    var alert_start = document.getElementById("alert_start").value;
+    var alert_end = document.getElementById("alert_end").value;
+    document.getElementById('hddn_pass_alert').click();
+    if(document.getElementById('hddn_pass_alert').checked == true){
+        document.getElementById("tbl_pass_alert").style.display = "block";}
+    else if(document.getElementById('hddn_pass_alert').checked == false){
+        document.getElementById("tbl_pass_alert").style.display = "none";}
+};
+
+function pass_btn_func(name){
+    var hddn_btn_element = document.getElementById("hddn_pass_btn"+name);
+    var btn_element = document.getElementById("pass_btn"+name);
+    var hddn_reason = document.getElementById("reason"+name);
+    
+    hddn_btn_element.click();
+    multi_hddn_btn_func(hddn_btn_element.checked);
+    sessionStorage.setItem("hddn_btn_element"+name,JSON.stringify(hddn_btn_element.checked));
+
+    if(hddn_btn_element.checked == true){
+        document.getElementById("pass_btn"+name).style.backgroundColor = "palegreen";
+        document.getElementById('timer'+name).style.display = "flex";
+        document.getElementById("hddn_time_go"+name).value = new Date().toLocaleTimeString();
+        sessionStorage.setItem("display"+name,"flex");
+        sessionStorage.setItem("time"+name,JSON.stringify(new Date().getTime() / 1000));
+        sessionStorage.setItem("hddn_time_go"+name, JSON.stringify(new Date().toLocaleTimeString()));
+        var date = Number(JSON.parse(sessionStorage.getItem('time'+name)))
+        if(document.getElementById("check_box"+name).checked == true){reason_func(name)};} 
+    else {
+        btn_element.style.backgroundColor = "initial";
+        document.getElementById('timer'+name).style.display = "none";
+        document.getElementById('reason'+name).style.display = "none";
+        document.getElementById("hddn_time_back"+name).value = new Date().toLocaleTimeString();
+        sessionStorage.setItem("display"+name,"none");
+        sessionStorage.setItem("time"+name, null);
+        sessionStorage.setItem("hddn_time_back"+name, JSON.stringify(new Date().toLocaleTimeString()));
+        record_pass_func(name);};
+
+    count_students_out();
+    pass_active_func();
+};
+
+function reason_func(name){
+    longPress = setTimeout(()=>{
+        document.getElementById("reason"+name).style.display = 'block';
+        if( document.getElementById("hddn_pass_btn"+name).checked == true && 
+            document.getElementById("pass_btn"+name).style.backgroundColor == "palegreen"){
+            document.getElementById("reason"+name).style.display = 'block';};
+    },1000,name);//end of longpress  
+};
+
+function reason_close_func(name){
+    var reason = document.getElementById("reason_box"+name);
+    document.getElementById("hddn_reason"+name).value = reason.value;
+    reason.value = null;
+    document.getElementById("reason"+name).style.display = 'none';
+};
+
+function longpress_clear_func(){
+    clearTimeout(longPress);
+};
+
+function count_students_out(){
+    var count = 0;
+    var nm = [];
+    for(name of names){
+        if(document.getElementById("hddn_pass_btn"+name).checked == true){
+            count = count + 1;
+            nm.push("["+name+"]")};
+    };//end for
+    if(count > 0){
+        document.getElementById("status_nav").innerHTML = `(${count})`;
+        document.getElementById("missing_title").innerHTML = "&nbsp MISSING:";
+        document.getElementById("missing_names").innerHTML = nm.join(" ");}
+    else if(count < 1){
+        document.getElementById("status_nav").innerHTML = "";
+        document.getElementById("missing_title").innerHTML = "";
+        document.getElementById("missing_names").innerHTML = ""};
+};
+
+function record_pass_func(nm){
+    var new_hddn_pass_list = []
+    var time_go = document.getElementById("hddn_time_go"+nm).value;
+    var time_back = document.getElementById("hddn_time_back"+nm).value;
+    var time_min = document.getElementById("time_val"+nm).innerHTML;
+    var reason = document.getElementById('hddn_reason'+nm).value;
+    var date = new Date();
+    var today = String(date).slice(4,10)+"/"+String(date).slice(13,15);
+
+    var time_string = `[Duration: ${time_min}min] [${time_go}-${time_back}] [Date: ${today}] [${nm}] [Reason: ${reason}]`;
+    var old_hddn_pass_list = document.getElementById("hddn_pass_list").value.split("\n");
+    if(old_hddn_pass_list[0] == ""){
+        old_hddn_pass_list.splice(0,1)};//fix glitch
+    old_hddn_pass_list.push(time_string);
+    if(Number(time_min) < 1000){
+        document.getElementById("hddn_pass_list").value = old_hddn_pass_list.join("\n");};
+    document.getElementById("hddn_reason"+nm).value = "";
+};
+
+function myTimer_func(){
+    for(name of names){
+        var time1 = Number(sessionStorage.getItem('time'+name));
+        var time2 = new Date().getTime() / 1000;
+        var alert_start = document.getElementById("alert_start").value;
+        var alert_end = document.getElementById("alert_end").value;
+        try{
+        document.getElementById("time_val"+name).innerHTML = Math.round((time2 - time1)/60);
+        if(     document.getElementById('timer'+name).style.display == "flex" && 
+                Number(document.getElementById("time_val"+name).innerHTML) >= 0 &&
+                Number(document.getElementById("time_val"+name).innerHTML) < alert_start)
+                {document.getElementById("pass_btn"+name).style.backgroundColor = "palegreen";}
+        else if(document.getElementById('timer'+name).style.display == "flex" &&
+                Number(document.getElementById("time_val"+name).innerHTML) >= alert_start && 
+                Number(document.getElementById("time_val"+name).innerHTML) < alert_end)
+                    {document.getElementById("pass_btn"+name).style.backgroundColor = "yellow";}
+        else if(document.getElementById('timer'+name).style.display == "flex" &&
+                Number(document.getElementById("time_val"+name).innerHTML) >= alert_end)
+                    {document.getElementById("pass_btn"+name).style.backgroundColor = "tomato";}
+        }catch{}
+    };//for end
+};
+
+function check_func(){
+    document.getElementById("hddn_all_check").click();
+    for(name of names){
+        if(document.getElementById("attn"+name).value != "A" && document.getElementById("hddn_all_check").checked == true){
+            document.getElementById("check_box"+name).checked = true;}
+        else if(document.getElementById("attn"+name).value != "A" && document.getElementById("hddn_all_check").checked == false){
+            document.getElementById("check_box"+name).checked = false};
+        var checked = document.getElementById("check_box"+name).checked;
+        sessionStorage.setItem("check"+name,JSON.stringify(checked));
+    };//end for
+};
+
+function rand_func(){
+    var boo = []
+    for(name of names){boo.push(document.getElementById("check_box"+name).checked)};//endfor
+    if(boo.every(function(boo){return boo == false})){
+        var rand = Math.floor(Math.random()*(names.length - 0) ) + 0;
+        alert(names[rand].replace("_"," "))}
+    else{
+        while(true){
+            var rand = Math.floor(Math.random()*(names.length - 0) ) + 0;
+            if(document.getElementById("check_box"+names[rand]).checked == true){
+                alert(names[rand].replace("_"," "));
+                break};//endif
+        }//endwhile
+    };//endelse
+};
+
+function clear_names_func(){
+    document.getElementById("names").value = "";
+    document.getElementById("add_btn").click()
+};
+
+function clear_cache_func(){
+    var conf = confirm("Are you sure you want to clear cashe data (i.e. All Values in Edit)?");
+    if(conf == true){
+        document.getElementById("hddn_attn_list").value = "";
+        document.getElementById("hddn_pass_list").value = "";
+        document.getElementById("hddn_notes_list").value = "";
+        sessionStorage.clear();
+        localStorage.clear();
+        alert("All Data Has Been Cleared");
+        document.getElementById("add_btn").click();}
+    else if(conf == false){
+        alert("Cancelled");};
+};
+
+function multi_hddn_btn_func(check){
+    for(name of names){
+        var checked = document.getElementById('check_box'+name).checked;
+        sessionStorage.setItem("check"+name,JSON.stringify(checked));
+        if( 
+            document.getElementById("check_box"+name).checked == true && check == true){
+                document.getElementById("pass_btn"+name).style.backgroundColor = "palegreen";
+                document.getElementById('timer'+name).style.display = "flex";
+                document.getElementById("hddn_time_go"+name).value = new Date().toLocaleTimeString();
+                document.getElementById("hddn_pass_btn"+name).checked = true;
+                sessionStorage.setItem("display"+name,"flex");
+                sessionStorage.setItem("time"+name,JSON.stringify(new Date().getTime() / 1000));
+                sessionStorage.setItem("hddn_time_go"+name, JSON.stringify(new Date().toLocaleTimeString()));
+                var date = Number(JSON.parse(sessionStorage.getItem('time'+name)));}
+        else if(
+            document.getElementById("check_box"+name).checked == true && check == false){
+                document.getElementById("pass_btn"+name).style.backgroundColor = "initial";
+                document.getElementById('timer'+name).style.display = "none";
+                document.getElementById('reason'+name).style.display = "none"
+                document.getElementById("hddn_time_back"+name).value = new Date().toLocaleTimeString();
+                document.getElementById("hddn_pass_btn"+name).checked = false;
+                sessionStorage.setItem("display"+name,"none");
+                sessionStorage.setItem("time"+name, null);
+                sessionStorage.setItem("hddn_time_back"+name, JSON.stringify(new Date().toLocaleTimeString()));}
+    };//end for
+};
+
+function get_attn_func(nm){
+    var attn_value = document.getElementById("attn"+nm).value;
+    sessionStorage.setItem("attn"+nm,attn_value);
+    for(name of names){
+        if(document.getElementById("check_box"+name).checked == true){
+                document.getElementById("attn"+name).value = attn_value;
+                sessionStorage.setItem("attn"+name,attn_value);}
+    }//end for
+    attn_list = [];
+    document.getElementById("hddn_attn_list").value = ""; 
+    for(name of names){
+        var attn = document.getElementById("attn"+name).value;
+        attn_list.push("["+attn+"] "+name);
+    }//end for
+    document.getElementById("hddn_attn_list").value = attn_list.join("\n");
+    
+    absent_func()
+};
+
+function absent_func(){
+    for(name of names){
+        try{
+        if(document.getElementById("attn"+name).value == "A"){
+            document.getElementById("student"+name).style.backgroundColor = "rgba(0,0,0,.5)";
+            document.getElementById("pass_btn"+name).disabled = true;
+            document.getElementById("check_box"+name).checked = false;
+            document.getElementById("check_box"+name).disabled = true;
+            document.getElementById("notes"+name).disabled = true;
+            document.getElementById("pass_btn"+name).style.backgroundColor = "initial";
+            document.getElementById('timer'+name).style.display = "none";
+            document.getElementById("hddn_time_go"+name).value = "";
+            document.getElementById("hddn_pass_btn"+name).checked = false}
+            else{
+            document.getElementById("student"+name).style.backgroundColor = "initial";
+            document.getElementById("pass_btn"+name).disabled = false;
+            document.getElementById("check_box"+name).disabled = false;
+            document.getElementById("notes"+name).disabled = false;}
+            }catch{};
+    }//end for
+};
+
+function input_table_func(){
+    document.getElementById("hddn_input_students").click();
+    var hddn_input_students = document.getElementById("hddn_input_students");
+    if(hddn_input_students.checked == true){
+            document.getElementById("statusbar_input_table").style.display = "block";
+            document.getElementById("input_class_data").style.marginRight = "-100%";
+            disappear = setTimeout(function(){document.getElementById("input_class_data").style.display ="none"},50);}//animation
+    else if(hddn_input_students.checked == false){
+                document.getElementById("statusbar_input_table").style.display = "none";
+                document.getElementById("input_class_data").style.display = "block";
+                if(window.innerWidth < 645 || window.screen.width < 645){document.getElementById("input_class_data").style.marginRight ="auto"}
+                else{reappear = setTimeout(function(){document.getElementById("input_class_data").style.marginRight ="0"},0)}
+                }//end of else if
+};
+
+function modal_view_func(nm){
+    var modal_check = document.getElementById("hddn_modal_view");
+    var name_list = [];
+    modal_check.click();
+    if(modal_check.checked == true){
+        document.getElementById("modal_view").style.display = "block";
+        reappear = setTimeout(function(){
+            document.getElementById("modal_view").style.visibility = "visible";
+            document.getElementById("modal_view").style.opacity ="100%"},0);
+        for(name of names){
+            if(document.getElementById("check_box"+name).checked == true &&
+                name != nm){
+                name_list.push("["+name+"]");}
+        };//end for
+        name_list.push("["+nm+"]");
+        string_names = name_list.join(" ");
+        document.getElementById("modal_name").innerHTML = string_names;
+        call_studentNotes(nm);
+    }else if(modal_check.checked == false){
+        document.getElementById("modal_view").style.opacity ="0";
+        document.getElementById("modal_view").style.visibility = "hidden";
+        disappear = setTimeout(function(){document.getElementById("modal_view").style.display = "none"},500);}
+    close_fields_func("hddn_modal_view");
+};
+
+function edit_view_func(){
+    document.getElementById("hddn_edit_view").click();
+    if(document.getElementById("hddn_edit_view").checked == true){
+        document.getElementById("edit_view").style.display = "block";
+        reappear = setTimeout(function(){
+            document.getElementById("edit_view").style.visibility = "visible";
+            document.getElementById("edit_view").style.opacity = "100%"},0);}
+    else if(document.getElementById("hddn_edit_view").checked == false){
+        document.getElementById("edit_view").style.opacity ="0";
+        document.getElementById("edit_view").style.visibility ="hidden";
+        disappear = setTimeout(function(){document.getElementById("edit_view").style.display = "none"},500);};
+    close_fields_func("hddn_edit_view");
+};
+
+function edit_view_close_func(){
+    document.getElementById("edit_view").style.opacity ="0"
+    document.getElementById("edit_view").style.visibility ="hidden";
+    disappear = setTimeout(function(){document.getElementById("edit_view").style.display = "none"},500);
+};
+
+// function modify_notes_func(){
+//     document.getElementById("hddn_notes_list").value = document.getElementById("copy_edit_notes").value;
+// };
+
+function input_custom_func(){
+    var input_custom = document.getElementById("input_custom").value.split("\n");
+    var select = document.getElementById("output_custom");
+    while (select.hasChildNodes()) {  
+        select.removeChild(select.firstChild);
+    };//end while
+    for(input of input_custom){
+        var opt = document.createElement('option');
+        opt.value = input;
+        opt.innerHTML = input;
+        select.appendChild(opt);
+    };//end for
+};
+
+function add_note_func(){
+    var output_note = [];
+    var date = new Date();
+    var time = date.toLocaleTimeString();
+    var today = String(date).slice(4,10)+"/"+String(date).slice(13,15);
+    
+    var hddn_notes_list = document.getElementById("hddn_notes_list").value.split("\n");
+    var modal_opt = [document.getElementById("self"),document.getElementById("class"),document.getElementById("student")];
+    document.getElementById("student").value = document.getElementById("modal_name").innerHTML;
+    output_note.push(`[${time}] [Date: ${today}]`);
+    for(opt of modal_opt){
+        if(opt.checked == true){
+            output_note.push(opt.value)}
+    };//end for
+    if(hddn_notes_list[0] == ""){
+        hddn_notes_list.splice(0,1)};//fix glitch
+    output_note.push(`[Note: ${document.getElementById("add_note_text").value}]`);
+    var string_output = output_note.join(" ");
+    hddn_notes_list.push(string_output);
+    document.getElementById("hddn_notes_list").value = hddn_notes_list.join("\n");
+    document.getElementById("add_note_text").value = "";
+
+    call_noteTransfer();
+};
+
+function add_custom_func(){
+    var output_note = [];
+    var date = new Date();
+    var time = date.toLocaleTimeString();
+    var today = String(date).slice(4,10)+"/"+String(date).slice(13,15);
+    
+    var hddn_notes_list = document.getElementById("hddn_notes_list").value.split("\n");
+    var modal_opt = [document.getElementById("self"),document.getElementById("class"),document.getElementById("student")];
+    document.getElementById("student").value = document.getElementById("modal_name").innerHTML;
+    output_note.push(`[${time}] [Date: ${today}]`);
+    for(opt of modal_opt){
+        if(opt.checked == true){
+            output_note.push(opt.value)}
+    };//end for
+    if(hddn_notes_list[0] == ""){
+        hddn_notes_list.splice(0,1)};//fix glitch
+    output_note.push(`[Note: ${document.getElementById("output_custom").value}]`);
+    var string_output = output_note.join(" ");
+    hddn_notes_list.push(string_output);
+    document.getElementById("hddn_notes_list").value = hddn_notes_list.join("\n");
+
+    call_noteTransfer();
+};
+
+function close_fields_func(except){
+    var checked_list = {"hddn_status":"dropdown_status",
+                        "hddn_modal_view":"modal_view",
+                        "hddn_edit_view":"edit_view",
+                        "hddn_pass_alert":"tbl_pass_alert",
+                        "hddn_set_view":"set_view",
+                        "checkbox_stat_view":"stat_view"};
+    for(check in checked_list){
+        if(except != check && document.getElementById(check).checked == true){
+            document.getElementById(check).checked = false;
+            document.getElementById(checked_list[check]).style.display = "none";}
+    };//end for
+};
+
+function settings_func(){
+    document.getElementById("hddn_set_view").click();
+    if(document.getElementById("hddn_set_view").checked == true){
+        document.getElementById("set_view").style.display = "block";
+        reappear = setTimeout(function(){
+            document.getElementById("set_view").style.visibility ="visible";
+            document.getElementById("set_view").style.opacity = "100%"},0);}
+    else if(document.getElementById("hddn_set_view").checked == false){
+        document.getElementById("set_view").style.opacity ="0";
+        document.getElementById("set_view").style.visibility ="hidden";
+        disappear = setTimeout(function(){document.getElementById("set_view").style.display = "none"},500);};
+    close_fields_func("hddn_set_view")
+};
+
+function set_view_close_func(){
+    document.getElementById("hddn_set_view").checked == false;
+    document.getElementById("set_view").style.opacity ="0";
+    document.getElementById("set_view").style.visibility ="hidden";
+    disappear = setTimeout(function(){document.getElementById("set_view").style.display = "none"},500);
+};
+
+function createSTD_func(){
+    var xml = new XMLHttpRequest();
+    xml.open("POST","{{url_for('createSTD_func.createSTD_func')}}",true);
+    xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xml.onload = function(){
+        var dataReply = JSON.parse(this.responseText);
+        call_snackbar(dataReply['reply'])
+    };//endfunction
+
+    var rand;
+    document.getElementById("hddn_check_std").click();
+    if(document.getElementById("hddn_check_std").checked == true){
+        if(document.getElementById("teacher").value != ""){
+            rand = JSON.stringify(Math.random()).slice(2,6);
+            document.getElementById("hddn_std").value = rand;
+            document.getElementById("std").innerHTML = rand;
+            sessionStorage.setItem("std", rand)
+            
+            pwdStudent = {};
+            for(name of names){pwdStudent[name] = document.getElementById(name+"pwd").value;};//endfor
+            
+            var dataSend = JSON.stringify({
+            "out":[],
+            "ready":[],
+            "waiting":[],
+            "present":[],
+            "allowNum":document.getElementById("allowNum").value,
+            "classCode":document.getElementById("class_code").value,
+            "teacher": document.getElementById("teacher").value,
+            "classNum": rand,
+            "pwdStudent":pwdStudent,
+            "pwdEnabled":document.getElementById("pwd_enable").checked,
+            "readyWait":document.getElementById("readyWait").value,
+            "key":"makeClass"
+            });//endjson
+            xml.send(dataSend);
+        }else{
+            document.getElementById("teacher").placeholder = "Required";
+            document.getElementById("hddn_check_std").checked = false};//endif
+    }else{
+        var dataSend = JSON.stringify({
+            "key":"delClass",
+            "classNum": document.getElementById("std").innerHTML
+            });//endjson
+        xml.send(dataSend);
+
+        document.getElementById("hddn_std").value = "";
+        document.getElementById("std").innerHTML = "";
+        document.getElementById("teacher").placeholder = "";
+        sessionStorage.removeItem("std");
+    };//endelse
+};
+
+function pass_active_func(){pass_active = true};
+function xmlCM_func(){
+    if( document.getElementById("std").innerHTML == ""){return};//endif Guard Clause
+    
+    var xml = new XMLHttpRequest();
+    xml.open("POST","{{url_for('xmlCM_func.xmlCM_func')}}",true);
+    xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    if(pass_active == false){
+        xml.onload = function(){
+        var dataReply = JSON.parse(this.responseText);
+        for(nm of dataReply['out']){
+            if(document.getElementById("hddn_pass_btn"+nm).checked == false){
+                document.getElementById("pass_btn"+nm).click();};};//endif endfor
+        for(nm of dataReply['present']){
+            if(document.getElementById("hddn_pass_btn"+nm).checked == true){
+                document.getElementById("pass_btn"+nm).click();};};//endif endfor
+        };//endfunction
+
+        dataSend = JSON.stringify({
+        "classNum":document.getElementById("std").innerHTML,
+        "key":"Update_CM"});
+        xml.send(dataSend);
+
+    } else if(pass_active == true){
+        var out = [];
+        var present = [];
+        for(name of names){
+            if(document.getElementById("hddn_pass_btn"+name).checked == true &&
+                out.indexOf(name) == -1){out.push(name);}
+            else if(
+                document.getElementById("hddn_pass_btn"+name).checked == false &&
+                present.indexOf(name) == -1){present.push(name);};//endif
+        };//endfor
+
+        pwdStudent = {};
+        for(name of names){pwdStudent[name] = document.getElementById(name+"pwd").value ?? ""};//endfor
+
+        dataSend = JSON.stringify({
+        "out":out,
+        "present":present,
+        "pwdStudent":pwdStudent,
+        "allowNum":document.getElementById("allowNum").value,
+        "pwdEnabled":document.getElementById("pwd_enable").checked,
+        "readyWait":document.getElementById("readyWait").value,
+        "classNum":document.getElementById("std").innerHTML,
+        "key":"Update_STD"});
+        xml.send(dataSend);
+        pass_active = false;
+    };//endif      
+};
+
+function func_studentStat(e){
+    document.getElementById("checkbox_stat_view").click();
+    close_fields_func("checkbox_stat_view");
+    if(document.getElementById("checkbox_stat_view").checked){
+        document.getElementById("stat_view").style.display = "block";
+        document.getElementById("statName").value = e;
+        document.getElementById("area_stdNotes").value = document.getElementById("area_stdNotes"+e).value;
+        call_showTrend("thirty");
+    }else{document.getElementById("stat_view").style.display = "none";};//endelse
+};
+
+function func_saveStdNote(){
+    var statName = document.getElementById("statName").value;
+    document.getElementById("area_stdNotes"+statName).value = document.getElementById("area_stdNotes").value;
+    call_snackbar("Notes Saved");
+};
+
+function func_saveLoadData(e){
+    var idsVals = [ "copy_edit_notes","hddn_attn_list","hddn_pass_list","names","teacher","class_code","alert_start","alert_end","readyWait","allowNum"];
+    var nameQuery = ["from_email","to_email","subject","epwd"];
+    
+    if(e=="save"){
+        var dataIn = {};
+        for(ids of idsVals){
+            dataIn[ids] = document.getElementById(ids).value;};//endfor_ids
+        for(name of names){
+            dataIn[name+"pwd"] = document.getElementById(name+"pwd").value;
+            dataIn["area_stdNotes"+name] = document.getElementById("area_stdNotes"+name).value;
+        };//endfor_name
+        for(nm of nameQuery){
+            dataIn[nm] = document.querySelector(`input[name='${nm}']`).value;};//endfor_nm
+      
+        var file = new Blob([JSON.stringify(dataIn)], {type:'text'});
+        var anchor = document.createElement("a")
+        anchor.href = URL.createObjectURL(file);
+        anchor.download = "classMgm.txt";
+        anchor.click();
+        call_snackbar("Data Saved")
+
+    }else if(e=="load"){
+        var file = document.getElementById("load_file").files[0];
+        var reader = new FileReader();
+        reader.onload = function(){
+            var dataOut = JSON.parse(reader.result);
+            if(document.getElementById("names").value=="None"||document.getElementById("names").value==""){
+                document.getElementById("names").value = dataOut["names"];
+                document.getElementById("add_btn").click();
+                alert("Must load again to get more data");
+            }else{
+                for(ids of idsVals){document.getElementById(ids).value = dataOut[ids]};//endfor_ids
+                for(nm of nameQuery){document.querySelector(`input[name='${nm}']`).value = dataOut[nm];};//endfor_nm
+                for(name of names){
+                    document.getElementById(name+"pwd").value = dataOut[name+"pwd"];
+                    document.getElementById("area_stdNotes"+name).value = dataOut["area_stdNotes"+name];
+                    call_snackbar("All data has been loaded")
+                };//endfor_name
+            };//endelse
+            
+        };//endfunction
+        reader.readAsText(file);
+    };//endif
+};
+
+//### Callback Functions ###
+
+function call_showTrend(e){
+    var statName = document.getElementById("statName").value;
+    var notesList = document.getElementById("copy_edit_notes").value.split("\n");
+    var attendList = document.getElementById("hddn_attn_list").value.split("\n");
+    var passList = document.getElementById("hddn_pass_list").value.split("\n");
+
+    var stdPassList = []; 
+    for(let p=0;p<passList.length;p++){
+        if(passList[p].indexOf(`[${statName}]`)>-1){stdPassList.push(passList[p])};//endif
+    };//endfor_p
+
+    var stdNoteList = [];
+    for(let n=0;n<notesList.length;n++){
+        if(notesList[n].indexOf(`[${statName}]`)>-1){stdNoteList.push(notesList[n])};//endif
+    };//endfor_n
+
+    if(e=="seven"){
+        var sevenPassList = call_dateFilter(stdPassList, "seven")
+        document.getElementById("duration").value = call_timeDuration(sevenPassList);
+        var sevenNoteList = call_dateFilter(stdNoteList, "seven")
+        call_topBehavior(sevenNoteList);
+        document.querySelector("input[value='7-day']").style.backgroundColor = "palegreen";
+        document.querySelector("input[value='14-day']").style.backgroundColor = "initial";
+        document.querySelector("input[value='30-day']").style.backgroundColor = "initial";
+        
+    }else if(e=="fourteen"){
+        var fourteenPassList = call_dateFilter(stdPassList, "fourteen")
+        document.getElementById("duration").value = call_timeDuration(fourteenPassList);
+        var fourteenNoteList = call_dateFilter(stdNoteList, "fourteen")
+        call_topBehavior(fourteenNoteList);
+        document.querySelector("input[value='7-day']").style.backgroundColor = "initial";
+        document.querySelector("input[value='14-day']").style.backgroundColor = "palegreen";
+        document.querySelector("input[value='30-day']").style.backgroundColor = "initial";
+       
+    }else if(e=="thirty"){
+        var thirtyPassList = call_dateFilter(stdPassList, "thirty")
+        document.getElementById("duration").value = call_timeDuration(thirtyPassList);
+        var thirtyNoteList = call_dateFilter(stdNoteList, "thirty")
+        call_topBehavior(thirtyNoteList);
+        document.querySelector("input[value='7-day']").style.backgroundColor = "initial";
+        document.querySelector("input[value='14-day']").style.backgroundColor = "initial";
+        document.querySelector("input[value='30-day']").style.backgroundColor = "palegreen";
+       
+    };//endif
+};
+
+function call_studentNotes(e){
+    var notesList = document.getElementById("copy_edit_notes").value.split("\n");
+    var studentList = [];
+    for(let n=0;n<notesList.length;n++){
+        if(notesList[n].indexOf(`[${e}]`)>-1){studentList.push(notesList[n])};//endif
+    };//endfor_n
+    document.getElementById("hddn_notes_list").value = studentList.join("\n");
+};
+
+function call_noteTransfer(){
+    var notesList = document.getElementById("copy_edit_notes").value.split("\n");
+    var stdNoteList = document.getElementById("hddn_notes_list").value.split("\n");
+    var combineList = notesList.concat(stdNoteList);
+    for(let c=0;c<combineList.length;c++){
+        if(combineList.findIndex(item=>item=="")>-1){
+            combineList.splice(combineList.findIndex(item=>item==""),1)};//endif
+    };//endfor_c
+    
+    var noteSet = new Set(combineList);
+    document.getElementById("copy_edit_notes").value = Array.from(noteSet).join("\n");
+};
+
+function call_timeDuration(e){
+    var durationList = []; var durTime;
+    for(let t=0;t<e.length;t++){
+        startIndex = e[t].indexOf(" ");
+        endIndex = e[t].indexOf("m")
+        durTime = Number(e[t].slice(startIndex,endIndex))
+        durationList.push(durTime);
+    };//endfor_t
+    try{var average = (durationList.reduce((accum,val)=>accum+val) / durationList.length).toFixed(0);
+    }catch{};
+    average = isFinite(average)?average:0;
+    return average
+};
+
+function call_dateFilter(eList,mode){
+    var seven = []; var fourteen = []; var thirty = [];
+    var mon; var day; var year; var dateRef; var nowDay; var diffDay; var dateIndex;
+    var month = {"Jan":0,"Feb":1,"Mar":2,"Apr":3,"May":4,"Jun":5,"Jul":6,"Aug":7,"Sep":8,"Oct":9,"Nov":10,"Dec":11};
+
+    for(let s=0;s<eList.length;s++){
+        dateIndex = eList[s].indexOf("[Date:");
+        mon = month[eList[s].slice(dateIndex+7,dateIndex+10)];
+        day = Number(eList[s].slice(dateIndex+11,dateIndex+13));
+        year = Number("20"+eList[s].slice(dateIndex+14,dateIndex+16));
+       
+        dateRef = Math.round((new Date(year,mon,day).getTime() / 86400000));
+        nowDay = Math.round((new Date().getTime() / 86400000));
+        diffDay = nowDay - (dateRef+1);
+        
+        if(diffDay < 8){
+            seven.push(eList[s]);
+        }else if(diffDay >= 8 && diffDay < 15){
+            fourteen.push(eList[s]);
+        }else if(diffDay >= 15 && diffDay < 31){
+            thirty.push(eList[s]);
+        };//endif
+    };//endfor
+
+    if(mode=="seven"){
+        return seven
+    }else if(mode=="fourteen"){
+        return fourteen
+    }else if(mode=="thirty"){
+        return thirty
+    };//endelse
+};
+
+function call_topBehavior(eList){
+    var behave; var noteIndex; var behaveDict = {};
+    for(let b=0;b<eList.length;b++){
+        startIndex = eList[b].indexOf("[Note:");
+        endIndex = eList[b].slice(startIndex,).indexOf("]");
+        behave = eList[b].slice(startIndex+7,startIndex+endIndex).trim();
+        behaveDict[behave] = 0;
+    };//end_b
+
+    behave = "";
+    for(d in behaveDict){
+        for(let b=0;b<eList.length;b++){
+            startIndex = eList[b].indexOf("[Note:");
+            endIndex = eList[b].slice(startIndex,).indexOf("]");
+            behave = eList[b].slice(startIndex+7,startIndex+endIndex).trim();
+            if(d==behave){behaveDict[d]++};//endif
+        };//end_b
+    };//endfor_d
+
+    var topNum; var topBehave;
+    for(let i=1;i<5;i++){
+        if(behaveDict.length==0){console.log("guard");return};//endif GuardClause
+
+        topNum = 0; topBehave = "";
+        for(d in behaveDict){
+            if(behaveDict[d] > topNum){
+                topBehave = d;
+                topNum = behaveDict[d];
+            };//endif
+        };//end_d
+        document.getElementById(i+"topBehave").value = topBehave;
+        document.getElementById(i+"topNum").value = behaveDict[topBehave]??"";
+        document.getElementById(i+"times").value = isFinite(behaveDict[topBehave])?"times":"";
+        delete behaveDict[topBehave];
+    };//endfor_i
+};
+
+function call_snackbar(msg){
+    var snackbar = document.getElementById("snackbar");
+    snackbar.innerHTML = msg;
+    snackbar.className = "show";
+    setTimeout(function(){snackbar.className = snackbar.className.replace("show", "");}, 3000);
+};
+
+
+</script>
+
+
+{% endblock content %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="#">
+</head>
+    
+<body style="margin:0; padding:0;">
+
+<button onclick="window.print()">Print this page</button> 
+<br><br>
+
+<div id="calendar" class="popup_box" style="height:90vh; display:flex; align-items:stretch; justify-content:center">
+    
+    <div style="display:flex; height:100%; ">
+        <div style="display:flex; flex-direction:column; justify-content:flex-start;">
+            <div style="display:flex; width:100%; font-size: large; font-weight:bold; text-align:center;">
+                <span style="flex-grow:1;">
+                    <span id="dateMonth">Month</span>
+                    <span id="dateYear">Year</span>
+                </span>
+            </div>
+            <div style="height: 100%;">
+                <table class="calendar" style="width:100%;height:100%; text-align:center;">
+                    <tr style="height:min-content;">
+                        <td><input type="text" disabled value="Sunday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Monday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Tuesday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Wednesday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Thursday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Friday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Saturday" style="width:100%; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="0td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray;" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="0td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="0td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="0td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="1td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="1td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="1td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="1td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="2td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="2td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="2td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="2td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="3td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="3td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="3td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="3td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="4td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="4td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell" ><textarea id="4td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="4td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="5td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="5td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="5td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="5td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!--end checkbox_calendar-->
+
+
+
+
+<script type="text/javascript" language="javascript">
+var names = window.opener.document.getElementById("edit_students").value.split("\n");
+document.getElementById("dateMonth").innerHTML = window.opener.document.getElementById("dateMonth").innerHTML;
+document.getElementById("dateYear").innerHTML = window.opener.document.getElementById("dateYear").innerHTML;
+
+
+for(let r=0;r<6;r++){
+    for(let c=0;c<7;c++){
+        document.getElementById(r+"td"+c).value = window.opener.document.getElementById(r+"td"+c).value;
+        document.getElementById(r+"td"+c).style.backgroundColor = window.opener.document.getElementById(r+"td"+c).style.backgroundColor;
+    };//endfor_c
+};//endfor_r
+
+</script>
+</body>
+
+</html>

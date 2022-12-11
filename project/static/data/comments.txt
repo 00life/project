@@ -1,0 +1,1980 @@
+{N(001)N G(Behavior)G} His/her punctuality needs improvement. 
+{N(002)N G(Behavior)G} His/her daily attendance is essential for success. 
+{N(003)N G(Behavior)G} Improved attendance should improve his/her performance. 
+{N(004)N G(Behavior)G} Regular attendance and more effort are required. 
+{N(005)N G(Behavior)G} His/her class behaviour must be improved. 
+{N(006)N G(Behavior)G} A more positive attitude should improve his/her results. 
+{N(007)N G(Behavior)G} He/she needs to demonstrate appropriate behaviour. 
+{N(008)N G(Behavior)G} More participation is required in class. 
+{N(009)N G(Behavior)G} He/she is encouraged to ask for help when he/she needs it. 
+{N(010)N G(Behavior)G} He/she must bring necessary materials to class. 
+{N(011)N G(Behavior)G} Paying increased attention in class improves his/her understanding. 
+{N(012)N G(Behavior)G} Additional emphasis on organization and time management is needed. 
+{N(013)N G(Behavior)G} He/she needs to focus on completing assignments on a regular basis. 
+{N(014)N G(Behavior)G} His/her daily class work must be completed. 
+{N(015)N G(Behavior)G} He/she must make better use of available class time. 
+{N(016)N G(Behavior)G} He/she must learn to follow instructions. 
+{N(017)N G(Behavior)G} He/she must catch up on missed work. 
+{N(018)N G(Behavior)G} He/she should use the agenda to record homework/assignment dates. 
+{N(019)N G(Behavior)G} He/she should take more care with written assignments. 
+{N(020)N G(Behavior)G} Submitting all assignments should improve his/her grade. 
+{N(021)N G(Behavior)G} Homework must be completed more regularly. 
+{N(022)N G(Behavior)G} Repetition of skills should improve his/her performance. 
+{N(023)N G(Behavior)G} His/her group work skills need improvement. 
+{N(024)N G(Behavior)G} His/her work and study habits need improvement. 
+{N(025)N G(Behavior)G} Better preparation for tests is required. 
+{N(026)N G(Behavior)G} He/she should maintain an up-to-date notebook in order to review/study for tests. 
+{N(027)N G(Behavior)G} Consistent daily review should improve his/her results. 
+{N(028)N G(Behavior)G} His/her oral skills need improvement. More daily practice will help. 
+{N(029)N G(Behavior)G} Your writing skills need to improve. 
+{N(030)N G(Behavior)G} He/she should support ideas with proof. 
+{N(031)N G(Behavior)G} Careful proofreading of assignments should improve his/her results. 
+{N(032)N G(Behavior)G} He/she should prepare and rehearse oral presentations. 
+{N(033)N G(Behavior)G} He/she should apply course concepts to practical work. 
+{N(034)N G(Behavior)G} His/her note-taking skills need improvement. 
+{N(035)N G(Behavior)G} Tutoring others would help to further develop his/her academic strength. 
+{N(036)N G(Behavior)G} He/she should take advantage of help offered. 
+{N(037)N G(Behavior)G} Repetition of grammar skills should improve his/her performance. 
+{N(038)N G(Behavior)G} Voluntary activities could broaden his/her experience. 
+{N(039)N G(Behavior)G} Help is available. A tutor would be beneficial. 
+{N(040)N G(Behavior)G} Outside related reading suggested. 
+{N(041)N G(Behavior)G} He/she should consider participating in course-related contests. 
+{N(042)N G(Behavior)G} More daily effort required. 
+{N(043)N G(Behavior)G} His/her mark should improve with continued effort. 
+{N(044)N G(Behavior)G} He/she is not prepared to work when he/she come to class.
+
+@GENERAL COMMENTS
+
+{N(101)N G(General)G} His/her progress is satisfactory. 
+{N(102)N G(General)G} His/her progress is unsatisfactory. 
+{N(103)N G(General)G} He/she must take your studies more seriously. 
+{N(104)N G(General)G} More effort and interest might improve his/her mark. 
+{N(105)N G(General)G} Continue his/her excellent effort. 
+{N(106)N G(General)G} Continue with the present good work habits. 
+{N(107)N G(General)G} Well done! He/she can take pride in his/her success. 
+{N(108)N G(General)G} He/she is an outstanding student. 
+{N(109)N G(General)G} He/she is a mature and responsible student. 
+{N(110)N G(General)G} Keep up the good work. 
+{N(111)N G(General)G} Good effort in participation, but poor test results. 
+{N(112)N G(General)G} He/she inspire others through example and leadership. 
+{N(113)N G(General)G} Currently not working to potential.
+
+@FINAL
+
+{N(301)N G(Final)G} Final mark based on term work only.
+{N(302)N G(Final)G} Missing the final exam has affected his/her mark. 
+{N(303)N G(Final)G} Final exam not written due to illness. 
+{N(304)N G(Final)G} He/she wrote a poor final exam.
+{N(305)N G(Final)G} He/she wrote a good final exam.
+{N(306)N G(Final)G} His/her attitude change since Midterm has improved his/her result. 
+{N(307)N G(Final)G} Work deteriorated in the second half of the course. 
+{N(308)N G(Final)G} He/she made an excellent effort in his/her course. 
+{N(309)N G(Final)G} He/she worked hard all semester. 
+{N(310)N G(Final)G} He/she have done extremely well in this course. 
+{N(311)N G(Final)G} He/she displayed the potential to pursue a career in this field. 
+{N(312)N G(Final)G} Recommend he/she upgrade before continuing in this level. 
+{N(313)N G(Final)G} Loss of credit due to excessive absenteeism. 
+{N(314)N G(Final)G} Additional reinforcement recommended. Enrol in Summer School. 
+{N(315)N G(Final)G} Recommend he/she take ELS301 to improve literacy skills. 
+{N(316)N G(Final)G} Incomplete: Credit not granted at this time. 
+{N(317)N G(Final)G} Recommend that he/she continue at the Academic level. 
+{N(318)N G(Final)G} Recommend that he/she continue at the Applied level. 
+{N(319)N G(Final)G} Recommend that he/she change to the Academic level. 
+{N(320)N G(Final)G} Recommend that he/she change to the Applied level. 
+{N(321)N G(Final)G} Recommend that he/she take a transfer course leading to a new destination. 
+{N(322)N G(Final)G} Recommend that he/she take the Locally Developed course. 
+{N(323)N G(Final)G} Recommend that he/she continue at the University level. 
+{N(324)N G(Final)G} Recommend that he/she continue at the University/College level. 
+{N(325)N G(Final)G} Recommend that he/she continue at the College level. 
+{N(326)N G(Final)G} Recommend that he/she continue at the Workplace level. 
+{N(327)N G(Final)G} Recommend that he/she change to the University level. 
+{N(328)N G(Final)G} Recommend that he/she change to the University/College level. 
+{N(329)N G(Final)G} Recommend that he/she change to the College level. 
+{N(330)N G(Final)G} Recommend that he/she change to the Workplace level.
+
+@SPECIAL EDUCATION/RESOURCE
+
+@General Comments
+
+{N(400)N S(SpecEdRes)S G(General)G} Insufficient achievement of curriculum expectations to date. 
+{N(401)N S(SpecEdRes)S G(General)G} He/she is in a non-credit earning individualized program for this course. 
+{N(402)N S(SpecEdRes)S G(General)G} He/she is in a non-credit earning individualized program. 
+{N(403)N S(SpecEdRes)S G(General)G} Accommodations are in place for this course. 
+{N(404)N S(SpecEdRes)S G(General)G} He/she have successfully completed a modification of the course. 
+{N(405)N S(SpecEdRes)S G(General)G} An Individual Education Plan was implemented for this course. 
+{N(406)N S(SpecEdRes)S G(General)G} He/she is working well on an alternate program. 
+{N(407)N S(SpecEdRes)S G(General)G} He/she uses resource time effectively. 
+{N(408)N S(SpecEdRes)S G(General)G} He/she needs to make better use of resource assistance. 
+{N(409)N S(SpecEdRes)S G(General)G} He/she would benefit from accessing resource supports available. 
+{N(410)N S(SpecEdRes)S G(General)G} Time spent in class by him/her has increased. 
+{N(411)N S(SpecEdRes)S G(General)G} He/she works well with an educational assistant. 
+{N(412)N S(SpecEdRes)S G(General)G} He/she are coping well in a modified program.
+
+@Social Skills/Communication Skills/Behaviour
+
+{N(413)N S(SpecEdRes)S G(General)G} His/her augmentative communication skills are improving. 
+{N(414)N S(SpecEdRes)S G(General)G} His/her verbal communication skills are improving. 
+{N(415)N S(SpecEdRes)S G(General)G} He/she needs to implement the strategies needed for effective communication. 
+{N(416)N S(SpecEdRes)S G(General)G} He/she needs to work to improve communication skills. 
+{N(417)N S(SpecEdRes)S G(General)G} His/her Braille skills are improving. 
+{N(418)N S(SpecEdRes)S G(General)G} He/she needs to improve Braille Skills. 
+{N(419)N S(SpecEdRes)S G(General)G} He/she is interacting more with peers. 
+{N(420)N S(SpecEdRes)S G(General)G} He/she needs to interact more with his/her peers. 
+{N(421)N S(SpecEdRes)S G(General)G} He/she demonstrates appropriate behaviours in class. 
+{N(422)N S(SpecEdRes)S G(General)G} He/she behaviour has hindered classroom success. 
+{N(423)N S(SpecEdRes)S G(General)G} He/she appears to appreciate interaction and discussion times. 
+{N(424)N S(SpecEdRes)S G(General)G} He/she is an active participant in this class. 
+{N(425)N S(SpecEdRes)S G(General)G} He/she is responding well to a behaviour modification program. 
+{N(426)N S(SpecEdRes)S G(General)G} Recommendations of the behavioural therapist are implemented. 
+{N(427)N S(SpecEdRes)S G(General)G} His/her endurance on equipment is improving. 
+{N(428)N S(SpecEdRes)S G(General)G} Recommendations of the occupational therapist are implemented. 
+{N(429)N S(SpecEdRes)S G(General)G} Recommendations of the physio-therapist are implemented. 
+{N(430)N S(SpecEdRes)S G(General)G} He/she is becoming more independent in daily living skills. 
+{N(431)N S(SpecEdRes)S G(General)G} He/she is becoming more responsible in caring for his/her personal belongings. 
+{N(432)N S(SpecEdRes)S G(General)G} He/she needs to take more responsibility for his/her personal belongings. 
+{N(433)N S(SpecEdRes)S G(General)G} He/she needs to interact more at his/her placement. 
+{N(434)N S(SpecEdRes)S G(General)G} He/she appears to enjoy his/her placement. 
+{N(435)N S(SpecEdRes)S G(General)G} He/she is interacting well with others at his/her placement. 
+{N(436)N S(SpecEdRes)S G(General)G} Employer is pleased with the student’s performance.
+
+@Physical/Daily Living Skills
+
+{N(437)N S(SpecEdRes)S G(General)G} His/her performance at his/her placement needs to improve. 
+{N(438)N S(SpecEdRes)S G(General)G} He/she has met the goals set out for the placement. 
+{N(439)N S(SpecEdRes)S G(General)G} He/she is working towards meeting the goals that were set for the placement. 
+{N(440)N S(SpecEdRes)S G(General)G} He/she is now able to perform tasks independently. 
+{N(441)N S(SpecEdRes)S G(General)G} He/she needs to become more independent in task completion. 
+{N(442)N S(SpecEdRes)S G(General)G} He/she is able to accept constructive criticism. 
+{N(443)N S(SpecEdRes)S G(General)G} He/she needs to accept constructive criticism. 
+{N(444)N S(SpecEdRes)S G(General)G} He/she needs to take initiative at the placement. 
+{N(445)N S(SpecEdRes)S G(General)G} He/she is independent at his/her placement.
+
+@GLE/Resource Course Comments
+
+@Strengths
+
+{N(446)N S(SpecEdRes)S G(Strength)G} He/she demonstrates an ability to manage his/her own learning. 
+{N(447)N S(SpecEdRes)S G(Strength)G} He/she demonstrates the personal management skills, habits and characteristics required for success. 
+{N(448)N S(SpecEdRes)S G(Strength)G} He/she demonstrates behaviours that reflect self-motivation. 
+{N(449)N S(SpecEdRes)S G(Strength)G} He/she demonstrates effective use of time management strategies. 
+{N(450)N S(SpecEdRes)S G(Strength)G} He/she demonstrates effective use of study and test preparation strategies. 
+{N(451)N S(SpecEdRes)S G(Strength)G} He/she is a self-directed learner who demonstrates a confident and positive sense of self.
+
+@Areas for Improvement
+
+{N(446)N S(SpecEdRes)S G(Improve)G} He/she demonstrates an ability to manage his/her own learning. 
+{N(447)N S(SpecEdRes)S G(Improve)G} He/she demonstrates the personal management skills, habits and characteristics required for 
+{N(448)N S(SpecEdRes)S G(Improve)G} He/she demonstrates behaviours that reflect self-motivation. 
+{N(449)N S(SpecEdRes)S G(Improve)G} He/she demonstrates effective use of time management strategies. 
+{N(450)N S(SpecEdRes)S G(Improve)G} He/she demonstrates effective use of study and test preparation strategies. 
+{N(451)N S(SpecEdRes)S G(Improve)G} He/she is a self-directed learner who demonstrates a confident and positive sense of self. 
+
+@Next Steps
+
+{N(457)N S(SpecEdRes)S G(Next)G} He/she would benefit from home monitoring of the agenda book. 
+{N(458)N S(SpecEdRes)S G(Next)G} He/she is recommended to continue to take a GLE course each year. 
+
+@Special Education 1 Credit Coop
+
+{N(459)N S(SpecEdRes)S G(Next)G} He/sher work as a peer helper was a great asset! 
+{N(460)N S(SpecEdRes)S G(Next)G} He/sher work as a peer helper was beneficial. 
+{N(461)N S(SpecEdRes)S G(Next)G} He/she need to take more initiative when working with him/herr peer(s). 
+{N(462)N S(SpecEdRes)S G(Next)G} He/she need to complete him/herr weekly logs and journals. 
+{N(463)N S(SpecEdRes)S G(Next)G} He/she need to complete him/herr assignments. 
+{N(464)N S(SpecEdRes)S G(Next)G} He/she should consider a career in this field. 
+{N(465)N S(SpecEdRes)S G(Next)G} He/she must take this course more seriously. 
+{N(466)N S(SpecEdRes)S G(Next)G} Poor attendance resulted in him/her failing this course. 
+{N(467)N S(SpecEdRes)S G(Next)G} Improvement is needed in order for him/her to achieve a credit in this course.
+
+@CAREER STUDIES
+
+@Strengths
+
+{N(600)N S(Career)S G(Strength)G} He/she demonstrates thorough knowledge of career facts. 
+{N(601)N S(Career)S G(Strength)G} He/she communicates information, ideas and experiences clearly. 
+{N(602)N S(Career)S G(Strength)G} He/she uses all the skills involved in the inquiry process. 
+{N(603)N S(Career)S G(Strength)G} He/she transfers ideas and skills to new contexts very efficiently. 
+{N(604)N S(Career)S G(Strength)G} He/she uses appropriate technology most effectively. 
+{N(605)N S(Career)S G(Strength)G} He/she demonstrates considerable understanding of career facts. 
+{N(606)N S(Career)S G(Strength)G} He/she communicates information, ideas with considerable clarity. 
+{N(607)N S(Career)S G(Strength)G} He/she applies most of the skills in the inquiry process. 
+{N(608)N S(Career)S G(Strength)G} He/she transfers ideas and skills with considerable effectiveness. 
+{N(609)N S(Career)S G(Strength)G} He/she uses appropriate technology with considerable effectiveness. 
+{N(610)N S(Career)S G(Strength)G} He/she demonstrates moderate knowledge of career facts. 
+{N(611)N S(Career)S G(Strength)G} He/she communicates information, ideas with some clarity. 
+{N(612)N S(Career)S G(Strength)G} He/she transfers ideas and skills with some effectiveness. 
+{N(613)N S(Career)S G(Strength)G} He/she uses appropriate technology with some effectiveness. 
+{N(614)N S(Career)S G(Strength)G} He/she demonstrates limited knowledge of career facts. 
+{N(615)N S(Career)S G(Strength)G} He/she communicates information, ideas with limited clarity. 
+{N(616)N S(Career)S G(Strength)G} He/she applies few of the skills involved in the inquiry process. 
+{N(617)N S(Career)S G(Strength)G} He/she transfers ideas and skills with limited effectiveness. 
+{N(618)N S(Career)S G(Strength)G} He/she uses appropriate technology with limited effectiveness. 
+
+@Areas for Improvement
+
+{N(619)N S(Career)S G(Improve)G} Continue to develop all forms of communication skills. 
+{N(620)N S(Career)S G(Improve)G} Incorporate more creativity in his/her work. 
+{N(621)N S(Career)S G(Improve)G} Continue to develop research and technology skills. 
+{N(622)N S(Career)S G(Improve)G} Apply more insight and inquiry skills in his/her work. 
+{N(623)N S(Career)S G(Improve)G} Improve planning, information analysis and the use of resources. 
+
+@Next Steps
+ 
+{N(624)N S(Career)S G(Next)G} He/she transfer's career course experience to the world of work. 
+{N(625)N S(Career)S G(Next)G} This grade reflects the final mark for this course. 
+{N(626)N S(Career)S G(Next)G} Compulsory half-credit course has been successfully completed. 
+{N(627)N S(Career)S G(Next)G} Compulsory half-credit course has not been successfully completed. 
+
+@COOPERATIVE EDUCATION
+
+@Strengths
+
+{N(0700)N S(Coop)S G(Strength)G} He/she displays an excellent work ethic. 
+{N(0701)N S(Coop)S G(Strength)G} He/she transfers theory and skills at the placement with excellent results. 
+{N(0702)N S(Coop)S G(Strength)G} He/she is an excellent hands-on learner. 
+{N(0703)N S(Coop)S G(Strength)G} He/she has demonstrated an excellent understanding of the importance of communication with co-workers. 
+{N(0704)N S(Coop)S G(Strength)G} Excellent final assignment and visual presentation results. 
+{N(0705)N S(Coop)S G(Strength)G} He/she is demonstrating a very good understanding of the necessary work skills of this job. 
+{N(0706)N S(Coop)S G(Strength)G} He/she displays very good research skills on the work-related topic. 
+{N(0707)N S(Coop)S G(Strength)G} He/she has developed good communication skills with co-workers. 
+{N(0708)N S(Coop)S G(Strength)G} He/she completes all written assignments well and on time. 
+{N(0709)N S(Coop)S G(Strength)G} He/she is demonstrating a good understanding of the necessary work skills of this job. 
+{N(0710)N S(Coop)S G(Strength)G} He/she is capable of working independently. 
+{N(0711)N S(Coop)S G(Strength)G} He/she uses problem-solving skills effectively. 
+
+@Areas for Improvement
+
+{N(0800)N S(Coop)S G(Improve)G} The final assignment should have been completed as it represents the practical learning that took place. 
+{N(0801)N S(Coop)S G(Improve)G} Written final assignment was incomplete. 
+{N(0802)N S(Coop)S G(Improve)G} He/she progress could improve by completing in-school assignments. 
+{N(0803)N S(Coop)S G(Improve)G} Mid-term assignments have not been completed. 
+{N(0804)N S(Coop)S G(Improve)G} Major assignments have not been completed. 
+{N(0805)N S(Coop)S G(Improve)G} Written assignments are incomplete. 
+{N(0806)N S(Coop)S G(Improve)G} Written assignments could be more detailed. 
+{N(0807)N S(Coop)S G(Improve)G} Correct spelling and grammar would improve written work. 
+{N(0808)N S(Coop)S G(Improve)G} Visual presentation could have contained more material. 
+{N(0809)N S(Coop)S G(Improve)G} Logs have been partially completed. 
+{N(0810)N S(Coop)S G(Improve)G} He/she needs to complete and submit weekly logs on time. 
+{N(0811)N S(Coop)S G(Improve)G} Completing log viewpoints would help student to better understand the work experience. 
+{N(0812)N S(Coop)S G(Improve)G} He/she must learn to identify the hours and tasks on a weekly basis. 
+{N(0813)N S(Coop)S G(Improve)G} He/she should pursue this career/job. 
+{N(0814)N S(Coop)S G(Improve)G} He/she transfers theory and skills at the placement with limited results. 
+{N(0815)N S(Coop)S G(Improve)G} He/she needs to develop all forms of application. 
+{N(0816)N S(Coop)S G(Improve)G} He/she is demonstrating a satisfactory understanding of the necessary work skills of this job. 
+{N(0817)N S(Coop)S G(Improve)G} He/she should apply more initiative in assuming more challenging tasks. 
+{N(0818)N S(Coop)S G(Improve)G} He/she should ask more questions to improve knowledge and complete assigned tasks with better results. 
+{N(0819)N S(Coop)S G(Improve)G} He/she needs supervision to complete tasks properly. 
+{N(0820)N S(Coop)S G(Improve)G} He/she needs to develop better communication skills to better understand the workplace. 
+{N(0821)N S(Coop)S G(Improve)G} He/she should review proper procedures to complete tasks efficiently. 
+{N(0822)N S(Coop)S G(Improve)G} He/she should ask questions to ensure tasks are completed properly. 
+{N(0823)N S(Coop)S G(Improve)G} He/she needs to complete all appropriate documentation and submit on time. 
+{N(0824)N S(Coop)S G(Improve)G} He/she needs to improve time management skills. 
+{N(0825)N S(Coop)S G(Improve)G} He/she needs to improve communication skills with the teacher-monitor. 
+{N(0826)N S(Coop)S G(Improve)G} He/she needs to improve on reporting absences to the employer & teacher-monitor.
+
+@Next Step/General Comment
+
+{N(0900)N S(Coop)S G(Next)G} He/she is demonstrating an excellent attitude in this work area. 
+{N(0901)N S(Coop)S G(Next)G} He/she is demonstrating excellent knowledge and work skills. 
+{N(0902)N S(Coop)S G(Next)G} He/she has demonstrated and excellent understanding & application of the work skills necessary to succeed in this career. 
+{N(0903)N S(Coop)S G(Next)G} He/she has displayed a keen interest in learning and has completed all assignments efficiently and willingly. 
+{N(0904)N S(Coop)S G(Next)G} He/she takes initiative and completes all assigned tasks willingly with excellent results. 
+{N(0905)N S(Coop)S G(Next)G} He/she has assumed all assigned responsibilities with confidence & competency. 
+{N(0906)N S(Coop)S G(Next)G} He/she is acquiring substantial knowledge and work skills in this career/job area. 
+{N(0907)N S(Coop)S G(Next)G} In-school Coop assignments are an important component of the overall Coop work experience. 
+{N(0908)N S(Coop)S G(Next)G} He/she has the potential of becoming a valuable employee in this career/job. 
+{N(0909)N S(Coop)S G(Next)G} He/she should consider a future in this career/job. 
+{N(0910)N S(Coop)S G(Next)G} The employer is pleased with his/her contribution at work. 
+{N(0911)N S(Coop)S G(Next)G} He/she has proven to be a dependable and reliable member of this organization. 
+{N(0912)N S(Coop)S G(Next)G} He/she is a valued member of the work staff. 
+{N(0913)N S(Coop)S G(Next)G} He/she is a pleasure to work with. 
+{N(0914)N S(Coop)S G(Next)G} Final assignment reflects his/her understanding of the work experience. 
+{N(0915)N S(Coop)S G(Next)G} Congratulations on his/her apprenticeship registration. 
+
+@BUSINESS AND COMPUTER STUDIES COMMENTS
+
+@Strengths
+
+{N(1000)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she communicates information and ideas with high clarity. 
+{N(1001)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates thorough understanding of relationships between concepts. 
+{N(1002)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she uses highly effective critical and creative thinking skills. 
+{N(1003)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she applies all/almost all of the skills involved in an inquiry process. 
+{N(1004)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she applies concepts, with high effect, to familiar business applications. 
+{N(1005)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she correctly demonstrates and promotes the safe use of equipment. 
+{N(1006)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates a thorough understanding of concepts. 
+{N(1007)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates a thorough knowledge of facts and terms. 
+{N(1008)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates excellent computer skills. 
+{N(1009)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates confidence when learning new computer concepts. 
+{N(1010)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she assists others in class with computer software. 
+{N(1011)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she demonstrates outstanding and creative computer skills. 
+{N(1013)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she incorporates additional computer knowledge in daily work. 
+{N(1014)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she often adds additional features to computer assignments. 
+{N(1015)N S(BusCom)S G(Strength)G M(100)M m(80)m} He/she often adds a creative touch to computer assignments. 
+
+{N(1030)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she communicates information and ideas with considerable clarity. 
+{N(1031)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she demonstrates considerable understanding of relationships between concepts. 
+{N(1032)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she uses critical and creative thinking skills to considerable effect. 
+{N(1033)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she applies most of the skills involved in an inquiry process. 
+{N(1034)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she applies concepts and skills to business applications to considerable effect. 
+{N(1035)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she safely and correctly uses equipment and technology. 
+{N(1036)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she demonstrates a considerable understanding of concepts. 
+{N(1037)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she demonstrates considerable knowledge of facts and terms. 
+{N(1038)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she demonstrates good computer skills. 
+{N(1039)N S(BusCom)S G(Strength)G M(79)M m(70)m} He/she demonstrates considerable confidence when learning new computer concepts.
+
+{N(1050)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she communicates information and ideas with some clarity. 
+{N(1051)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she demonstrates some understanding of relationships between concepts. 
+{N(1052)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she uses critical and creative thinking skills to moderate effect. 
+{N(1053)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she applies some of the skills involved in an inquiry process. 
+{N(1054)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she applies concepts, with moderate effect, to familiar business applications. 
+{N(1055)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she uses equipment and technology with moderate effectiveness. 
+{N(1056)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she demonstrates some understanding of concepts. 
+{N(1057)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she demonstrates some knowledge of facts and terms. 
+{N(1058)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she demonstrates adequate computer skills. 
+{N(1059)N S(BusCom)S G(Strength)G M(69)M m(60)m} He/she demonstrates some confidence when learning new computer concepts. 
+
+{N(1050)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she communicates information and ideas with some clarity. 
+{N(1051)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she demonstrates some understanding of relationships between concepts. 
+{N(1052)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she uses critical and creative thinking skills to moderate effect. 
+{N(1053)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she applies some of the skills involved in an inquiry process. 
+{N(1054)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she applies concepts, with moderate effect, to familiar business applications. 
+{N(1055)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she uses equipment and technology with moderate effectiveness. 
+{N(1056)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she demonstrates some understanding of concepts. 
+{N(1057)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she demonstrates some knowledge of facts and terms. 
+{N(1058)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she demonstrates adequate computer skills. 
+{N(1059)N S(BusCom)S G(Strength)G M(59)M m(50)m} He/she demonstrates some confidence when learning new computer concepts. 
+
+@Areas for Improvement
+
+{N(1100)N S(BusCom)S G(Improve)G} Experiencing difficulty applying knowledge to real-world scenarios. 
+{N(1101)N S(BusCom)S G(Improve)G} Researching skills need improvement. 
+{N(1102)N S(BusCom)S G(Improve)G} Presentation skills need improvement. 
+{N(1103)N S(BusCom)S G(Improve)G} Problem-solving skills need improvement. 
+{N(1104)N S(BusCom)S G(Improve)G} Application of knowledge to hands-on situations needs improvement. 
+{N(1105)N S(BusCom)S G(Improve)G} Proofreading skills need improvement. 
+{N(1106)N S(BusCom)S G(Improve)G} Major assignment(s) must be completed and submitted on time. 
+{N(1107)N S(BusCom)S G(Improve)G} Major assignment was not submitted. 
+{N(1108)N S(BusCom)S G(Improve)G} Poor culminating assessment has affected mark. 
+{N(1109)N S(BusCom)S G(Improve)G} Completion of assignments is necessary for success. 
+{N(1110)N S(BusCom)S G(Improve)G} Class attendance must improve to achieve course expectations. 
+{N(1111)N S(BusCom)S G(Improve)G} Organizational skills need improvement. 
+
+@Next Steps
+
+{N(1200)N S(BusCom)S G(Next)G} Poor mark is affected by late entry into the course. 
+{N(1201)N S(BusCom)S G(Next)G} He/she needs to learn how to work with peers in an appropriate manner.
+{N(1202)N S(BusCom)S G(Next)G} Is encouraged to expand and build related vocabulary.
+{N(1203)N S(BusCom)S G(Next)G} He/she needs to improve understanding of concepts and skills.
+{N(1204)N S(BusCom)S G(Next)G} He/she should aim to complete tasks independently.
+{N(1205)N S(BusCom)S G(Next)G} He/she should use a wider variety of electronic sources when researching.
+{N(1206)N S(BusCom)S G(Next)G} He/she should strive to use more creative solutions to problems.
+{N(1207)N S(BusCom)S G(Next)G} He/she should try to apply knowledge to hands-on situations.
+{N(1208)N S(BusCom)S G(Next)G} He/she should focus more attention to the problem-solving process.
+{N(1209)N S(BusCom)S G(Next)G} He/she should focus on quality of product rather than a speedy completion.
+{N(1210)N S(BusCom)S G(Next)G} He/she needs to read instructions more carefully.
+{N(1211)N S(BusCom)S G(Next)G} He/she should take advantage of extra computer time that is available.
+{N(1212)N S(BusCom)S G(Next)G} He/she needs to focus on completing assignments on a regular basis.
+{N(1213)N S(BusCom)S G(Next)G} He/she needs to work more independently when using the computer.
+{N(1214)N S(BusCom)S G(Next)G} Continued effort is necessary to sustain recent improvement.
+{N(1215)N S(BusCom)S G(Next)G} He/she should consider taking computer programming.
+{N(1216)N S(BusCom)S G(Next)G} He/she should consider continuing in the programming field.
+{N(1217)N S(BusCom)S G(Next)G} He/she should consider taking the Grade 11 Business Applications course.
+{N(1218)N S(BusCom)S G(Next)G} He/she should consider continuing in the computer applications field.
+{N(1219)N S(BusCom)S G(Next)G} He/she should consider taking a Business Studies course. 
+
+@SCIENCE
+
+@Strengths
+
+@Knowledge & Understanding
+
+{N(2001)N S(Science)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of concepts, principles and laws.
+{N(2002)N S(Science)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of concepts, principles and laws.
+{N(2003)N S(Science)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable understanding of concepts, principles and laws.
+{N(2004)N S(Science)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding of concepts, principles and laws.
+
+{N(2005)N S(Science)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of facts and terms.
+{N(2006)N S(Science)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of facts and terms.
+{N(2007)N S(Science)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of facts and terms.
+{N(2008)N S(Science)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough knowledge of facts and terms.
+
+{N(2009)N S(Science)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she infrequently transfers simple concepts to new contexts.
+{N(2010)N S(Science)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she sometimes transfers simple concepts to new contexts.
+{N(2011)N S(Science)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she usually transfers simple concepts to new contexts.
+{N(2012)N S(Science)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she routinely transfers simple concepts to new contexts.
+
+{N(2013)N S(Science)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of relationships between concepts.
+{N(2014)N S(Science)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of relationships between concepts.
+{N(2015)N S(Science)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable understanding of relationships between concepts.
+{N(2016)N S(Science)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding of relationships between concepts.
+
+@Inquiry
+
+{N(2026)N S(Science)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she applies few of the skills and strategies of scientific inquiry. 
+{N(2027)N S(Science)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she applies some of the skills and strategies of scientific inquiry.
+{N(2028)N S(Science)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she applies most of the skills and strategies of scientific inquiry.
+{N(2029)N S(Science)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she applies almost all of the skills and strategies of scientific inquiry.
+
+{N(2030)N S(Science)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she applies technical skills with limited competence.
+{N(2031)N S(Science)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she applies technical skills with moderate competence.
+{N(2032)N S(Science)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she applies technical skills with considerable competence.
+{N(2033)N S(Science)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she applies technical skills with a high degree of competence.
+
+{N(2034)N S(Science)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she uses equipment and materials correctly, requiring constant supervision.
+{N(2035)N S(Science)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she uses equipment and materials correctly, requiring some supervision.
+{N(2036)N S(Science)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she uses equipment and materials correctly, requiring minimal supervision.
+{N(2037)N S(Science)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she uses equipment and materials correctly, requiring no supervision.
+
+{N(2038)N S(Science)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she uses equipment and materials safely, requiring constant supervision.
+{N(2039)N S(Science)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she uses equipment and materials safely, requiring some supervision.
+{N(2040)N S(Science)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she uses equipment and materials safely, requiring minimal supervision.
+{N(2041)N S(Science)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she uses equipment and materials safely, requiring no supervision.
+
+@Communication
+
+{N(2051)N S(Science)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she communicates information with limited clarity and precision.     
+{N(2052)N S(Science)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she communicates information with moderate clarity and precision.    
+{N(2053)N S(Science)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she communicates information with considerable clarity and precision.
+{N(2054)N S(Science)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she communicates information with a high degree of clarity and precision.
+
+{N(2055)N S(Science)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she uses scientific terms and symbols with limited accuracy.
+{N(2056)N S(Science)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she uses scientific terms and symbols with some accuracy.
+{N(2057)N S(Science)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she uses scientific terms and symbols with considerable accuracy.
+{N(2058)N S(Science)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she uses scientific terms and symbols with a high degree of accuracy.
+
+{N(2059)N S(Science)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited command of various forms of communication.
+{N(2060)N S(Science)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she demonstrates moderate command of various forms of communication.
+{N(2061)N S(Science)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable command of various forms of communication.
+{N(2062)N S(Science)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she demonstrates extensive command of various forms of communication.
+
+{N(2063)N S(Science)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she uses information technology with limited effectiveness.
+{N(2064)N S(Science)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she uses information technology with moderate effectiveness.
+{N(2065)N S(Science)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she uses information technology with considerable effectiveness.
+{N(2066)N S(Science)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she uses information technology with a high degree of effectiveness.
+
+@Making Connections
+
+{N(2076)N S(Science)S C(Application)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of connections in familiar contexts.    
+{N(2077)N S(Science)S C(Application)C M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of connections in familiar contexts.       
+{N(2078)N S(Science)S C(Application)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable understanding of connections in familiar context.
+{N(2079)N S(Science)S C(Application)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding of connections in familiar contexts.
+
+{N(2080)N S(Science)S C(Application)C M(59)M m(50)m G(Strength)G} He/she analyses social & economic issues with limited effectiveness.
+{N(2081)N S(Science)S C(Application)C M(69)M m(60)m G(Strength)G} He/she analyses social & economic issues with moderate effectiveness.
+{N(2082)N S(Science)S C(Application)C M(79)M m(70)m G(Strength)G} He/she analyses social & economic issues with considerable effectiveness.
+{N(2083)N S(Science)S C(Application)C M(100)M m(80)m G(Strength)G} He/she analyses social & economic issues with a high degree of effectiveness.
+
+{N(2084)N S(Science)S C(Application)C M(59)M m(50)m G(Strength)G} He/she Assesses the impact of science on the environment with limited effectiveness.
+{N(2085)N S(Science)S C(Application)C M(69)M m(60)m G(Strength)G} He/she Assesses the impact of science on the environment with moderate effectiveness.
+{N(2086)N S(Science)S C(Application)C M(79)M m(70)m G(Strength)G} He/she Assesses the impact of science on the environment with considerable effectiveness.       
+{N(2087)N S(Science)S C(Application)C M(100)M m(80)m G(Strength)G} He/she Assesses the impact of science on the environment with a high degree of effectiveness.  
+
+{N(2088)N S(Science)S C(Application)C M(59)M m(50)m G(Strength)G} He/she extends analyses of problems into practical action with limited effectiveness.
+{N(2089)N S(Science)S C(Application)C M(69)M m(60)m G(Strength)G} He/she extends analyses of problems into practical action with moderate effectiveness.
+{N(2090)N S(Science)S C(Application)C M(79)M m(70)m G(Strength)G} He/she extends analyses of problems into practical action with considerable effectiveness.      
+{N(2091)N S(Science)S C(Application)C M(100)M m(80)m G(Strength)G} He/she extends analyses of problems into practical action with a high degree of effectiveness.  
+
+@Areas for Improvement
+
+@Knowledge & Understanding
+
+{N(2200)N S(Science)S C(Knowledge)C G(Improve)G} Understanding of concepts, laws and theories requires improvement.
+{N(2201)N S(Science)S C(Knowledge)C G(Improve)G} Knowledge of facts and terms requires improvement.
+{N(2202)N S(Science)S C(Knowledge)C G(Improve)G} Transferring simple concepts to new contexts requires improvement.
+{N(2203)N S(Science)S C(Knowledge)C G(Improve)G} Understanding relationships between concepts requires improvement.
+
+@Inquiry
+
+{N(2220)N S(Science)S C(Thinking)C G(Improve)G} Application of strategies associated with scientific inquiry requires improvement.
+{N(2221)N S(Science)S C(Thinking)C G(Improve)G} Application of technical skills and procedures requires improvement.
+{N(2222)N S(Science)S C(Thinking)C G(Improve)G} Safe and independent use of laboratory equipment requires improvement.
+
+@Communication
+
+{N(2240)N S(Science)S C(Communication)C G(Improve)G} Communication of ideas with clarity and precision requires improvement.
+{N(2241)N S(Science)S C(Communication)C G(Improve)G} Use of scientific terms and units with accuracy requires improvement.
+{N(2242)N S(Science)S C(Communication)C G(Improve)G} Use of various forms of reports and essays requires improvement.
+{N(2243)N S(Science)S C(Communication)C G(Improve)G} Communication for an appropriate audience requires improvement.
+{N(2244)N S(Science)S C(Communication)C G(Improve)G} Use of information technology for scientific purposes requires improvement.
+
+@Making Connections
+
+{N(2260)N S(Science)S C(Application)C G(Improve)G} Connecting science to technology, the environment, and society requires improvement.
+{N(2261)N S(Science)S C(Application)C G(Improve)G} Analysis of social issues in science and technology requires improvement.
+{N(2262)N S(Science)S C(Application)C G(Improve)G} Assessing the impact of science on the environment and society requires improvement.
+{N(2263)N S(Science)S C(Application)C G(Improve)G} Proposing courses of action to science related problems requires improvement.
+
+@General
+
+{N(2280)N S(Science)S G(Next)G} Overall effort requires improvement in order to achieve success.
+{N(2300)N S(Science)S G(Next)G} Better test preparation is required.
+{N(2301)N S(Science)S G(Next)G} Prepare for tests several days in advance.
+{N(2302)N S(Science)S G(Next)G} Greater attention during class may improve test results.
+{N(2303)N S(Science)S G(Next)G} Daily review of notes may improve test results.
+{N(2304)N S(Science)S G(Next)G} Attempting more homework questions may improve test results.
+{N(2350)N S(Science)S G(Next)G} Complete and submit all projects and assignments.
+{N(2351)N S(Science)S G(Next)G} Review rubric before submitting an assignment.
+{N(2352)N S(Science)S G(Next)G} Make sure that him/her understand criteria before starting/completing projects.
+{N(2400)N S(Science)S G(Next)G} Complete and submit all lab related activities.
+{N(2401)N S(Science)S G(Next)G} Better preparation for lab related activities is required.
+{N(2402)N S(Science)S G(Next)G} Pay more attention to instructions related to lab activities.
+{N(2403)N S(Science)S G(Next)G} Pay greater attention to proper lab report format.
+{N(2404)N S(Science)S G(Next)G} Follow proper safety procedures during lab activities.
+{N(2405)N S(Science)S G(Next)G} Follow proper waste disposal procedures during lab activities.
+{N(2406)N S(Science)S G(Next)G} Make sure that him/her clean up after him/herrself upon the completion of lab activities.
+{N(2407)N S(Science)S G(Next)G} More effort is required when completing lab reports.
+{N(2500)N S(Science)S G(Next)G} Stay on task during class activities.
+{N(2501)N S(Science)S G(Next)G} Solutions to problems require greater organization and clarity.
+{N(2502)N S(Science)S G(Next)G} Active participation during classroom discussions may improve knowledge & understanding.
+{N(2503)N S(Science)S G(Next)G} Participate more during classroom discussion to improve communication skills.
+{N(2504)N S(Science)S G(Next)G} Homework should be completed on a daily basis to achieve success.
+{N(2505)N S(Science)S G(Next)G} Written responses require greater clarity and focus.
+{N(2506)N S(Science)S G(Next)G} He/she need to develop a greater respect for deadlines.
+{N(2507)N S(Science)S G(Next)G} He/sher note-taking skills require more effort and organization.
+{N(2508)N S(Science)S G(Next)G} Daily attendance is essential for success.
+{N(2509)N S(Science)S G(Next)G} Try to improve him/herr ability to follow instructions.
+{N(2510)N S(Science)S G(Next)G} He/sher mark should improve with continued effort.
+{N(2511)N S(Science)S G(Next)G} He/she may pass with continued hard work.
+{N(2512)N S(Science)S G(Next)G} Consult teacher when concept or assignment is not understood.
+{N(2513)N S(Science)S G(Next)G} Improve work habits in order to reach potential.
+{N(2514)N S(Science)S G(Next)G} Punctuality is very important in achieving success.
+{N(2515)N S(Science)S G(Next)G} He/sher mark should improve with continued effort.
+{N(2516)N S(Science)S G(Next)G} He/she can pass with continued hard work.
+
+@Suggestions for continued success
+
+{N(2600)N S(Science)S G(General)G} Continue his/her fine efforts in science.
+{N(2601)N S(Science)S G(General)G} Read scientific articles to broaden him/herr interest in science.
+{N(2602)N S(Science)S G(General)G} Explore science Internet sites suggested by the textbook.        
+{N(2603)N S(Science)S G(General)G} Consider a science Coop placement.
+{N(2604)N S(Science)S G(General)G} Consider pursuing a career in science.
+{N(2605)N S(Science)S G(General)G} Consider future participation in science fairs.
+{N(2606)N S(Science)S G(General)G} Overall effort has greatly improved. Keep up the good work.
+
+@End of Semester Recommendations
+
+{N(2800)N S(Science)S G(Change)G} Recommend placement into the grade 9 locally developed science course.
+{N(2801)N S(Science)S G(Change)G} Recommend placement into the grade 9 applied science course.
+{N(2802)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 9 academic science course.     
+{N(2803)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 9 applied science course.
+
+{N(2804)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 9 locally developed science course.
+{N(2805)N S(Science)S G(Change)G} Recommend SNC 2D1 after completing the transfer course.
+{N(2806)N S(Science)S G(Change)G} Recommend placement into the grade 10 academic science course.
+{N(2807)N S(Science)S G(Change)G} Recommend SNC 2P1 after completing the transfer course.
+
+{N(2808)N S(Science)S G(Change)G} Recommend placement into the grade 10 applied science course.
+{N(2809)N S(Science)S G(Change)G} Recommend placement into the grade 10 supported applied science course.
+{N(2810)N S(Science)S G(Change)G} Recommend placement into SNC 241.
+
+{N(2820)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 10 academic science course.
+{N(2821)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 10 applied science course.
+{N(2822)N S(Science)S G(Change)G} Recommend that he/she repeat the grade 10 supported applied science course.
+
+{N(2830)N S(Science)S G(Change)G} Recommend placement into the grade 11 workplace preparation science course.
+{N(2832)N S(Science)S G(Change)G} Recommend placement into the grade 11 UC destination science course.
+{N(2834)N S(Science)S G(Change)G} Recommend that he/she continue in a college destination science course.
+{N(2835)N S(Science)S G(Change)G} Recommend that he/she continue in a university destination science course.
+
+{N(2836)N S(Science)S G(Change)G} Recommend that he/she consider changing to a college destination science course.
+{N(2837)N S(Science)S G(Change)G} Recommend that he/she consider changing to a university destination science course.
+{N(2838)N S(Science)S G(Change)G} Recommend placement into the grade 12 workplace preparation science course.
+{N(2839)N S(Science)S G(Change)G} Recommend placement into the grade 12 UC destination science course.
+
+@Grade 12 Graduates
+
+{N(2900)N S(Science)S G(Graduate)G} Congratulations on achieving honours!
+{N(2901)N S(Science)S G(Graduate)G} Outstanding effort and results!
+{N(2902)N S(Science)S G(Graduate)G} Excellent effort and results. Congratulations!
+{N(2903)N S(Science)S G(Graduate)G} Very good results. He/she can take pride in his/her success!
+{N(2904)N S(Science)S G(Graduate)G} Good work! Good luck in the future.
+{N(2905)N S(Science)S G(Graduate)G} Satisfactory results! Good luck in the future!
+
+@PHYSICAL EDUCATION AND HEALTH
+
+@Strengths
+
+{N(3000)N S(PhyEd)S G(Strength)G} He/she demonstrates considerable knowledge of health facts and terms.
+{N(3001)N S(PhyEd)S G(Strength)G} He/she demonstrates thorough understanding of concepts, principles, requirements, guidelines and strategies related to health and physical education.
+{N(3002)N S(PhyEd)S G(Strength)G} He/she demonstrates relationships between concepts.
+{N(3003)N S(PhyEd)S G(Strength)G} He/she participates actively in physical education activities.
+{N(3004)N S(PhyEd)S G(Strength)G} He/she takes initiative in group activities.
+{N(3005)N S(PhyEd)S G(Strength)G} He/she Approaches new skills with confidence.
+{N(3006)N S(PhyEd)S G(Strength)G} He/she applies skills to new situations.
+{N(3007)N S(PhyEd)S G(Strength)G} He/she Displays a good development of sport skills.
+{N(3008)N S(PhyEd)S G(Strength)G} He/she maintains a moderate level of personal physical fitness.
+{N(3009)N S(PhyEd)S G(Strength)G} He/she actively participates with others with varied skills and abilities.
+{N(3010)N S(PhyEd)S G(Strength)G} He/she attempts new and different activities in physical education.
+{N(3011)N S(PhyEd)S G(Strength)G} He/she demonstrates enjoyment from active participation in physical education.
+{N(3012)N S(PhyEd)S G(Strength)G} He/she demonstrates personal competence in applying movement skills and principles.
+{N(3013)N S(PhyEd)S G(Strength)G} He/she participates well in phys. ed and improving physical fitness.
+{N(3014)N S(PhyEd)S G(Strength)G} He/she demonstrates high level of personal physical fitness.
+{N(3015)N S(PhyEd)S G(Strength)G} Good results on fitness tests.
+{N(3016)N S(PhyEd)S G(Strength)G} He/she demonstrates understanding of rules and guidelines for participation in sports and games.
+{N(3017)N S(PhyEd)S G(Strength)G} He/she demonstrates improvement in movement skills.
+{N(3018)N S(PhyEd)S G(Strength)G} He/she demonstrates appropriate strategies as related to healthy living skills.
+{N(3019)N S(PhyEd)S G(Strength)G} He/she participates well in all aspects of class both health and physical education.
+{N(3020)N S(PhyEd)S G(Strength)G} He/she demonstrates and promotes the safe use of procedures and equipment in all athletic facilities.
+{N(3021)N S(PhyEd)S G(Strength)G} He/she demonstrates safe practices regarding the safety of self and others.
+{N(3022)N S(PhyEd)S G(Strength)G} He/she uses appropriate decision-making skills to achieve goals related to personal health.
+{N(3023)N S(PhyEd)S G(Strength)G} He/she follows action plan to achieve personal health goals.
+{N(3024)N S(PhyEd)S G(Strength)G} He/she attempts to use the inquiry process in health and physical activities.
+{N(3025)N S(PhyEd)S G(Strength)G} He/she has a good understanding of positive lifestyle choices and relationships with others.
+{N(3026)N S(PhyEd)S G(Strength)G} He/she consistently uses the inquiry process in health and physical activities.
+
+@Areas for Improvement
+
+{N(3300)N S(PhyEd)S G(Improve)G} He/she has difficulty working with other team members.
+{N(3301)N S(PhyEd)S G(Improve)G} He/she needs to come to class in gym uniform/prepared to participate consistently.
+{N(3302)N S(PhyEd)S G(Improve)G} He/she needs to make better use of class time.
+{N(3303)N S(PhyEd)S G(Improve)G} He/she needs to practice a more disciplined work ethic.
+{N(3304)N S(PhyEd)S G(Improve)G} He/she needs to become more active in group games.
+{N(3305)N S(PhyEd)S G(Improve)G} He/she needs to show respect toward others.
+{N(3306)N S(PhyEd)S G(Improve)G} He/she needs to stay on task in class activities.
+{N(3307)N S(PhyEd)S G(Improve)G} Increased confidence may help when presented with new skills.
+{N(3308)N S(PhyEd)S G(Improve)G} Health component needs more focus and study.
+{N(3309)N S(PhyEd)S G(Improve)G} Better participation in both the gym and classroom is needed.
+
+{N(3310)N S(PhyEd)S G(Improve)G} More initiative and application of effort is needed.
+{N(3311)N S(PhyEd)S G(Improve)G} Attentiveness and focus is needed.
+{N(3312)N S(PhyEd)S G(Improve)G} He/she needs to fully participate in all aspects of the phys. ed program.
+{N(3313)N S(PhyEd)S G(Improve)G} He/she needs to show more effort and interest in phys. ed. activities.
+{N(3314)N S(PhyEd)S G(Improve)G} His/her punctuality needs improvement.
+{N(3315)N S(PhyEd)S G(Improve)G} He/she needs more self-discipline. Improved attitude and effort would help achievement.
+{N(3316)N S(PhyEd)S G(Improve)G} He/she needs to complete all assignments /projects.
+{N(3317)N S(PhyEd)S G(Improve)G} He/she has difficulty working independently.
+{N(3318)N S(PhyEd)S G(Improve)G} More participation in class is needed.
+{N(3319)N S(PhyEd)S G(Improve)G} He/she needs to demonstrate a higher level of understanding of concepts, requirements, guidelines, and strategies.
+{N(3320)N S(PhyEd)S G(Improve)G} He/she needs to improve his/her level of personal fitness through a willingness to participate more consistently in all fitness activities.
+{N(3321)N S(PhyEd)S G(Improve)G} He/she needs to demonstrate a higher degree of safe and correct use of procedures and equipment in all athletic facilities.      
+{N(3322)N S(PhyEd)S G(Improve)G} He/she needs to continue to maintain a high level of achievement of facts and terms.
+{N(3323)N S(PhyEd)S G(Improve)G} He/she needs to take on leadership opportunities which enhance confidence in communications skills.
+{N(3324)N S(PhyEd)S G(Improve)G} He/she needs to apply effective thinking skills in all physical and health activities.
+{N(3325)N S(PhyEd)S G(Improve)G} He/she needs to follow instructions and focus on the task.
+
+@Next Steps
+
+{N(3600)N S(PhyEd)S G(Next)G} He/she should try to remain on task in class. 
+{N(3601)N S(PhyEd)S G(Next)G} He/she needs to make better use of class time.
+{N(3602)N S(PhyEd)S G(Next)G} He/she should review health notes.
+{N(3603)N S(PhyEd)S G(Next)G} He/she should show more respect for others.
+{N(3604)N S(PhyEd)S G(Next)G} He/she should ask questions when he/she does not understand concepts.
+{N(3605)N S(PhyEd)S G(Next)G} He/she should become more of an active participant in class.
+{N(3606)N S(PhyEd)S G(Next)G} He/sher physical injury was taken into consideration.
+{N(3607)N S(PhyEd)S G(Next)G} Practice events of the fitness test to improve his/her results.
+{N(3608)N S(PhyEd)S G(Next)G} Better preparation for tests needed to improve his/her mark.
+{N(3609)N S(PhyEd)S G(Next)G} He/she should set goals to ensure success.
+{N(3610)N S(PhyEd)S G(Next)G} He/she needs to follow instructions in class.
+{N(3611)N S(PhyEd)S G(Next)G} This mark reflects only the Physical Education component.
+{N(3612)N S(PhyEd)S G(Next)G} This mark only reflects the Health component of the course.
+{N(3613)N S(PhyEd)S G(Next)G} He/she passed Physical Education but failed Health.
+{N(3614)N S(PhyEd)S G(Next)G} He/she passed Health but failed Physical Education.
+{N(3615)N S(PhyEd)S G(Next)G} He/she should focus more on equipment safety.
+{N(3616)N S(PhyEd)S G(Next)G} He/she should improve communication of ideas.
+{N(3617)N S(PhyEd)S G(Next)G} He/she should take part in extra-curricular school activities.
+{N(3618)N S(PhyEd)S G(Next)G} Daily exercise routine is necessary.
+
+{N(3619)N S(PhyEd)S G(Next)G} He/she should focus on homework completion.
+{N(3620)N S(PhyEd)S G(Next)G} He/she should complete assignments and submit on time.
+{N(3621)N S(PhyEd)S G(Next)G} More effort and interest in course program might improve his/her mark.
+{N(3622)N S(PhyEd)S G(Next)G} Work and study habits need to improve.
+{N(3623)N S(PhyEd)S G(Next)G} He/she needs to take studies more seriously.
+{N(3624)N S(PhyEd)S G(Next)G} Regular attendance and more effort required.
+{N(3625)N S(PhyEd)S G(Next)G} Daily attendance is essential for success.
+{N(3626)N S(PhyEd)S G(Next)G} More effort required to improve fitness level and movement skills.
+{N(3627)N S(PhyEd)S G(Next)G} He/she should try to be more attentive in class.
+{N(3628)N S(PhyEd)S G(Next)G} Extra work outside of class may improve some fitness results.
+{N(3629)N S(PhyEd)S G(Next)G} He/she should spend more time preparing for health tests.
+{N(3630)N S(PhyEd)S G(Next)G} He/she should put more effort into class assignments.
+{N(3631)N S(PhyEd)S G(Next)G} He/she should follow rules of fair play in games & activities and encourage others to do so.
+{N(3632)N S(PhyEd)S G(Next)G} He/she should show patience and consideration with others of differing abilities.
+{N(3633)N S(PhyEd)S G(Next)G} He/she should work toward a higher level of personal fitness.
+{N(3634)N S(PhyEd)S G(Next)G} He/she needs to improve level of personal fitness by participating more consistently in all fitness
+{N(3635)N S(PhyEd)S G(Next)G} He/she should consider accepting leadership opportunities that would present challenges and
+{N(3636)N S(PhyEd)S G(Next)G} He/she should strive to complement a higher degree of performance by developing a leadership
+{N(3637)N S(PhyEd)S G(Next)G} He/she should strive to continually promote, lead and organize physical activities outside the
+{N(3638)N S(PhyEd)S G(Next)G} He/she should consider continuation of courses that will lead to a career in the physical/health
+{N(3639)N S(PhyEd)S G(Next)G} Practise events of the fitness test to improve his/her results.
+
+@MATHEMATICS 
+
+@Strengths 
+
+{N(4000)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding of concepts.        
+{N(4001)N S(Math)S M(100)M m(80)m G(Strength)G} He/she selects and accurately performs most efficient algorithm.
+{N(4002)N S(Math)S M(100)M m(80)m G(Strength)G} He/she follows and judges the validity of complex arguments.   
+{N(4003)N S(Math)S M(100)M m(80)m G(Strength)G} He/she applies steps of inquiry/problem solving process effectively.
+{N(4004)N S(Math)S M(100)M m(80)m G(Strength)G} He/she communicates concisely with a high degree of clarity.
+{N(4005)N S(Math)S M(100)M m(80)m G(Strength)G} He/she communicates concisely with a full justification of reasoning.
+{N(4006)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough command of mathematical language.
+{N(4007)N S(Math)S M(100)M m(80)m G(Strength)G} He/she routinely uses proper mathematical symbols and conventions.
+{N(4008)N S(Math)S M(100)M m(80)m G(Strength)G} He/she solves problems relating to familiar and unfamiliar settings.
+
+{N(4009)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in number Sense/Algebra.
+{N(4010)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Relationships.       
+{N(4011)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Analytic Geometry.   
+{N(4012)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Measurement/Geometry.
+{N(4013)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Quadratic Functions.
+{N(4014)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Trigonometry.
+{N(4015)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Linear Functions.
+{N(4016)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Proportional Reasoning.
+{N(4017)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Functions.
+{N(4018)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Calculus.
+{N(4019)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Proofs.
+{N(4020)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Vectors.
+{N(4021)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Counting Principles.
+{N(4022)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Data Management.
+{N(4023)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough understanding in Financial Math.
+
+{N(4024)N S(Math)S M(100)M m(80)m G(Strength)G} He/she demonstrates considerable understanding of Concepts.
+{N(4025)N S(Math)S M(100)M m(80)m G(Strength)G} He/she performs Algorithms accurately.
+{N(4026)N S(Math)S M(100)M m(80)m G(Strength)G} He/she usually uses arguments of considerable complexity.  
+{N(4027)N S(Math)S M(100)M m(80)m G(Strength)G} He/she has considerable application of Inquiry/Problem Solving Process.
+{N(4028)N S(Math)S M(100)M m(80)m G(Strength)G} He/she communicates with considerable Clarity.
+{N(4029)N S(Math)S M(100)M m(80)m G(Strength)G} He/she communicates with considerable Justification of Reasoning.
+{N(4030)N S(Math)S M(100)M m(80)m G(Strength)G} He/she shows considerable command of Mathematical Language.
+{N(4031)N S(Math)S M(100)M m(80)m G(Strength)G} He/she usually uses correct Mathematical Symbols and Conventions.
+{N(4032)N S(Math)S M(100)M m(80)m G(Strength)G} He/she solves complex problems relating to familiar settings.
+{N(4033)N S(Math)S M(100)M m(80)m G(Strength)G} He/she recognizes concepts and procedures relating to unfamiliar settings.
+
+{N(4034)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Number Sense/Algebra.
+{N(4035)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Relationships.       
+{N(4036)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Analytic Geometry.   
+{N(4037)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Measurement/Geometry.
+{N(4038)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Quadratic Functions.
+{N(4039)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Trigonometry.
+{N(4040)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Linear Functions.
+{N(4041)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Proportional Reasoning.
+{N(4042)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Functions.
+
+{N(4043)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Calculus.
+{N(4044)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Proofs.
+{N(4045)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Vectors.
+{N(4046)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Counting Principles.
+{N(4047)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Data Management.
+{N(4048)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding in Financial Math.
+
+{N(4049)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of Concepts.
+{N(4050)N S(Math)S M(69)M m(60)m G(Strength)G} He/she performs Algorithms with inconsistent accuracy.
+{N(4051)N S(Math)S M(69)M m(60)m G(Strength)G} He/she follows arguments of moderate complexity.
+{N(4052)N S(Math)S M(69)M m(60)m G(Strength)G} He/she has moderate application of Inquiry/Problem Solving Process.
+{N(4053)N S(Math)S M(69)M m(60)m G(Strength)G} He/she communicates with some clarity.
+{N(4054)N S(Math)S M(69)M m(60)m G(Strength)G} He/she communicates with some justification of reasoning.
+{N(4055)N S(Math)S M(69)M m(60)m G(Strength)G} He/she shows some command of Mathematical Language.
+{N(4056)N S(Math)S M(69)M m(60)m G(Strength)G} He/she uses correct mathematical symbols and conventions sometimes.
+{N(4057)N S(Math)S M(69)M m(60)m G(Strength)G} He/she solves problems of some complexity in familiar settings.
+
+{N(4058)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Number Sense/Algebra.
+{N(4059)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Relationships.       
+{N(4060)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Analytical Geometry. 
+{N(4061)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Quadratic Functions.
+{N(4062)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Trigonometry.
+{N(4063)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Linear Functions.
+{N(4064)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Proportional Reasoning.
+{N(4065)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Functions.
+{N(4066)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Calculus.
+{N(4067)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Proofs.
+{N(4068)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Vectors.
+{N(4069)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Counting Principles.
+{N(4070)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Data Management.
+{N(4071)N S(Math)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding in Financial Math. 
+
+{N(4072)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of Concepts.
+{N(4073)N S(Math)S M(59)M m(50)m G(Strength)G} He/she performs only simple Algorithms.
+{N(4074)N S(Math)S M(59)M m(50)m G(Strength)G} He/she follows simple Mathematical Arguments.
+{N(4075)N S(Math)S M(59)M m(50)m G(Strength)G} He/she has limited application of Inquiry/Problem Solving Process.
+{N(4076)N S(Math)S M(59)M m(50)m G(Strength)G} He/she communicates with limited clarity.
+{N(4077)N S(Math)S M(59)M m(50)m G(Strength)G} He/she communicates with limited justification of reasoning.
+{N(4078)N S(Math)S M(59)M m(50)m G(Strength)G} Show limited command of Mathematical Language.
+{N(4079)N S(Math)S M(100)M m(80)m G(Strength)G} He/she has infrequent use of proper Mathematical Symbols/Conventions.
+{N(4080)N S(Math)S M(59)M m(50)m G(Strength)G} He/she solves simple problems relating to familiar settings.
+
+{N(4081)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in number Sense/Algebra.
+{N(4082)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Relationships.
+{N(4083)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Analytic Geometry.
+{N(4084)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Measurement/Geometry.
+{N(4085)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Quadratic Functions.
+{N(4086)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Trigonometry.
+
+{N(4087)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Linear Function.
+{N(4088)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Functions.
+{N(4089)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Calculus.
+{N(4090)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Proofs.
+{N(4091)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Vectors.
+{N(4092)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Counting Principles.
+{N(4093)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Data Management.
+{N(4094)N S(Math)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding in Financial Math.
+{N(4095)N S(Math)S M(79)M m(70)m G(Strength)G} He/she demonstrates good understanding of concepts.
+
+@Areas For Improvement
+
+{N(4300)N S(Math)S G(Inprove)G} Demonstrating knowledge of concepts needs improvement.       
+{N(4301)N S(Math)S G(Inprove)G} Process of performing Algorithms needs improvement.
+{N(4302)N S(Math)S G(Inprove)G} Thinking/Inquiry and Problem Solving Skills need improvement.
+{N(4303)N S(Math)S G(Inprove)G} Communication with Mathematical Language needs improvement.
+{N(4304)N S(Math)S G(Inprove)G} Use of Mathematical symbols and conventions needs improvement.
+{N(4305)N S(Math)S G(Inprove)G} Communication of Reasoning needs improvement.
+{N(4306)N S(Math)S G(Inprove)G} Applying concepts and procedures needs improvement.
+{N(4307)N S(Math)S G(Inprove)G} Writing skills need improvement.
+{N(4308)N S(Math)S G(Inprove)G} Class attendance must improve to achieve course expectations.
+{N(4309)N S(Math)S G(Inprove)G} More effort should be made to reduce Mathematical errors.
+{N(4310)N S(Math)S G(Inprove)G} Note-taking skills need improvement.
+{N(4311)N S(Math)S G(Inprove)G} Assignments must be completed and submitted on time.
+{N(4312)N S(Math)S G(Inprove)G} Better test preparation is required.
+{N(4313)N S(Math)S G(Inprove)G} Reading and comprehension skills need improvement.
+{N(4314)N S(Math)S G(Inprove)G} Completion of homework assignments needs improvement.
+{N(4315)N S(Math)S G(Inprove)G} Work habits and time management need improvement.
+{N(4316)N S(Math)S G(Inprove)G} Bringing necessary equipment/books to class needs improvement.
+{N(4317)N S(Math)S G(Inprove)G} Requires more practice with use of graphing and calculator.
+{N(4318)N S(Math)S G(Inprove)G} Requires more practice with use of Dynamic Geometry Software.
+{N(4319)N S(Math)S G(Inprove)G} He/she has difficulty in applying course concepts.
+{N(4320)N S(Math)S G(Inprove)G} Fair mark but more effort could be made.
+
+@Next Steps
+
+{N(4600)N S(Math)S G(Next)G} He/she should consider participating in the Math Contests.
+{N(4601)N S(Math)S G(Next)G} Consistent daily review will improve his/her results.     
+{N(4602)N S(Math)S G(Next)G} Homework must be completed on a daily basis.
+{N(4603)N S(Math)S G(Next)G} He/she should consider tutoring a student in Mathematics.
+{N(4604)N S(Math)S G(Next)G} Recommend the aid of a tutor.
+{N(4605)N S(Math)S G(Next)G} Recommend participation in after school tutoring program.
+{N(4606)N S(Math)S G(Next)G} Request help when needed.
+{N(4607)N S(Math)S G(Next)G} Bringing required equipment/books to class.
+{N(4608)N S(Math)S G(Next)G} He/she should catch up on missed work.
+{N(4609)N S(Math)S G(Next)G} He/she should used agenda book to record homework and assignments.
+{N(4610)N S(Math)S G(Next)G} He/she communicates with teacher when work is not understood.
+{N(4611)N S(Math)S G(Next)G} Increased effort would reap benefits.
+{N(4612)N S(Math)S G(Next)G} Additional emphasis on organization/time management needed.
+
+{N(4613)N S(Math)S G(Next)G} Repetition of skills will improve performance.
+{N(4614)N S(Math)S G(Next)G} Paying (increased) attention in class improves understanding.
+{N(4615)N S(Math)S G(Next)G} Improved attendance will improve performance.
+{N(4616)N S(Math)S G(Next)G} He/she should make better use of available class time.
+{N(4617)N S(Math)S G(Next)G} He/she should complete assignments on time.
+{N(4618)N S(Math)S G(Next)G} He/she should improve notebook for study purposes.
+{N(4619)N S(Math)S G(Next)G} Better test preparation needed.
+{N(4620)N S(Math)S G(Next)G} Submit all assignments to improve his/her grade.
+{N(4621)N S(Math)S G(Next)G} He/she should take studies more seriously.
+{N(4622)N S(Math)S G(Next)G} More positive attitude could improve his/her results.
+{N(4623)N S(Math)S G(Next)G} He/she should He/she should Improve Time Management.
+{N(4624)N S(Math)S G(Next)G} He/she should take more care with written assignments.
+{N(4625)N S(Math)S G(Next)G} He/she would benefit from a proper study atmosphere.
+{N(4626)N S(Math)S G(Next)G} Keep up the good work.
+{N(4627)N S(Math)S G(Next)G} Continue with present work habits.
+{N(4628)N S(Math)S G(Next)G} Continue his/her excellent effort.
+{N(4629)N S(Math)S G(Next)G} Insufficient achievement of curriculum expectations to date.
+{N(4632)N S(Math)S G(Next)G} Recommend he/she continue at the Academic Level.
+{N(4633)N S(Math)S G(Next)G} Recommend he/she continue at the Applied Level.
+{N(4634)N S(Math)S G(Next)G} Recommend he/she change to the Academic Level.
+{N(4635)N S(Math)S G(Next)G} Recommend he/she change to the Applied Level.
+{N(4636)N S(Math)S G(Next)G} Recommend to the Grade 10 Locally Developed Math Course.
+{N(4637)N S(Math)S G(Next)G} Recommend he/she take the Grade 11 Workplace Preparation Course.
+{N(4638)N S(Math)S G(Next)G} Recommend he/she take the Grade 11 College Preparation Course.
+{N(4639)N S(Math)S G(Next)G} Recommend he/she repeat the Grade 10 Applied course.
+{N(4640)N S(Math)S G(Next)G} Recommend he/she take the transfer course for Univ/College Prep.
+{N(4641)N S(Math)S G(Next)G} Recommend he/she repeat the Grade 10 Academic Course.
+{N(4642)N S(Math)S G(Next)G} Recommend he/she take the Grade 10 Applied Course.
+{N(4643)N S(Math)S G(Next)G} Recommend he/she take the University Preparation Course.
+{N(4644)N S(Math)S G(Next)G} Recommend he/she take the University/College Prep Course.
+{N(4645)N S(Math)S G(Next)G} Recommend he/she take the University/College Preparation Courses.
+{N(4646)N S(Math)S G(Next)G} Recommend he/she repeat this course.
+{N(4647)N S(Math)S G(Next)G} Recommend he/she take the Grade 12 Workplace course.
+{N(4648)N S(Math)S G(Next)G} Take the Univ. Prep. Course(s) relevant to his/her future plans.
+{N(4649)N S(Math)S G(Next)G} Recommend he/she take the college and apprenticeship Mathematics course.
+{N(4650)N S(Math)S G(Next)G} Recommend he/she take the Mathematics for College Technology course.
+{N(4651)N S(Math)S G(Next)G} Take Data man. (U) or college Tech course for his/her future plans.
+{N(4652)N S(Math)S G(Next)G} Take Calculus (U) and/or Data Man. (U) course for his/her future plans.
+{N(4653)N S(Math)S G(Next)G} Recommend he/she take the Grade 12 College Course.
+{N(4654)N S(Math)S G(Next)G} Recommend he/she take the Grade 12 University Course.
+{N(4656)N S(Math)S G(Next)G} Course mark has been improved by performance assessment task.
+
+@ENGLISH
+
+@Strengths
+
+{N(5000)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough knowledge of concepts/ideas.
+{N(5001)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of the short story.
+{N(5002)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of the novel.      
+{N(5003)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of poetry.
+{N(5004)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of drama.
+{N(5005)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of non-fiction texts.
+{N(5006)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful understanding of media.
+{N(5007)N S(English)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough knowledge of language.
+{N(5008)N S(English)S M(100)M m(80)m G(Strength)G} He/she shows insightful understanding of conventions of the narrative.
+{N(5009)N S(English)S M(100)M m(80)m G(Strength)G} He/she shows insightful understanding of conventions of essay writing.
+{N(5010)N S(English)S M(100)M m(80)m G(Strength)G} He/she shows insightful understanding of conventions of writing poetry.
+{N(5011)N S(English)S M(100)M m(80)m G(Strength)G} He/she shows insightful understanding of conventions of media works.
+{N(5012)N S(English)S M(100)M m(80)m G(Strength)G} He/she uses creative thinking skills proficiently.
+{N(5013)N S(English)S M(100)M m(80)m G(Strength)G} He/she uses critical thinking skills proficiently.
+{N(5014)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies all of the skills involved in the research process.
+{N(5015)N S(English)S M(100)M m(80)m G(Strength)G} He/she communicates ideas orally with a high degree of clarity.
+{N(5016)N S(English)S M(100)M m(80)m G(Strength)G} He/she communicates orally with a strong sense of audience and purpose.
+{N(5017)N S(English)S M(100)M m(80)m G(Strength)G} Written communication has a strong sense of audience and purpose.
+{N(5018)N S(English)S M(100)M m(80)m G(Strength)G} Written communication is highly effective.
+{N(5019)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies writing skills with a high degree of competency.
+{N(5020)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies the writing process with a high degree of competency.
+{N(5021)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies reading skills with a high degree of competency.
+{N(5022)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies oral skills with a high degree of competency.
+{N(5023)N S(English)S M(100)M m(80)m G(Strength)G} He/she applies media skills with a high degree of competency.
+{N(5024)N S(English)S M(100)M m(80)m G(Strength)G} He/she uses technology with a high degree of appropriateness & effectiveness. 
+
+{N(5100)N S(English)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of concepts/ideas.
+{N(5101)N S(English)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of language.
+{N(5102)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of elements of the short story.
+{N(5103)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of elements of the novel.
+{N(5104)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of elements of poetry.
+{N(5105)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of elements of drama.
+{N(5106)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of non-fiction texts.
+{N(5107)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of elements of media.
+{N(5108)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of conventions of the narrative.
+{N(5109)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of conventions of essay writing.
+{N(5110)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of conventions of writing poetry.
+{N(5111)N S(English)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of conventions of media works.
+{N(5112)N S(English)S M(79)M m(70)m G(Strength)G} He/she communicates ideas orally with considerable clarity.
+{N(5113)N S(English)S M(79)M m(70)m G(Strength)G} He/she communicates orally with a clear sense of audience and purpose.
+{N(5114)N S(English)S M(79)M m(70)m G(Strength)G} Written communication has a clear sense of audience and purpose.
+{N(5115)N S(English)S M(79)M m(70)m G(Strength)G} Communication has considerable clarity in logical organization.
+{N(5116)N S(English)S M(79)M m(70)m G(Strength)G} He/she uses critical thinking skills effectively.
+{N(5117)N S(English)S M(79)M m(70)m G(Strength)G} He/she uses creative thinking skills effectively.
+{N(5118)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies most of the skills involved in the research process.
+{N(5119)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies writing skills with considerable competency.
+{N(5120)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies the writing process with considerable competency.
+{N(5121)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies reading skills with considerable competency.
+{N(5122)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies oral skills with considerable competency.
+{N(5123)N S(English)S M(79)M m(70)m G(Strength)G} He/she applies media skills with considerable competency.
+{N(5124)N S(English)S M(79)M m(70)m G(Strength)G} He/she uses technology with considerable appropriateness and effectiveness.
+
+{N(5200)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of concepts/ideas.
+{N(5201)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of the short story.
+{N(5202)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of the novel.      
+{N(5203)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of poetry.
+{N(5204)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of drama.
+{N(5205)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of non-fiction texts.
+{N(5206)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of elements of media.
+{N(5207)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of language.
+{N(5208)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of conventions of the narrative.
+{N(5209)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of conventions of essay writing.
+{N(5210)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of conventions of writing poetry.
+{N(5211)N S(English)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of conventions of media works.
+{N(5212)N S(English)S M(69)M m(60)m G(Strength)G} He/she uses critical thinking skills with some effectiveness.
+{N(5213)N S(English)S M(69)M m(60)m G(Strength)G} He/she uses creative thinking skills with some effectiveness.
+{N(5214)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies some of the skills involved in the research process.
+{N(5215)N S(English)S M(69)M m(60)m G(Strength)G} He/she communicates ideas orally with some clarity.
+{N(5216)N S(English)S M(69)M m(60)m G(Strength)G} He/she communicates orally with some sense of audience and purpose.
+{N(5217)N S(English)S M(69)M m(60)m G(Strength)G} Written communication has some sense of audience and purpose.
+{N(5218)N S(English)S M(69)M m(60)m G(Strength)G} Communication in writing has some clarity in logical organization.
+{N(5219)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies writing skills with moderate competency.
+{N(5220)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies the steps of the writing process with moderate competency.
+{N(5221)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies reading skills with moderate competency.
+{N(5222)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies oral skills with a some competency.
+{N(5223)N S(English)S M(69)M m(60)m G(Strength)G} He/she applies media skills with some competency.
+{N(5224)N S(English)S M(69)M m(60)m G(Strength)G} He/she uses technology with moderate appropriateness and effectiveness.
+
+{N(5300)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of concepts/ideas.
+{N(5301)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of the short story.
+{N(5302)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of the novel.      
+{N(5304)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of poetry.
+{N(5305)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of drama.
+{N(5306)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of non-fiction texts.
+{N(5307)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of elements of media.
+{N(5308)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of language.
+{N(5309)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of conventions of the narrative.
+{N(5310)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of conventions of essay writing.
+{N(5311)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of conventions of writing poetry.
+{N(5312)N S(English)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of conventions of media works.
+{N(5313)N S(English)S M(59)M m(50)m G(Strength)G} He/she uses critical thinking skills with limitations.
+{N(5314)N S(English)S M(59)M m(50)m G(Strength)G} He/she uses creative thinking skills with limitations.
+{N(5315)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies few of the skills involved in the research process.
+{N(5316)N S(English)S M(59)M m(50)m G(Strength)G} He/she communicates orally with limited clarity.
+{N(5317)N S(English)S M(59)M m(50)m G(Strength)G} He/she communicates orally with limited sense of audience and purpose.
+{N(5318)N S(English)S M(59)M m(50)m G(Strength)G} Written communication has limited sense of audience and purpose.
+{N(5319)N S(English)S M(59)M m(50)m G(Strength)G} Communication in writing lacks clarity through poor organization.
+{N(5320)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies writing skills with limited competency.
+{N(5321)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies the steps of the writing process with limited competence.
+{N(5322)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies reading skills with limited competency.
+{N(5323)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies oral skills with limited competency.
+{N(5324)N S(English)S M(59)M m(50)m G(Strength)G} He/she applies media skills with limited competency.
+{N(5325)N S(English)S M(59)M m(50)m G(Strength)G} He/she uses technology with limited appropriateness and effectiveness.
+
+@Areas for Improvement
+
+{N(5400)N S(English)S G(Improve)G} Demonstrating knowledge of concept/ideas needs improvement.
+{N(5401)N S(English)S G(Improve)G} Demonstrating knowledge of language needs improvement.     
+{N(5402)N S(English)S G(Improve)G} Use of critical thinking skills needs improvement.
+{N(5403)N S(English)S G(Improve)G} Use of creative thinking skills needs improvement.
+{N(5404)N S(English)S G(Improve)G} Communication of ideas in writing needs improvement.
+{N(5405)N S(English)S G(Improve)G} Clarity in writing needs improvement.
+{N(5406)N S(English)S G(Improve)G} Oral communication of ideas needs improvement.
+{N(5407)N S(English)S G(Improve)G} Organization of writing assignments needs improvement.
+{N(5408)N S(English)S G(Improve)G} Application of writing skills needs improvement.
+{N(5409)N S(English)S G(Improve)G} Application of research skills needs improvement.
+{N(5410)N S(English)S G(Improve)G} Application of reading skills needs improvement.
+{N(5411)N S(English)S G(Improve)G} Application of oral skills needs improvement.
+{N(5412)N S(English)S G(Improve)G} Application of media skills needs improvement.
+
+@Next Steps
+
+{N(5500)N S(English)S G(Next)G} More attention to revision and editing of written work needed.
+{N(5501)N S(English)S G(Next)G} Support his/her ideas with proof.
+{N(5502)N S(English)S G(Next)G} Prepare and rehearse his/her oral presentations.
+{N(5503)N S(English)S G(Next)G} Increased effort on written work required.
+{N(5504)N S(English)S G(Next)G} Focus on proofreading assignments.
+
+@HISTORY
+
+@Strengths
+
+{N(6000)N S(History)S G(Strength)G} He/she demonstrates thorough knowledge of facts and terms.
+{N(6001)N S(History)S G(Strength)G} He/she demonstrates the ability to collect and organize information.
+{N(6002)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates with high degree of clarity and confidence.
+{N(6003)N S(History)S M(100)M m(80)m G(Strength)G} He/she transfers historical connections with a high degree of effectiveness.
+{N(6004)N S(History)S M(100)M m(80)m G(Strength)G} He/she uses critical thinking skills with a high degree of clarity & effectiveness.
+{N(6005)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates orally with a high degree of effectiveness.
+{N(6006)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates in writing with a high degree of effectiveness.
+{N(6007)N S(History)S M(100)M m(80)m G(Strength)G} He/she demonstrates considerable knowledge of facts and terms.
+{N(6008)N S(History)S M(79)M m(70)m G(Strength)G} He/she demonstrates most ability to collect and organize information
+{N(6009)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with considerable clarity.
+{N(6010)N S(History)S M(100)M m(80)m G(Strength)G} He/she transfers historical connections with considerable effectiveness.
+{N(6011)N S(History)S M(100)M m(80)m G(Strength)G} He/she uses critical thinking skills with considerable clarity and effectiveness.
+{N(6012)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates orally with considerable effectiveness.
+{N(6013)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates in writing with considerable effectiveness.
+{N(6014)N S(History)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of facts and terms.
+{N(6015)N S(History)S M(69)M m(60)m G(Strength)G} He/she demonstrates some ability to collect, organize and synthesize information.
+{N(6016)N S(History)S M(69)M m(60)m G(Strength)G} He/she transfers historical connections with moderate effectiveness.
+{N(6017)N S(History)S M(69)M m(60)m G(Strength)G} He/she communicates orally with some effectiveness.
+{N(6018)N S(History)S M(69)M m(60)m G(Strength)G} He/she communicates in writing with some effectiveness.
+{N(6019)N S(History)S M(59)M m(50)m G(Strength)G} He/she demonstrates few of the skills involved in the collections.
+{N(6020)N S(History)S M(59)M m(50)m G(Strength)G} He/she struggles with organization and synthesis of information.
+{N(6021)N S(History)S M(59)M m(50)m G(Strength)G} He/she communicates with limited accuracy and effectiveness.
+{N(6022)N S(History)S M(59)M m(50)m G(Strength)G} He/she applies all skills with limited accuracy and effectiveness.
+{N(6023)N S(History)S M(59)M m(50)m G(Strength)G} He/she transfers skills to new contexts with limited effectiveness.
+{N(6024)N S(History)S M(59)M m(50)m G(Strength)G} He/she demonstrates a limited ability to collect and organize information.
+{N(6025)N S(History)S M(59)M m(50)m G(Strength)G} He/she communicates information and ideas with limited clarity.
+{N(6026)N S(History)S M(59)M m(50)m G(Strength)G} He/she makes historical connections wit limited effectiveness.
+{N(6027)N S(History)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of facts and terms.
+{N(6028)N S(History)S M(59)M m(50)m G(Strength)G} He/she uses critical thinking with limited clarity and effective effectiveness.
+{N(6029)N S(History)S M(59)M m(50)m G(Strength)G} He/she communicates orally with limited effectiveness.
+{N(6030)N S(History)S M(59)M m(50)m G(Strength)G} He/she communicates in writing with limited effectiveness.
+
+{N(6100)N S(History)S M(100)M m(80)m G(Strength)G} He/she demonstrates considerable knowledge of facts and terms.       
+{N(6101)N S(History)S M(100)M m(80)m G(Strength)G} Skilled in the collection, organization and synthesis of information.
+{N(6102)N S(History)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with considerable clarity. 
+{N(6103)N S(History)S M(100)M m(80)m G(Strength)G} He/she applies history skills with considerable accuracy and effectiveness.
+{N(6104)N S(History)S M(100)M m(80)m G(Strength)G} He/she applies concepts and skills with considerable effectiveness.
+{N(6105)N S(History)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of facts and terms.
+{N(6106)N S(History)S M(69)M m(60)m G(Strength)G} He/she applies some of the skills involved in handling information.
+{N(6107)N S(History)S M(69)M m(60)m G(Strength)G} He/she communicates information and ideas with some clarity.
+{N(6108)N S(History)S M(69)M m(60)m G(Strength)G} He/she uses history applications with some accuracy and effectiveness.
+{N(6109)N S(History)S M(69)M m(60)m G(Strength)G} He/she uses history concepts and skills with moderate effectiveness.
+{N(6110)N S(History)S M(69)M m(60)m G(Strength)G} He/she sometimes makes logical conclusions or generalizations.
+{N(6111)N S(History)S M(59)M m(50)m G(Strength)G} He/she needs to work towards improving knowledge of facts and terms.
+
+@Areas for Improvement
+
+{N(6111)N S(History)S G(Improve)G} He/she needs to work towards improving knowledge of facts and terms.    
+{N(6112)N S(History)S G(Improve)G} He/she needs to improve the ability to collect and organize information.
+{N(6113)N S(History)S G(Improve)G} He/she needs to improve the communication of ideas and information.     
+{N(6114)N S(History)S G(Improve)G} He/she needs to work towards improving knowledge of facts and terms.
+{N(6115)N S(History)S G(Improve)G} He/she needs to improve the ability to collect and organize information.
+{N(6116)N S(History)S G(Improve)G} He/she needs to improve the communication of information and ideas.
+
+@Next Steps
+
+{N(6200)N S(History)S G(Improve)G} The aid of a tutor is suggested.
+{N(6201)N S(History)S G(Improve)G} Proper study atmosphere would benefit this student.
+{N(6202)N S(History)S G(Improve)G} He/she should monitor the completion of homework and assignments.
+{N(6203)N S(History)S G(Improve)G} He/she should focus on proof-reading assignments.
+{N(6204)N S(History)S G(Improve)G} Outside related reading suggested.
+{N(6205)N S(History)S G(Improve)G} Voluntary activities could broaden his/her experience.
+{N(6206)N S(History)S G(Improve)G} He/she should consider helping his/her peers.
+{N(6207)N S(History)S G(Improve)G} Tutoring others would help further develop academic @Strengths.
+{N(6208)N S(History)S G(Improve)G} Involvement in related outside activities may be helpful.
+{N(6209)N S(History)S G(Behavior)G} Keep up the good work.
+{N(6210)N S(History)S G(Behavior)G} Continue with present work habits.
+{N(6211)N S(History)S G(Behavior)G} Continue his/her excellent effort.
+{N(6212)N S(History)S G(Improve)G} Well Done. He/she can take pride in his/her success.
+{N(6213)N S(History)S G(Improve)G} Consider participating in writing/debating contests.
+{N(6214)N S(History)S G(Change)G} Recommend he/she continue at the academic level.
+{N(6215)N S(History)S G(Change)G} Recommend he/she continue at the applied level.
+{N(6216)N S(History)S G(Change)G} Recommend he/she change to the academic level.
+{N(6217)N S(History)S G(Change)G} Recommend he/she change to the applied level.
+{N(6218)N S(History)S G(Improve)G} He/she should read more consistently from the text and other historical sources.
+{N(6219)N S(History)S G(Improve)G} He/she should continue to pursue his/her interest in social sciences.
+{N(6220)N S(History)S G(Improve)G} He/she must do extra review in preparation for tests and quizzes.
+{N(6221)N S(History)S G(Improve)G} He/she should improve the organization and completion of his/her notes.
+{N(6222)N S(History)S G(Improve)G} He/she should consider seeking peer tutoring.
+{N(6223)N S(History)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6224)N S(History)S G(Improve)G} He/she must prepare more effectively for tests and final exam.
+{N(6225)N S(History)S G(Improve)G} He/she should read more consistently from the text and other historical sources.
+{N(6226)N S(History)S G(Improve)G} He/she should continue to pursue his/her interest in history.
+{N(6227)N S(History)S G(Improve)G} He/she should be more active participant in class to ensure understanding.
+{N(6228)N S(History)S G(Improve)G} He/she must do extra review in preparation for tests and quizzes.
+{N(6229)N S(History)S G(Improve)G} He/she should improve the organization and completion of his/her notes.
+{N(6230)N S(History)S G(Improve)G} He/she should consider seeking peer tutoring.
+{N(6231)N S(History)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6232)N S(History)S G(Improve)G} He/she should consider additional senior level social science course.
+{N(6233)N S(History)S G(Improve)G} He/she must prepare more effectively for tests and final exam.
+
+@CIVICS
+
+@Strengths
+
+{N(6300)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with clarity and confidence.     
+{N(6301)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she transfers political connections with a high degree of effectiveness.
+{N(6302)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates orally with a high degree of effectiveness.
+{N(6303)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she demonstrates the ability to collect and organize information.
+{N(6304)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she demonstrates thorough knowledge of political facts and terms.
+{N(6305)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she uses critical thinking skills with a high degree of clarity and effectiveness.
+{N(6306)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates in writing with a high degree of effectiveness.
+{N(6307)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she demonstrates some ability to collect and organize information.
+{N(6308)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with considerable clarity.
+{N(6309)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she demonstrates considerable knowledge of facts and terms.
+{N(6310)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates in writing with considerable effectiveness.
+{N(6311)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she transfers political connections with considerable effectiveness.
+{N(6312)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she uses critical thinking skills with considerable clarity and effectiveness.
+{N(6313)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates orally with considerable effectiveness.
+{N(6314)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she uses mapping and graphing skills with some accuracy and effectiveness.
+{N(6315)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she communicates orally with some effectiveness.
+{N(6316)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she communicates in writing with some effectiveness.
+{N(6317)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she uses critical thinking skills with moderate clarity and effectiveness.
+{N(6318)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she transfers political connections with moderate effectiveness.
+{N(6319)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she demonstrates some ability in handling information for portfolio.
+{N(6320)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of political facts and terms.
+{N(6321)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she communicates information and ideas with some clarity.
+{N(6322)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she makes political connections with limited effectiveness.
+{N(6323)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she applies all skills with limited accuracy and effectiveness.
+{N(6324)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she uses critical thinking with limited clarity and effectiveness.
+{N(6325)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she communicates orally with limited effectiveness.
+{N(6326)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of political facts and terms.
+{N(6327)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she demonstrates few skills involved in handling information.
+{N(6328)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she demonstrates a limited ability in handling information for portfolio.
+{N(6329)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she communicates information and ideas with limited clarity.
+{N(6330)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she transfers concepts, skill & procedures with limited effectiveness.
+{N(6331)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she communicates in writing with limited effectiveness.
+{N(6332)N S(Civics)S M(59)M m(50)m G(Strength)G} He/she communicates information with limited accuracy and effectiveness.
+
+{N(6400)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she applies concepts and skills with considerable effectiveness.
+{N(6401)N S(Civics)S M(79)M m(70)m G(Strength)G} He/she applies most skills involved in the handling of information. 
+{N(6402)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she demonstrates considerable knowledge of facts and terms.     
+{N(6403)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with considerable clarity.
+{N(6404)N S(Civics)S M(100)M m(80)m G(Strength)G} He/she applies political skills with considerable accuracy and effectiveness.
+{N(6405)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she transfers political concepts and skills with moderate effectiveness.
+{N(6406)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she sometimes makes logical conclusions or generalization.
+{N(6407)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she uses civics applications with some accuracy and effectiveness.
+{N(6408)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she communicates information and ideas with some clarity.
+{N(6409)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she applies some skills involved in the handling of information.
+{N(6410)N S(Civics)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of political facts and terms.
+
+@Areas For Improvement
+
+{N(6411)N S(Civics)S G(Improve)G} He/she needs to work towards improving communication of information and ideas.
+{N(6412)N S(Civics)S G(Improve)G} He/she needs to work towards improving knowledge of political facts and terms.
+{N(6413)N S(Civics)S G(Improve)G} He/she needs to improve the collection and organization of information.
+{N(6414)N S(Civics)S G(Improve)G} He/she needs to work towards improving knowledge of political facts and terms.
+{N(6415)N S(Civics)S G(Improve)G} He/she needs to work towards improving communication of information and ideas.
+{N(6416)N S(Civics)S G(Improve)G} He/she needs to improve information gathering for his/her portfolio.
+
+@Next Steps
+
+{N(6500)N S(Civics)S G(Change)G} He/she should continue to pursue his/her interest in social sciences.     
+{N(6501)N S(Civics)S G(Improve)G} He/she should be a more active participant to ensure better understanding.
+{N(6502)N S(Civics)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6503)N S(Civics)S G(Improve)G} He/she should improve the organization and completion of his/her notes.
+{N(6504)N S(Civics)S G(Improve)G} He/she should read more consistently from the text and other political sources.
+{N(6505)N S(Civics)S G(Change)G} He/she should consider becoming peer-tutoring.
+{N(6506)N S(Civics)S G(Change)G} He/she should become involved in civic minded community groups.
+{N(6507)N S(Civics)S G(Change)G} Outstanding achievement, consider senior social science course.
+{N(6508)N S(Civics)S G(Improve)G} Could prepare more effectively for civics tests and final exam.
+{N(6509)N S(Civics)S G(Improve)G} Could do extra review in preparation for tests and quizzes.
+{N(6510)N S(Civics)S G(Improve)G} He/she should improve the organization and completion of civics notes.
+{N(6511)N S(Civics)S G(Change)G} He/she should consider a senior level social science course.
+{N(6512)N S(Civics)S G(Improve)G} He/she must do extra review in preparation for civics tests and quizzes.
+{N(6513)N S(Civics)S G(Improve)G} He/she must prepare more effectively for tests and final exam.
+{N(6514)N S(Civics)S G(Improve)G} He/she should be a more active participant to ensure better understanding.
+{N(6515)N S(Civics)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6516)N S(Civics)S G(Improve)G} He/she should consider seeking peer-tutoring in civics.
+{N(6517)N S(Civics)S G(Improve)G} He/she should continue to pursue his/her interest in politics.
+{N(6518)N S(Civics)S G(Improve)G} He/she should read more consistently from the text and other political sources.
+{N(6519)N S(Civics)S G(Improve)G} He/she should improve the organization and completion of civics notes.
+{N(6520)N S(Civics)S G(Improve)G} He/she should be a more active participant to ensure better understanding.
+{N(6521)N S(Civics)S G(Change)G} He/she should continue to pursue his/her interest in social sciences.
+{N(6522)N S(Civics)S G(Improve)G} He/she must prepare more effectively for civics tests and final exam.
+{N(6523)N S(Civics)S G(Improve)G} He/she should read more consistently from the text and other political sources.
+{N(6524)N S(Civics)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6525)N S(Civics)S G(Improve)G} He/she should consider seeking peer-tutoring in civics.
+{N(6526)N S(Civics)S G(Improve)G} He/she must do extra review in preparation for civics tests and quizzes.
+{N(6527)N S(Civics)S G(Improve)G} He/she should continue to pursue his/her interest in local governments.
+{N(6528)N S(Civics)S G(Improve)G} He/she should be a more active participant to ensure better understanding.
+{N(6529)N S(Civics)S G(Improve)G} He/she must do extra review in preparation for civics tests and quizzes.
+{N(6530)N S(Civics)S G(Improve)G} He/she should improve the organization and completion of civics notes.
+{N(6531)N S(Civics)S G(Improve)G} He/she should consider seeking peer-tutoring in civics/careers.
+{N(6532)N S(Civics)S G(Change)G} He/she should consider additional senior level social science course.
+{N(6533)N S(Civics)S G(Improve)G} He/she must prepare more effectively for civics tests and final exam.
+{N(6534)N S(Civics)S G(Improve)G} He/she should read more consistently from the text and other political sources.
+{N(6535)N S(Civics)S G(Improve)G} He/she should seek clarification regarding assignments, lessons and tests.
+
+@GEOGRAPHY
+
+@Knowledge and understanding
+
+{N(6600)N S(Geograpy)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she shows thorough knowledge of geographic facts, terms, skills.
+{N(6601)N S(Geograpy)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she shows broad knowledge of geographic facts, terms, skills.   
+{N(6602)N S(Geograpy)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she shows some knowledge of geographic facts, terms, skills.     
+{N(6603)N S(Geograpy)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she shows limited knowledge of geographic facts, terms, skills.
+
+@Thinking and inquiry
+
+{N(6605)N S(Geograpy)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she applies all of the geographic skills effectively.
+{N(6606)N S(Geograpy)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she applies most of the geographic skills effectively.
+{N(6607)N S(Geograpy)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she applies some of the geographic skills.
+{N(6608)N S(Geograpy)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she applies few of the geographic skills; limited effectiveness.
+
+@Communication
+
+{N(6610)N S(Geograpy)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she communicates information with a high degree of clarity.
+{N(6611)N S(Geograpy)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she communicates information with considerable clarity.    
+{N(6612)N S(Geograpy)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she communicates information and ideas with some clarity.   
+{N(6613)N S(Geograpy)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she communicates information and ideas with limited clarity.
+
+@Application
+
+{N(6615)N S(Geograpy)S C(Application)C M(100)M m(80)m G(Strength)G} He/she transfers ideas and skills with great effectiveness.  
+{N(6616)N S(Geograpy)S C(Application)C M(100)M m(80)m G(Strength)G} He/she transfers ideas and skill with effectiveness.
+{N(6617)N S(Geograpy)S C(Application)C M(69)M m(60)m G(Strength)G} He/she transfers ideas and skills with moderate effectiveness.
+{N(6618)N S(Geograpy)S C(Application)C M(59)M m(50)m G(Strength)G} He/she transfers ideas and skills with limited effectiveness.
+
+@Strengths
+
+{N(6626)N S(Geograpy)S G(Behavior)G} Good attitude in class.
+{N(6627)N S(Geograpy)S G(Behavior)G} Independent worker.
+{N(6628)N S(Geograpy)S G(Behavior)G} Excellent contribution to group activities.
+{N(6629)N S(Geograpy)S G(Behavior)G} Good organizational skills.
+{N(6630)N S(Geograpy)S G(Behavior)G} Good leadership skills.
+{N(6631)N S(Geograpy)S G(Behavior)G} Good tests results.
+{N(6632)N S(Geograpy)S G(Behavior)G} Good assignment results.
+{N(6633)N S(Geograpy)S G(Behavior)G} Good in class effort.
+{N(6634)N S(Geograpy)S G(Behavior)G} Excellent effort.
+{N(6635)N S(Geograpy)S G(Behavior)G} Excellent test results.
+{N(6636)N S(Geograpy)S G(Behavior)G} Excellent assignment results.
+{N(6637)N S(Geograpy)S G(Behavior)G} He/she are a co-operative, hard working student.
+{N(6638)N S(Geograpy)S G(Behavior)G} He/she display a good grasp of subject @Areas.
+{N(6639)N S(Geograpy)S G(Behavior)G} Good participation in class discussion.
+
+@Areas for Improvement
+
+{N(6700)N S(Geograpy)S G(Improve)G} His/her daily attendance needs improvement.      
+{N(6701)N S(Geograpy)S G(Improve)G} His/her punctuality needs improvement.
+{N(6702)N S(Geograpy)S G(Improve)G} Handing in assignments on time needs improvement.
+{N(6703)N S(Geograpy)S G(Improve)G} His/her homework must be done.
+{N(6704)N S(Geograpy)S G(Improve)G} Studying for tests needs improvement.
+{N(6705)N S(Geograpy)S G(Improve)G} His/her class participation need improvement.
+{N(6706)N S(Geograpy)S G(Improve)G} His/her co-operation with peers needs improvement.
+{N(6707)N S(Geograpy)S G(Improve)G} Staying on task needs improvement.
+{N(6708)N S(Geograpy)S G(Improve)G} Completing assignments properly needs improvement.
+{N(6709)N S(Geograpy)S G(Improve)G} His/her organizational skills and time management need improvement.
+{N(6710)N S(Geograpy)S G(Improve)G} Better preparation for tests required.
+{N(6711)N S(Geograpy)S G(Improve)G} His/her writing skills need improvement.
+{N(6712)N S(Geograpy)S G(Improve)G} His/her note taking skills need improvement.
+{N(6713)N S(Geograpy)S G(Improve)G} His/her class behaviour needs improvement.
+{N(6714)N S(Geograpy)S G(Improve)G} His/her work and study habits need improvement.
+{N(6715)N S(Geograpy)S G(Improve)G} He/she must strive to improve the quality of his/her assignments.
+{N(6716)N S(Geograpy)S G(Improve)G} His/her knowledge and understanding of subject area must be reflected in his/her daily class discussions.
+
+@Next Steps
+
+{N(6800)N S(Geograpy)S G(Behavior)G} Keep up the good work.
+{N(6801)N S(Geograpy)S G(Behavior)G} Continue with present work habits.
+{N(6802)N S(Geograpy)S G(Behavior)G} Continue his/her excellent effort.
+{N(6803)N S(Geograpy)S G(Next)G} He/she should take studies more seriously.
+{N(6804)N S(Geograpy)S G(Next)G} He/she should Learn to follow instructions.
+{N(6805)N S(Geograpy)S G(Next)G} Regular review needed.
+{N(6806)N S(Geograpy)S G(Next)G} He/she should catch up on missed work.
+{N(6807)N S(Geograpy)S G(Next)G} Consistent daily review will improve his/her results.
+{N(6808)N S(Geograpy)S G(Next)G} More positive attitude could improve his/her results.
+{N(6809)N S(Geograpy)S G(Change)G} Recommend he/she continue at the academic level.
+{N(6810)N S(Geograpy)S G(Change)G} Recommend he/she continue at the applied level.
+{N(6811)N S(Geograpy)S G(Change)G} Recommend he/she change to the academic level.
+{N(6812)N S(Geograpy)S G(Change)G} Recommend he/she change to the applied level.
+{N(6813)N S(Geograpy)S G(Next)G} He/she should seek clarification regarding assignments, lessons and tests.
+{N(6814)N S(Geograpy)S G(Next)G} He/she must prepare more effectively for tests and final exam.
+{N(6815)N S(Geograpy)S G(Behavior)G} Keep up the good work.
+{N(6816)N S(Geograpy)S G(Behavior)G} Continue with present work habits.
+{N(6817)N S(Geograpy)S G(Behavior)G} Continue his/her excellent effort.
+{N(6818)N S(Geograpy)S G(Behavior)G} Well Done. He/she can take pride in his/her success.
+
+@MODERN LANGUAGES
+
+@Strengths
+
+{N(7000)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates a thorough knowledge of grammar structures.  
+{N(7001)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates a thorough knowledge of content.
+{N(7002)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates a high degree of understanding of texts read.
+{N(7003)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates a thorough knowledge of vocabulary.
+{N(7004)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates a high degree of understanding of spoken texts.
+{N(7005)N S(Language)S M(100)M m(80)m G(Strength)G} He/she demonstrates use of almost all language structures with few errors.
+{N(7006)N S(Language)S M(100)M m(80)m G(Strength)G} He/she uses comprehension skills very effectively.
+{N(7007)N S(Language)S M(100)M m(80)m G(Strength)G} He/she shows a high degree of creativity in assignments.
+{N(7008)N S(Language)S M(100)M m(80)m G(Strength)G} He/she analyzes and evaluates ideas very effectively.
+{N(7009)N S(Language)S M(100)M m(80)m G(Strength)G} Writing is clear, organized; ideas are supported.
+{N(7010)N S(Language)S M(100)M m(80)m G(Strength)G} He/she communicates ideas clearly.
+{N(7011)N S(Language)S M(100)M m(80)m G(Strength)G} He/she speaks very effectively with few pronunciation errors.
+{N(7012)N S(Language)S M(100)M m(80)m G(Strength)G} He/she edits, proofreads and revises with little or no support.
+{N(7013)N S(Language)S M(100)M m(80)m G(Strength)G} He/she reads orally with few pronunciation errors.
+{N(7014)N S(Language)S M(100)M m(80)m G(Strength)G} He/she writes dictated passages with few errors.
+{N(7015)N S(Language)S M(100)M m(80)m G(Strength)G} He/she applies knowledge and skills very effectively in writing.
+
+{N(7100)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates a considerable degree of understanding of texts read.
+{N(7101)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of vocabulary.
+{N(7102)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of grammar structures.        
+{N(7103)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates a considerable degree of understanding of spoken text.
+{N(7104)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of content.
+{N(7105)N S(Language)S M(79)M m(70)m G(Strength)G} He/she demonstrates use of most language structures with occasional errors.
+{N(7106)N S(Language)S M(79)M m(70)m G(Strength)G} He/she uses comprehension skills effectively.
+{N(7107)N S(Language)S M(79)M m(70)m G(Strength)G} He/she shows considerable creativity in assignments.
+{N(7108)N S(Language)S M(79)M m(70)m G(Strength)G} He/she analyzes and evaluates ideas effectively.
+{N(7109)N S(Language)S M(79)M m(70)m G(Strength)G} His/her writing is clear, organized; most ideas are supported.
+{N(7110)N S(Language)S M(79)M m(70)m G(Strength)G} He/she uses grammar, vocabulary and spelling correctly.
+{N(7111)N S(Language)S M(79)M m(70)m G(Strength)G} He/she communicates ideas with considerable clarity.
+{N(7112)N S(Language)S M(79)M m(70)m G(Strength)G} He/she speaks effectively with occasional pronunciation errors.
+{N(7113)N S(Language)S M(79)M m(70)m G(Strength)G} He/she edits, proofreads and revises with occasional support.
+{N(7114)N S(Language)S M(79)M m(70)m G(Strength)G} He/she reads orally with occasional pronunciation errors.
+{N(7115)N S(Language)S M(79)M m(70)m G(Strength)G} He/she writes dictated passages with occasional errors.
+{N(7116)N S(Language)S M(79)M m(70)m G(Strength)G} He/she applies knowledge and skills effectively in writing.
+
+{N(7200)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of grammar structures.      
+{N(7201)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates some degree of understanding of texts read.
+{N(7202)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of vocabulary.
+{N(7203)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates some degree of understanding of spoken texts.
+{N(7204)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of content.
+{N(7205)N S(Language)S M(69)M m(60)m G(Strength)G} He/she demonstrates use of most language structures with some errors.
+{N(7206)N S(Language)S M(69)M m(60)m G(Strength)G} He/she uses comprehension skills with some effectiveness.
+{N(7207)N S(Language)S M(69)M m(60)m G(Strength)G} He/she shows some creativity in assignments.
+{N(7208)N S(Language)S M(69)M m(60)m G(Strength)G} He/she analyzes and evaluates ideas with some effectiveness.
+{N(7209)N S(Language)S M(69)M m(60)m G(Strength)G} His/her writing has some clarity, organization; some ideas are supported.
+{N(7210)N S(Language)S M(69)M m(60)m G(Strength)G} He/she communicates ideas with some clarity.
+{N(7211)N S(Language)S M(69)M m(60)m G(Strength)G} He/she speaks with some effectiveness and frequent pronunciation errors.
+{N(7212)N S(Language)S M(69)M m(60)m G(Strength)G} He/she edits, proofreads and revises with some support.
+
+{N(7213)N S(Language)S M(59)M m(50)m G(Strength)G} He/she reads orally with frequent pronunciation errors.
+{N(7214)N S(Language)S M(59)M m(50)m G(Strength)G} He/she writes dictated passages with frequent errors.
+{N(7215)N S(Language)S M(59)M m(50)m G(Strength)G} He/she applies knowledge and skills with some effectiveness in writing.
+{N(7300)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited degree of understanding of texts read.
+{N(7301)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of grammar structures.
+{N(7302)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of content.
+{N(7303)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates a limited degree of understanding of spoken text.
+{N(7304)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of vocabulary.
+{N(7305)N S(Language)S M(59)M m(50)m G(Strength)G} He/she demonstrates use of most language structures with frequent errors.
+{N(7306)N S(Language)S M(59)M m(50)m G(Strength)G} He/she uses comprehension skills with limited effectiveness.
+{N(7307)N S(Language)S M(59)M m(50)m G(Strength)G} He/she shows limited creativity in assignments.
+{N(7308)N S(Language)S M(59)M m(50)m G(Strength)G} He/she analyzes and evaluates ideas with limited effectiveness.
+{N(7309)N S(Language)S M(59)M m(50)m G(Strength)G} His/her writing has limited clarity, organization; few ideas are supported.
+{N(7310)N S(Language)S M(59)M m(50)m G(Strength)G} He/she communicates ideas with limited clarity.
+{N(7311)N S(Language)S M(59)M m(50)m G(Strength)G} He/she speaks with limited effectiveness and many pronunciation errors.
+{N(7312)N S(Language)S M(59)M m(50)m G(Strength)G} He/she edits, proofreads and revises with frequent support.
+{N(7313)N S(Language)S M(59)M m(50)m G(Strength)G} He/she reads orally with many pronunciation errors.
+{N(7314)N S(Language)S M(59)M m(50)m G(Strength)G} He/she writes dictated passages with many errors.
+{N(7315)N S(Language)S M(59)M m(50)m G(Strength)G} He/she applies knowledge and skills with many errors in writing.
+
+@Areas for Improvement 
+
+{N(7400)N S(Language)S G(Improve)G} He/she needs to improve knowledge of vocabulary.
+{N(7401)N S(Language)S G(Improve)G} He/she needs to improve knowledge of grammar.   
+{N(7402)N S(Language)S G(Improve)G} He/she needs to improve knowledge of content.   
+{N(7403)N S(Language)S G(Improve)G} He/she needs to improve grammar and spelling.
+{N(7404)N S(Language)S G(Improve)G} He/she needs to use context clues to understand meaning.
+{N(7405)N S(Language)S G(Improve)G} He/she needs to improve ability to grasp meaning from context.
+{N(7406)N S(Language)S G(Improve)G} He/she needs to improve ability to locate key ideas in reading.
+{N(7407)N S(Language)S G(Improve)G} He/she needs to improve ability to analyze information.
+{N(7408)N S(Language)S G(Improve)G} He/she needs to practice reading skills.
+{N(7409)N S(Language)S G(Improve)G} He/she needs to improve quality of writing.
+{N(7410)N S(Language)S G(Improve)G} The use of written language needs improvement.
+{N(7411)N S(Language)S G(Improve)G} He/she needs to improve paragraph organization.
+{N(7412)N S(Language)S G(Improve)G} He/she needs to improve sentence structure.
+{N(7413)N S(Language)S G(Improve)G} He/she needs to write ideas more clearly.
+{N(7414)N S(Language)S G(Improve)G} He/she needs to link ideas smoothly in paragraphs.
+{N(7415)N S(Language)S G(Improve)G} The use of oral language needs improvement.
+{N(7416)N S(Language)S G(Improve)G} He/she needs to improve understanding of spoken language.
+{N(7417)N S(Language)S G(Improve)G} He/she needs to focus on improving speaking skills.
+{N(7418)N S(Language)S G(Improve)G} More attention to revision, editing or written work needed.
+{N(7419)N S(Language)S G(Improve)G} Application of knowledge and skills needs improvement.
+{N(7420)N S(Language)S G(Improve)G} He/she needs to apply grammar rules consistently in paragraphs.
+{N(7421)N S(Language)S G(Improve)G} He/she needs to apply grammar rules better in dictation.
+{N(7422)N S(Language)S G(Improve)G} He/she needs to improve spelling of dictated words.
+{N(7423)N S(Language)S G(Improve)G} He/she needs to apply rules of pronunciation consistently.
+{N(7424)N S(Language)S G(Improve)G} He/she needs to improve ability to communicate ideas in sentences.
+{N(7425)N S(Language)S G(Improve)G} He/she needs to improve oral reading skills.
+
+@Next Steps
+
+{N(7500)N S(Language)S G(Next)G} He/she should Learn new vocabulary by writing it out.
+{N(7501)N S(Language)S G(Next)G} He/she should drill spelling and meanings of vocabulary daily.
+{N(7502)N S(Language)S G(Next)G} He/she should practice spelling vocabulary words.
+{N(7503)N S(Language)S G(Next)G} He/she should study the verb charts.
+{N(7504)N S(Language)S G(Next)G} He/she should improve his/her dictionary skills.
+{N(7505)N S(Language)S G(Next)G} He/she should review and practise proper grammar spelling and vocabulary.
+{N(7600)N S(Language)S G(Next)G} He/she should listen carefully to spoken language to increase his/her vocabulary.
+{N(7601)N S(Language)S G(Next)G} He/she should ask for suggestions on how to improve his/her spoken language.
+{N(7602)N S(Language)S G(Next)G} He/she should take advantage of class time to practice oral skills.
+{N(7603)N S(Language)S G(Next)G} He/she should practice oral reading to improve pronunciation.
+{N(7604)N S(Language)S G(Next)G} He/she should prepare and rehearse oral presentations.
+{N(7605)N S(Language)S G(Next)G} He/she should practice using reading strategies.
+{N(7606)N S(Language)S G(Next)G} He/she should use time management strategies.
+{N(7700)N S(Language)S G(Next)G} He/she should review rules of grammar.
+{N(7701)N S(Language)S G(Next)G} Better preparation for dictation needed.
+{N(7702)N S(Language)S G(Next)G} He/she should take more care with written assignments.
+{N(7703)N S(Language)S G(Next)G} He/she should check all sentences for subject verb agreement.
+{N(7704)N S(Language)S G(Next)G} He/she should check paragraphs for introductory and concluding sentences.
+{N(7705)N S(Language)S G(Next)G} He/she should Learn and use linking words.
+{N(7706)N S(Language)S G(Next)G} He/she should organize ideas logically.
+{N(7800)N S(Language)S G(Next)G} He/she are encouraged to continue language studies.
+{N(7801)N S(Language)S G(Next)G} He/she have successfully completed this compulsory credit.
+{N(7802)N S(Language)S G(Next)G} He/sher work has shown improvement this term.
+
+@VISUAL ARTS
+
+@Strengths
+
+{N(8011)N S(Visual)S M(100)M m(80)m G(Strength)G} He/she uses art equipment, material and technology safely and correctly.
+{N(8012)N S(Visual)S M(79)M m(70)m G(Strength)G} He/she communicates ideas with considerable accuracy.
+{N(8013)N S(Visual)S M(79)M m(70)m G(Strength)G} He/she applies the creative process with considerable effectiveness.
+{N(8014)N S(Visual)S M(79)M m(70)m G(Strength)G} He/she applies artistic abilities with considerable degree of effectiveness.
+{N(8015)N S(Visual)S M(79)M m(70)m G(Strength)G} He/she demonstrates a considerable understanding of artistic concepts.
+{N(8016)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of design concepts.
+{N(8017)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she uses critical analysis with some clarity & effectiveness.
+{N(8018)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she uses some art equipment, material & technology safely & correctly.
+{N(8019)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she communicates ideas with some degree of accuracy.
+{N(8020)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she applies the creative process with some degree of effectiveness.
+{N(8021)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of concepts/elements of design.
+{N(8022)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she uses artistic language and symbols with some accuracy.
+{N(8023)N S(Visual)S M(69)M m(60)m G(Strength)G} He/she demonstrates some understanding of artistic concepts.
+{N(8024)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she demonstrates a limited understanding of design concepts.
+{N(8025)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she uses critical analysis with limited clarity and effectiveness.
+{N(8026)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she uses artistic language and symbols with limited accuracy.
+{N(8027)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she uses art equipment, material safely & correctly only with supervision.
+{N(8028)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she communicates ideas with a limited amount of accuracy.
+{N(8029)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she applies the creative process with limited effectiveness.
+{N(8030)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she uses artistic language and symbols with minimal accuracy.
+{N(8031)N S(Visual)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited understanding of artistic concepts.
+
+@Areas for Improvement
+
+{N(8100)N S(Visual)S G(Improve)G} He/she needs to continue to develop knowledge of design concepts.
+{N(8101)N S(Visual)S G(Improve)G} He/she needs to continue to use equipment & materials safely & effectively.
+{N(8102)N S(Visual)S G(Improve)G} He/she needs to continue to develop ideas.
+{N(8103)N S(Visual)S G(Improve)G} He/she needs to continue experimenting with new media.
+{N(8104)N S(Visual)S G(Improve)G} He/she needs to continue expressing ideas creatively.
+{N(8105)N S(Visual)S G(Improve)G} He/she needs to incorporate a greater degree of creativity in portfolio.
+{N(8106)N S(Visual)S G(Improve)G} He/she needs to work towards improving communication of ideas.
+{N(8107)N S(Visual)S G(Improve)G} He/she needs to work towards neater execution of art work.
+{N(8108)N S(Visual)S G(Improve)G} He/she needs to work towards expressing ideas in a more creative manner.
+
+@Next Steps
+
+{N(8150)N S(Visual)S G(Next)G} He/she should consider a Coop placement to further the visual arts experience. 
+{N(8151)N S(Visual)S G(Next)G} He/she should recognize his/her potential & continue to develop his/her talent.
+{N(8152)N S(Visual)S G(Next)G} Local art galleries & museums are a great source of inspiration.
+{N(8153)N S(Visual)S G(Change)G} He/she should continue to pursue interest in the visual arts.
+{N(8154)N S(Visual)S G(Next)G} Continue his/her fine efforts in visual arts.
+{N(8155)N S(Visual)S G(Next)G} Volunteer activities would broaden his/her experience.
+{N(8156)N S(Visual)S G(Change)G} He/she should pursue a career in visual arts.
+{N(8157)N S(Visual)S G(Next)G} He/she should consider helping his/her peers.
+{N(8158)N S(Visual)S G(Change)G} He/she should consider a Coop placement to further his/her visual art experience.
+{N(8159)N S(Visual)S G(Next)G} He/she should recognize his/her potential & continue to develop his/her talent.
+{N(8161)N S(Visual)S G(Next)G} He/she should consult the teacher when a concept or assignment is not understood.
+{N(8162)N S(Visual)S G(Next)G} He/she should be a more active participant in class.
+{N(8163)N S(Visual)S G(Next)G} He/she should spend more effort & time on Sketchbook and/or journal.
+{N(8164)N S(Visual)S G(Next)G} He/she should be encouraged to improve work habits.
+{N(8165)N S(Visual)S G(Next)G} He/she needs to work towards submitting assignments for evaluation.
+{N(8166)N S(Visual)S G(Next)G} He/she needs to stay on task during class activities.
+{N(8167)N S(Visual)S G(Next)G} He/she should improve overall concern for artistic success both in rehearsal and in performance.
+{N(8168)N S(Visual)S G(Change)G} He/she should consider a career in the field of visual arts.
+
+@MUSIC
+
+@Strengths
+
+{N(8200)N S(Music)S M(100)M m(80)m G(Strength)G} He/she participates actively in music activities.
+{N(8201)N S(Music)S M(100)M m(80)m G(Strength)G} He/she demonstrates a high degree of knowledge of music theory.
+{N(8202)N S(Music)S M(100)M m(80)m G(Strength)G} He/she remains on task.
+{N(8203)N S(Music)S M(100)M m(80)m G(Strength)G} He/she uses class time with a high degree of effectiveness.
+{N(8204)N S(Music)S M(100)M m(80)m G(Strength)G} He/she shows a thorough understanding of concepts in theory & performance.
+{N(8205)N S(Music)S M(100)M m(80)m G(Strength)G} He/she demonstrates a thorough understanding of theoretical concepts.
+{N(8206)N S(Music)S M(100)M m(80)m G(Strength)G} He/she demonstrates excellent performance ability.
+{N(8207)N S(Music)S M(100)M m(80)m G(Strength)G} He/she shows respect for musical instruments.
+{N(8208)N S(Music)S M(100)M m(80)m G(Strength)G} He/she takes on a leadership role in group musical activities.
+{N(8209)N S(Music)S M(100)M m(80)m G(Strength)G} He/she Approaches new skills with a high degree of confidence.
+{N(8210)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies all music skills to new situations.
+{N(8211)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies creative thinking with a high degree of effectiveness.
+{N(8212)N S(Music)S M(100)M m(80)m G(Strength)G} He/she demonstrates ability to collect/organize/synthesize music material.
+{N(8213)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies theory and performance in creative ways to a high degree.
+{N(8214)N S(Music)S M(100)M m(80)m G(Strength)G} He/she shows excellent rehearsal deportment.
+{N(8215)N S(Music)S M(100)M m(80)m G(Strength)G} He/she participates actively in music activities.
+{N(8216)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies theory and performance in creative ways.
+{N(8217)N S(Music)S M(100)M m(80)m G(Strength)G} He/she shows good rehearsal deportment.
+{N(8218)N S(Music)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of theory concepts.
+{N(8219)N S(Music)S M(79)M m(70)m G(Strength)G} He/she remains on task most of the time.
+{N(8220)N S(Music)S M(79)M m(70)m G(Strength)G} He/she uses class time with considerable effectiveness.
+{N(8221)N S(Music)S M(79)M m(70)m G(Strength)G} He/she shows considerable understanding of concepts in theory & performance.
+{N(8222)N S(Music)S M(79)M m(70)m G(Strength)G} He/she demonstrates a considerable understanding of theoretical concepts.
+{N(8223)N S(Music)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable performance ability.
+{N(8224)N S(Music)S M(79)M m(70)m G(Strength)G} Takes considerable initiative in group activities.
+{N(8225)N S(Music)S M(79)M m(70)m G(Strength)G} He/she Approaches new skills with considerable confidence.
+{N(8226)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies music skills to new situations.
+{N(8227)N S(Music)S M(79)M m(70)m G(Strength)G} He/she applies creative thinking with considerable effectiveness.
+{N(8228)N S(Music)S M(100)M m(80)m G(Strength)G} He/she applies theory and performance in creative ways.
+{N(8229)N S(Music)S M(100)M m(80)m G(Strength)G} He/she demonstrates ability to collect/organize/synthesize music material.
+{N(8230)N S(Music)S M(100)M m(80)m G(Strength)G} He/she shows good rehearsal deportment.
+{N(8231)N S(Music)S M(100)M m(80)m G(Strength)G} He/she participates actively in music activities.
+{N(8232)N S(Music)S M(69)M m(60)m G(Strength)G} He/she demonstrates knowledge of theory concepts to some degree.
+{N(8233)N S(Music)S M(69)M m(60)m G(Strength)G} He/she remains on task some of the time.
+{N(8234)N S(Music)S M(69)M m(60)m G(Strength)G} He/she uses class time with some effectiveness.
+{N(8235)N S(Music)S M(69)M m(60)m G(Strength)G} He/she shows some understanding of concepts in theory & performance.
+{N(8236)N S(Music)S M(69)M m(60)m G(Strength)G} He/she demonstrates a moderate understanding of theoretical concepts.
+{N(8237)N S(Music)S M(69)M m(60)m G(Strength)G} He/she demonstrates moderate performance ability.
+{N(8238)N S(Music)S M(69)M m(60)m G(Strength)G} He/she Approaches new skills with some confidence.
+{N(8239)N S(Music)S M(69)M m(60)m G(Strength)G} He/she applies some music skills to new situations.
+{N(8240)N S(Music)S M(69)M m(60)m G(Strength)G} He/she applies creative thinking with moderate effectiveness and clarity.
+{N(8241)N S(Music)S M(69)M m(60)m G(Strength)G} He/she shows moderate ability to collect/organize/synthesize music material.
+{N(8242)N S(Music)S M(59)M m(50)m G(Strength)G} He/she demonstrates knowledge of theory concepts to a limited degree.
+{N(8243)N S(Music)S M(59)M m(50)m G(Strength)G} He/she uses class time with limited effectiveness.
+{N(8244)N S(Music)S M(59)M m(50)m G(Strength)G} He/she shows a limited understanding of concepts in theory & performance.
+{N(8245)N S(Music)S M(59)M m(50)m G(Strength)G} He/she demonstrates a limited understanding of theoretical concepts.
+{N(8246)N S(Music)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited performance ability.
+{N(8247)N S(Music)S M(59)M m(50)m G(Strength)G} He/she takes initiative in group activities to a limited degree.
+{N(8248)N S(Music)S M(59)M m(50)m G(Strength)G} He/she Approaches new skills with limited confidence.
+{N(8249)N S(Music)S M(59)M m(50)m G(Strength)G} He/she shows limited ability to collect/organize/synthesize music material.
+{N(8250)N S(Music)S M(59)M m(50)m G(Strength)G} He/she applies theory and performance in creative ways to a limited degree.
+ 
+@Areas for Improvement
+
+{N(8300)N S(Music)S G(Improve)G} He/she should apply greater effort in performance and theory.
+{N(8301)N S(Music)S G(Improve)G} He/she should apply greater effort in performance.
+{N(8302)N S(Music)S G(Improve)G} He/she should apply greater effort in theory.
+{N(8303)N S(Music)S G(Improve)G} Concentrate on theoretical concepts.
+{N(8304)N S(Music)S G(Improve)G} He/she must remember to bring necessary materials to class.
+{N(8305)N S(Music)S G(Improve)G} He/she must come to class prepared.
+{N(8306)N S(Music)S G(Improve)G} He/she must make better use of class time.
+{N(8307)N S(Music)S G(Improve)G} He/she should become more active in group performances.
+{N(8308)N S(Music)S G(Improve)G} He/she should set goals to ensure success on instrument.
+{N(8309)N S(Music)S G(Improve)G} He/she should complete assignments on time.
+{N(8310)N S(Music)S G(Improve)G} He/she should stay on task in class activities.
+{N(8311)N S(Music)S G(Improve)G} He/she should continue to practice his/her instrument to improve performance skills.
+{N(8312)N S(Music)S G(Improve)G} Participation in an extra-curricular music ensemble is recommended.
+{N(8313)N S(Music)S G(Improve)G} He/she should continue to review material to remain successful.
+{N(8314)N S(Music)S G(Improve)G} He/she should continue daily practice routine.
+{N(8315)N S(Music)S G(Improve)G} He/she should continue to demonstrate excellence in leadership in music activities.
+{N(8316)N S(Music)S G(Improve)G} He/she should improve communication of musical thoughts and ideas.
+{N(8317)N S(Music)S G(Improve)G} He/she should improve participation in classroom music activities.
+{N(8318)N S(Music)S G(Improve)G} He/she should review material to ensure success.
+{N(8319)N S(Music)S G(Improve)G} He/she should maintain a daily and/or nightly practice routine on his/her instrument.
+{N(8320)N S(Music)S G(Improve)G} He/she should show more respect for others.
+{N(8321)N S(Music)S G(Improve)G} He/she should focus on homework completion.
+{N(8322)N S(Music)S G(Improve)G} He/she should ask questions when he/she does not understand.
+{N(8323)N S(Music)S G(Improve)G} He/she should become more of an active participant in class.
+{N(8324)N S(Music)S G(Improve)G} More home practice would improve performance.
+{N(8325)N S(Music)S G(Improve)G} Increased focus during rehearsal will lead to success.
+{N(8326)N S(Music)S G(Improve)G} Regular review of theory concepts required.
+{N(8327)N S(Music)S G(Improve)G} He/she should focus on musical phrasing.
+{N(8328)N S(Music)S G(Improve)G} He/she needs to perform with greater conviction and confidence.
+{N(8329)N S(Music)S G(Improve)G} He/she needs to pay more attention to dynamics and overall musical expression.
+{N(8330)N S(Music)S G(Improve)G} He/she needs to focus on improving rhythmic accuracy.
+{N(8331)N S(Music)S G(Improve)G} He/she should continue to work on breathing and overall tone.
+{N(8332)N S(Music)S G(Improve)G} He/she should pay more attention to tempo markings.
+{N(8333)N S(Music)S G(Improve)G} He/she should continue to improve overall musicianship through daily practice.
+{N(8334)N S(Music)S G(Improve)G} He/she must learn to read proper music notation.
+{N(8335)N S(Music)S G(Improve)G} He/she must avoid using lettering on music to replace proper notation.
+{N(8336)N S(Music)S G(Improve)G} He/she should continue to work at sight reading to improve overall musicianship.
+{N(8337)N S(Music)S G(Improve)G} He/she must learn how to manipulate rudimentary theoretical data to a higher degree.
+
+@Next Steps
+
+{N(8350)N S(Music)S G(Next)G} He/she should consider taking additional private lessons on his/her instrument to improve performance results.
+{N(8351)N S(Music)S G(Next)G} He/she should consider applying talents through active involvement in school/community.
+{N(8352)N S(Music)S G(Next)G} He/she should refine performance skills through continued rehearsal.
+{N(8353)N S(Music)S G(Next)G} With continued effort and practice his/her mark should improve.
+{N(8354)N S(Music)S G(Next)G} He/she should extend knowledge of music through further exposure to audio recordings.
+{N(8355)N S(Music)S G(Next)G} He/she should continue to display his/her talents and love of music.
+{N(8356)N S(Music)S G(Next)G} He/she should continue to develop leadership skills in music environments.
+{N(8357)N S(Music)S G(Next)G} He/she should improve awareness of good musicianship through research.
+{N(8358)N S(Music)S G(Next)G} He/she should continue his/her excellent effort.
+{N(8359)N S(Music)S G(Next)G} He/she needs to work towards producing a quality tone through proper embouchure and breathing techniques.
+{N(8360)N S(Music)S G(Next)G} He/she needs to apply more effort in coming to class prepared with all necessary items.
+{N(8361)N S(Music)S G(Next)G} He/she should work toward submitting assignments for evaluation on time.
+{N(8362)N S(Music)S G(Next)G} He/she must work toward greater concentration and effort in performance.
+{N(8363)N S(Music)S G(Next)G} He/she needs to prepare effectively for performance evaluation.
+{N(8364)N S(Music)S G(Next)G} He/she needs to work towards a more creative expression of musical ideas.
+{N(8365)N S(Music)S G(Next)G} He/she must contribute more positively in practice and performance situations.
+{N(8366)N S(Music)S G(Next)G} He/she must work toward greater understanding & commitment to good musicianship.
+{N(8367)N S(Music)S G(Next)G} He/she must work towards using musical equipment carefully and correctly.
+{N(8368)N S(Music)S G(Next)G} He/she must work toward developing leadership skills.
+{N(8369)N S(Music)S G(Next)G} He/she should hand in assignments on time.
+{N(8370)N S(Music)S G(Next)G} He/she should improve overall concern for musical success both in rehearsal and in performance.
+{N(8371)N S(Music)S G(Next)G} He/she should continue to develop his/her musical talent.
+{N(8372)N S(Music)S G(Next)G} He/she should continue to exemplify excellent concern for musical success.
+{N(8373)N S(Music)S G(Next)G} He/she should continue to demonstrate his/her performance abilities through involvement in extra-curricular activities.
+{N(8374)N S(Music)S G(Change)G} He/she should consider choosing music again on next year's option sheet.
+{N(8375)N S(Music)S G(Change)G} He/she should consider a career in the music field.
+{N(8376)N S(Music)S G(Change)G} He/she has music talent. He/she should continue to develop it.
+
+@DRAMA
+
+@Strengths
+
+{N(8400)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she shows a high degree of knowledge of facts/terms/theories.
+{N(8401)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she uses creative thinking skills with a high degree of effectiveness.
+{N(8402)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she makes dramatic connections with a high degree of effectiveness.   
+{N(8403)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she communicates information and ideas with a high degree of clarity.
+{N(8404)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she communicates to a high degree using a variety of dramatic forms.
+{N(8405)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she communicates orally with a high degree of effectiveness.
+{N(8406)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she applies the creative process with a high degree of effectiveness.
+{N(8407)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she demonstrates a high degree of commitment to role.
+{N(8408)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she uses equipment and technology safely and correctly.
+{N(8409)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she communicates in writing with a high degree of effectiveness.
+{N(8410)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she demonstrates a high degree of performance skills.
+{N(8411)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she makes artistic connections with a high degree of effectiveness.
+{N(8412)N S(Drama)S M(100)M m(80)m G(Strength)G} He/she communicates artistic movement to a high degree of effectiveness.
+{N(8413)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she shows considerable knowledge of facts, terms & theories.
+{N(8414)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she uses creative thinking skills with considerable effectiveness.
+{N(8415)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she communicates information and ideas with considerable clarity.
+{N(8416)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she communicates to a considerable degree using various dramatic form.
+{N(8417)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she communicates orally with considerable effectiveness.
+{N(8418)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she applies the creative process with considerable effectiveness.
+{N(8419)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable commitment to role.
+{N(8420)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she uses equipment and technology safely and correctly.
+{N(8421)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she communicates in writing with considerable effectiveness.
+{N(8422)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable performance skills.
+{N(8423)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she makes artistic connections with considerable degree of effectiveness.
+{N(8424)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she communicates artistic movement to a considerable degree of effectiveness.
+{N(8425)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she shows some knowledge of facts, terms and theories of drama.
+{N(8426)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she uses creative thinking skills with moderate effectiveness.
+{N(8427)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she communicates information and ideas with moderate clarity.
+{N(8428)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she communicates to a moderate degree using various dramatic forms.
+{N(8429)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she communicates orally with moderate effectiveness.
+{N(8430)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she demonstrates commitment to role to a moderate degree.
+{N(8431)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she uses equipment safely & correctly only with supervision.
+{N(8432)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she communicates in writing with moderate effectiveness.
+{N(8433)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she demonstrates satisfactory performance skills.
+{N(8434)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she makes artistic connections with some degree of effectiveness.
+{N(8435)N S(Drama)S M(69)M m(60)m G(Strength)G} He/she communicates artistic movement with some degree of effectiveness.
+{N(8436)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she shows limited knowledge of facts, terms, theories of drama.
+{N(8437)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she uses creative thinking skills with limited effectiveness.
+{N(8438)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she makes dramatic connections with limited effectiveness.
+{N(8439)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates information and ideas with limited clarity.
+{N(8440)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates to a limited degree using various dramatic forms.
+{N(8441)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates orally with limited effectiveness.
+{N(8442)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she applies the creative process with limited effectiveness.
+{N(8443)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited commitment to role.
+{N(8444)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates in writing with limited effectiveness.
+{N(8445)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited performance skills.
+{N(8446)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she makes artistic connections with limited degree of effectiveness.    
+{N(8447)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates artistic movement with limited degree of effectiveness.
+{N(8448)N S(Drama)S M(59)M m(50)m G(Strength)G} He/she communicates limited concern for overall dramatic success.
+{N(8449)N S(Drama)S M(100)M m(80)m G(Strength)G} As demonstrated in his/her dance video submission, he/she applies the creative process with a high degree of effectiveness.
+{N(8450)N S(Drama)S M(79)M m(70)m G(Strength)G} He/she can describe a dance form using Body, Energy, Action, Space & Time with considerable success.
+
+@Areas for Improvement
+
+{N(8500)N S(Drama)S G(Improve)G} He/she needs to work towards a more creative expression of ideas.
+{N(8501)N S(Drama)S G(Improve)G} He/she needs more effort and detail in written work.
+{N(8503)N S(Drama)S G(Improve)G} He/she must work toward greater concentration in performance.    
+{N(8504)N S(Drama)S G(Improve)G} He/she needs to work towards improving knowledge of facts and terms.
+{N(8505)N S(Drama)S G(Improve)G} He/she needs to work towards a more creative expression of ideas.
+{N(8506)N S(Drama)S G(Improve)G} He/she must contribute more positively to the creative process.
+{N(8507)N S(Drama)S G(Improve)G} He/she must work toward greater understanding & commitment to role.
+{N(8508)N S(Drama)S G(Improve)G} He/she must work towards using equipment safely and correctly.
+{N(8509)N S(Drama)S G(Improve)G} He/she must work toward developing leadership skills.
+{N(8510)N S(Drama)S G(Improve)G} He/she should refine dramatic skills in voice and movement.
+{N(8511)N S(Drama)S G(Improve)G} He/she should develop more in-depth characterization.
+{N(8512)N S(Drama)S G(Improve)G} He/she should consider a Coop placement to further his/her experience.
+{N(8513)N S(Drama)S G(Improve)G} He/she should recognize dramatic potential and continue to develop talent.
+{N(8514)N S(Drama)S G(Improve)G} He/she should continue to challenge him/herself.
+{N(8515)N S(Drama)S G(Improve)G} He/she should add more insight and believability to role-play.
+{N(8516)N S(Drama)S G(Improve)G} He/she should refine artistic skills in movement.
+{N(8517)N S(Drama)S G(Improve)G} He/she should improve expressive skills.
+{N(8518)N S(Drama)S G(Improve)G} He/she should continue to improve dramatic conviction and overall confidence.
+{N(8519)N S(Drama)S G(Improve)G} He/she needs to improve volume and articulation in oral work.
+
+@Next Steps
+
+{N(8550)N S(Drama)S G(Next)G} He/she should consider attending plays/volunteering in community theatre.
+{N(8551)N S(Drama)S G(Next)G} He/she should consider applying talents through active involvement in school/community.
+{N(8552)N S(Drama)S G(Next)G} He/she should refine dramatic skills in voice and movement.
+{N(8553)N S(Drama)S G(Next)G} With continued effort, his/her mark should improve.
+{N(8554)N S(Drama)S G(Next)G} He/she should extend knowledge of drama through further reading research.
+{N(8555)N S(Drama)S G(Next)G} He/she should continue to display his/her talents and love of drama.
+{N(8556)N S(Drama)S G(Next)G} He/she should continue to develop leadership skills.
+{N(8557)N S(Drama)S G(Next)G} He/she should extend understanding and commitment to role.
+{N(8558)N S(Drama)S G(Next)G} He/she should extend knowledge of drama through further reading/research.
+{N(8559)N S(Drama)S G(Next)G} He/she should continue his/her excellent effort.
+{N(8560)N S(Drama)S G(Next)G} He/she needs to work towards a more creative expression of ideas.
+{N(8561)N S(Drama)S G(Next)G} He/she needs more effort and detail in written work.
+{N(8562)N S(Drama)S G(Next)G} He/she should work toward submitting assignments for evaluation.
+{N(8563)N S(Drama)S G(Next)G} He/she must work toward greater concentration in performance.
+{N(8564)N S(Drama)S G(Next)G} He/she needs to work towards improving knowledge of facts, terms of drama.
+{N(8565)N S(Drama)S G(Next)G} He/she needs to work towards a more creative expression of ideas.
+{N(8566)N S(Drama)S G(Next)G} He/she must contribute more positively to the creative process.
+{N(8567)N S(Drama)S G(Next)G} He/she must work toward greater understanding & commitment to role.
+{N(8568)N S(Drama)S G(Next)G} He/she must work towards using equipment safely and correctly.
+{N(8569)N S(Drama)S G(Next)G} He/she must work toward developing leadership skills.
+{N(8570)N S(Drama)S G(Next)G} He/she should hand in assignments on time.
+{N(8571)N S(Drama)S G(Next)G} He/she should improve overall concern for dramatic success both in rehearsal and in
+{N(8572)N S(Drama)S G(Change)G} He/she should consider a career in the field of dramatic arts.
+{N(8573)N S(Drama)S G(Change)G} He/she should consider taking drama as an option next year.
+{N(8574)N S(Drama)S G(Next)G} At home and school, he/she should look for dance elements in various performance styles.
+
+@TECHNOLOGY
+
+@Strengths
+
+{N(8600)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she makes connections between research and new ideas to a high degree.
+{N(8601)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she uses acquired knowledge to a thorough degree of success.
+{N(8602)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she has demonstrated a thorough understanding of concepts.
+{N(8603)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she describes technological concepts and procedures to a high degree.
+{N(8604)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she is able to demonstrate his/her skills to a thorough effectiveness.
+{N(8605)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she demonstrates a thorough knowledge of facts and terms.
+{N(8606)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she shows thorough problem solving ability.
+{N(8607)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she meets requirements and shows attention to detail to a high degree.
+{N(8608)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she shows neatness and accuracy. He/she uses presentation media effectively.
+{N(8609)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she Explains concepts & information with a high degree of skill.
+{N(8610)N S(Tech)S M(100)M m(80)m G(Strength)G} His/her assignment and/or projects indicate a thorough degree of skill.
+{N(8611)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she connects theory and physical production with high level of success.
+{N(8612)N S(Tech)S M(100)M m(80)m G(Strength)G} His/her work indicates skills developed to a high degree.
+{N(8613)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she uses equipment to a high degree of success.
+{N(8614)N S(Tech)S M(100)M m(80)m G(Strength)G} He/she uses equipment to a high degree of safety.
+{N(8615)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she makes connections between research/new ideas to considerable degree.
+{N(8616)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she has demonstrated a considerable understanding of concepts.
+{N(8617)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she describes technology concepts/procedures with considerable success.
+{N(8618)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she is able to demonstrate skills with considerable effectiveness.
+{N(8619)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she has demonstrated considerable knowledge of facts and terms.
+{N(8620)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she shows considerable problem solving ability.
+{N(8621)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she meets requirements and attention to detail to a considerable degree.
+{N(8622)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she shows neatness and accuracy. He/she uses presentation media effectively.
+{N(8623)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she is able to explain concepts and information with considerable clarity.
+{N(8624)N S(Tech)S M(79)M m(70)m G(Strength)G} Assignment and/or projects indicate a considerable degree of skill.
+{N(8625)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she connects theory/physical production with considerable success.
+{N(8626)N S(Tech)S M(79)M m(70)m G(Strength)G} His/her work indicates skills developed to a considerable degree.
+{N(8627)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she uses equipment to a considerable level of success.
+{N(8628)N S(Tech)S M(79)M m(70)m G(Strength)G} He/she uses equipment to a considerable level of safety.
+{N(8629)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she makes connections between research/ideas to some degree of success.
+{N(8630)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she has demonstrated some understanding of concepts.
+{N(8631)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she describes Tech. Concepts/Procedures with some degree of success.
+{N(8632)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she is able to demonstrate his/her skills with some effectiveness.
+{N(8633)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of facts and terms.
+{N(8634)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she shows some problem solving ability.
+{N(8635)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she meets requirements/shows attention to detail to some degree of success.
+{N(8636)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she shows neatness/accuracy. He/she uses presentation media to some effectiveness.
+{N(8637)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she is able to explain concepts and information with some clarity.
+{N(8638)N S(Tech)S M(69)M m(60)m G(Strength)G} Assignment and/or projects indicate some degree of skill.
+{N(8639)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she can make some connection between theory and physical production.
+{N(8640)N S(Tech)S M(69)M m(60)m G(Strength)G} His/her work indicates skills developed to some degree.
+{N(8641)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she uses equipment with some level of success.
+{N(8642)N S(Tech)S M(69)M m(60)m G(Strength)G} He/she uses equipment with some level of safety.
+{N(8643)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she makes connections between research and new ideas with limited success.
+{N(8644)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she uses acquired knowledge with limited success.
+{N(8645)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she has demonstrated limited understanding of concepts.
+{N(8646)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she able to describe concepts/procedures with limited success.
+{N(8647)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she is able to demonstrate his/her skills with limited effectiveness.
+{N(8648)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of facts and terms.
+{N(8649)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she shows limited problem solving ability.
+{N(8650)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she meets requirements and show attention to detail to a limited degree.
+{N(8651)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she shows neatness/accuracy, uses presentation media with limited success.
+{N(8652)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she is able to explain concepts and information with limited clarity.
+{N(8653)N S(Tech)S M(59)M m(50)m G(Strength)G} His/her Assignment and/or projects indicate a limited degree of skill.
+{N(8654)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she connects theory and physical production with limited success.
+{N(8655)N S(Tech)S M(59)M m(50)m G(Strength)G} His/her work indicates skills developed to a limited degree.
+{N(8656)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she uses equipment with limited level of success.
+{N(8657)N S(Tech)S M(59)M m(50)m G(Strength)G} He/she uses equipment with a limited level of safety.
+ 
+@Areas for Improvement
+
+{N(8700)N S(Tech)S G(Improve)G} He/she needs to extend his/her knowledge of facts and terms.
+{N(8701)N S(Tech)S G(Improve)G} He/she needs to extend greater initiative.
+{N(8702)N S(Tech)S G(Improve)G} He/she needs to extend his/her ability to collect and organize information.
+{N(8703)N S(Tech)S G(Improve)G} He/she needs to extend his/her communication of information and ideas.
+{N(8704)N S(Tech)S G(Improve)G} He/she needs to extend practical skills.
+{N(8705)N S(Tech)S G(Improve)G} He/she needs a greater daily effort to extend his/her abilities.
+{N(8706)N S(Tech)S G(Improve)G} He/she needs to further correlate between theory and practical work.
+{N(8707)N S(Tech)S G(Improve)G} He/she needs to follow safety practices.
+{N(8708)N S(Tech)S G(Improve)G} He/she needs to work towards improving knowledge of facts and terms.
+{N(8709)N S(Tech)S G(Improve)G} He/she needs to increase overall initiative.
+{N(8710)N S(Tech)S G(Improve)G} He/she needs to improve the ability to collect and organize information.
+{N(8711)N S(Tech)S G(Improve)G} He/she needs to work towards improving communication of information and ideas.
+{N(8712)N S(Tech)S G(Improve)G} He/she needs to improve practical skills.
+{N(8713)N S(Tech)S G(Improve)G} He/she needs to show greater concern for success.
+{N(8714)N S(Tech)S G(Improve)G} He/she needs to correlate between theory and practical work.
+{N(8715)N S(Tech)S G(Improve)G} He/she needs to follow safety practices. 
+
+@Next Steps
+
+{N(8725)N S(Tech)S G(Next)G} He/she should seek a career in Technological studies.
+{N(8726)N S(Tech)S G(Next)G} He/she should consider peer-tutoring.
+{N(8727)N S(Tech)S G(Next)G} He/she should consider a Coop placement in technological studies.
+{N(8728)N S(Tech)S G(Next)G} He/she should consider a more active role in class to ensure a better understanding of concepts and improve his/her skills.
+{N(8729)N S(Tech)S G(Next)G} He/she should consider extra review to improve his/her test, quiz and project.
+{N(8730)N S(Tech)S G(Next)G} He/she should seek clarification regarding assignments, projects, lessons and test.
+{N(8731)N S(Tech)S G(Next)G} He/she should consider a greater daily effort for improvement.
+{N(8732)N S(Tech)S G(Next)G} He/she should extend research and/or theoretical skills.
+{N(8733)N S(Tech)S G(Next)G} He/she should extend planning and problem solving skills.
+{N(8734)N S(Tech)S G(Next)G} He/she should be encouraged to follow appropriate and safe behavior in the class.
+{N(8735)N S(Tech)S G(Next)G} He/she should continue to take a technological studies course.
+{N(8736)N S(Tech)S G(Next)G} He/she should be a more active participant in class to ensure a better understanding of concepts and improve his/her skills.
+{N(8737)N S(Tech)S G(Next)G} He/she must complete daily review in preparation for test and quizzes.
+{N(8738)N S(Tech)S G(Next)G} He/she should consider extra help on some or all concepts, procedures and use of equipment.
+{N(8739)N S(Tech)S G(Next)G} He/she should seek clarification regarding assignments, projects, lessons and tests.
+{N(8740)N S(Tech)S G(Next)G} He/she should make a greater daily effort.
+{N(8741)N S(Tech)S G(Next)G} He/she needs to develop research and/or theoretical skills.
+{N(8742)N S(Tech)S G(Next)G} He/she needs to develop planning and problem solving skills.
+{N(8743)N S(Tech)S G(Next)G} He/she needs to develop presentation and/or verbal communication skills.
+{N(8744)N S(Tech)S G(Next)G} He/she should be encouraged to follow appropriate and safe behaviour in the class.
+{N(8745)N S(Tech)S G(Next)G} He/she needs to come to class prepared for all activities.
+{N(8746)N S(Tech)S G(Next)G} He/she must continue to prepare effectively for all tasks.
+{N(8747)N S(Tech)S G(Next)G} He/she should continue to exemplify concern for technology in the future.
+{N(8748)N S(Tech)S G(Change)G} He/she shows considerable skill development. He/she should continue to work in this field.
+{N(8749)N S(Tech)S G(Change)G} Well done overall. He/she should consider pursuing a career in this field.
+
+@RELIGION
+
+@Strengths
+
+{N(9000)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge of the Beatitudes and the Ten Commandments.
+{N(9001)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge of the role of religion in our daily lives.
+{N(9002)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge in the world religions component.
+{N(9003)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge of historical development of Christianity.  
+{N(9004)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge of Catholic social teachings.
+{N(9005)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough & insightful knowledge of sacramental life in a diverse society.   
+{N(9006)N S(Religion)S C(Knowledge)C M(100)M m(80)m G(Strength)G} He/she demonstrates thorough knowledge in the study of individuals, relationships and family.   
+{N(9007)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of the Beatitudes and the Ten Commandments.
+{N(9008)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of the role of religion in our daily lives.
+{N(9009)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge in the world religions component.
+{N(9010)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of historical development of Christianity.
+{N(9011)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of Catholic social teachings.
+{N(9012)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge of sacramental life in a diverse society.
+{N(9013)N S(Religion)S C(Knowledge)C M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge in the study of individuals, relationships and family.
+{N(9014)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of the Beatitudes and the Ten Commandments.
+{N(9015)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of the role of religion in our daily lives.
+{N(9016)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge in the world religions component.
+{N(9017)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of historical development of Christianity.
+{N(9018)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of Catholic social teachings.
+{N(9019)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge of sacramental life in a diverse society.
+{N(9020)N S(Religion)S C(Knowledge)C M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge in the study of individuals, relationships and family.        
+{N(9021)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of the beatitudes and the Ten Commandments.
+{N(9022)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of the role of religion in our daily lives.
+{N(9023)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge in the world religions component.
+{N(9024)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of historical development of Christianity.
+{N(9025)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of Catholic social teachings.
+{N(9026)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge of sacramental life in a diverse society.
+{N(9027)N S(Religion)S C(Knowledge)C M(59)M m(50)m G(Strength)G} He/she demonstrates limited knowledge in the study of individuals, relationships and family.   
+
+{N(9028)N S(Religion)S C(Thinking)C M(100)M m(80)m G(Strength)G} He/she uses & applies thinking/ inquiry skills proficiently.
+{N(9029)N S(Religion)S C(Thinking)C M(79)M m(70)m G(Strength)G} He/she uses & applies thinking/ inquiry skills effectively. 
+{N(9030)N S(Religion)S C(Thinking)C M(69)M m(60)m G(Strength)G} He/she uses & applies thinking/ inquiry skills moderately.  
+{N(9031)N S(Religion)S C(Thinking)C M(59)M m(50)m G(Strength)G} He/she uses & applies thinking/ inquiry skills with limitations.
+
+{N(9032)N S(Religion)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she communicates written information and ideas with thorough effectiveness & clarity.   
+{N(9033)N S(Religion)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she communicates written information and ideas with considerable effectiveness & clarity.
+{N(9034)N S(Religion)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she communicates written information and ideas with some effectiveness & clarity.        
+{N(9035)N S(Religion)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she communicates written information and ideas with limited effectiveness & clarity.      
+{N(9036)N S(Religion)S C(Communication)C M(100)M m(80)m G(Strength)G} He/she communicates verbal information and ideas with thorough effectiveness & clarity.     
+{N(9037)N S(Religion)S C(Communication)C M(79)M m(70)m G(Strength)G} He/she communicates verbal information and ideas with considerable effectiveness & clarity.  
+{N(9038)N S(Religion)S C(Communication)C M(69)M m(60)m G(Strength)G} He/she communicates verbal information and ideas with some effectiveness & clarity.
+{N(9039)N S(Religion)S C(Communication)C M(59)M m(50)m G(Strength)G} He/she communicates verbal information and ideas with limited effectiveness & clarity.       
+
+{N(9040)N S(Religion)S C(Application)C M(100)M m(80)m G(Strength)G} He/she applies concepts in religious education to life with a high degree of competency.
+{N(9041)N S(Religion)S C(Application)C M(79)M m(70)m G(Strength)G} He/she applies concepts in religious education to life with considerable competency.     
+{N(9042)N S(Religion)S C(Application)C M(69)M m(60)m G(Strength)G} He/she applies concepts in religious education to life with some competency.
+{N(9043)N S(Religion)S C(Application)C M(59)M m(50)m G(Strength)G} He/she applies concepts in religious education to life with limited competency.
+
+{N(9044)N S(Religion)S M(100)M m(80)m G(Strength)G} Scripture reading presentation was meaningful and well prepared.
+{N(9045)N S(Religion)S M(100)M m(80)m G(Strength)G} Group prayer service was meaningful and original.
+{N(9046)N S(Religion)S M(100)M m(80)m G(Strength)G} Social justice assignment was well researched (and presented).  
+{N(9047)N S(Religion)S M(100)M m(80)m G(Strength)G} Major project/ assignment was informative and well researched.
+{N(9048)N S(Religion)S M(100)M m(80)m G(Strength)G} Assignments and homework are completed accurately.
+{N(9049)N S(Religion)S M(100)M m(80)m G(Strength)G} Debate on social justice was well prepared.
+{N(9050)N S(Religion)S M(100)M m(80)m G(Strength)G} Media/ power point presentation was informative and well presented.
+{N(9051)N S(Religion)S M(79)M m(70)m G(Strength)G} He/she applies elements of media with considerable effectiveness.
+{N(9052)N S(Religion)S M(100)M m(80)m G(Strength)G} Story book on Std's was well done.
+{N(9053)N S(Religion)S M(100)M m(80)m G(Strength)G} Computer research assignment was well done.
+{N(9054)N S(Religion)S M(100)M m(80)m G(Strength)G} He/she applies/ exercises constructive criticism during class discussions/ debates.
+{N(9055)N S(Religion)S M(100)M m(80)m G(Strength)G} Independent study unit was well researched.
+{N(9056)N S(Religion)S M(100)M m(80)m G(Strength)G} He/she display a good development of skills.
+{N(9057)N S(Religion)S M(100)M m(80)m G(Strength)G} He/she display an excellent development of skills.
+{N(9058)N S(Religion)S M(79)M m(70)m G(Strength)G} He/she demonstrates considerable knowledge in the study of STD's/ AID's Unit.
+
+@Areas for Improvement
+
+{N(9300)N S(Religion)S G(Improve)G} Demonstrating knowledge of concepts/ideas needs improvement.
+{N(9301)N S(Religion)S G(Improve)G} Use of critical thinking skills needs improvement.
+{N(9302)N S(Religion)S G(Improve)G} Use of creative thinking skills needs improvement.
+{N(9303)N S(Religion)S G(Improve)G} Communication of ideas in writing needs improvement.
+{N(9304)N S(Religion)S G(Improve)G} Clarity in writing needs improvement.
+{N(9305)N S(Religion)S G(Improve)G} Oral communication of ideas needs improvement.
+{N(9306)N S(Religion)S G(Improve)G} Organization of writing assignments needs improvement.
+{N(9307)N S(Religion)S G(Improve)G} Application of writing skills needs improvement.
+{N(9308)N S(Religion)S G(Improve)G} Application of note taking skills needs improvement.
+{N(9309)N S(Religion)S G(Improve)G} Application of research skills needs improvement.
+{N(9310)N S(Religion)S G(Improve)G} Application of reading skills needs improvement.
+{N(9311)N S(Religion)S G(Improve)G} Application of oral skills needs improvement.
+{N(9312)N S(Religion)S G(Improve)G} Application of media skills needs improvement.
+{N(9313)N S(Religion)S M(69)M m(60)m G(Strength)G} He/she applies elements of media with some effectiveness.
+{N(9314)N S(Religion)S G(Improve)G} Application of course concepts needs improvement.
+{N(9315)N S(Religion)S G(Improve)G} Application of course concepts to practical work needs improvement.
+{N(9316)N S(Religion)S M(69)M m(60)m G(Strength)G} He/she demonstrates some knowledge in the study of STD's/ AID's Unit.
+{N(9317)N S(Religion)S G(Improve)G} Experiencing difficulty applying knowledge to real-world scenarios.
+{N(9318)N S(Religion)S G(Improve)G} Further supported opinions need to be expressed in written work.
+{N(9319)N S(Religion)S G(Improve)G} Further supported opinions need to be expressed in oral responses.
+{N(9320)N S(Religion)S G(Improve)G} Constructive criticism during class discussions and/ or debates needs improvement.
+{N(9321)N S(Religion)S G(Improve)G} Good practical application but weak in theory.
+{N(9322)N S(Religion)S G(Improve)G} Good in theory but weak on practical applications.
+{N(9323)N S(Religion)S G(Improve)G} More effort towards theory is required.
+{N(9324)N S(Religion)S G(Improve)G} More effort is needed for both practice and theory.
+
+@Next Steps
+
+{N(9600)N S(Religion)S G(Next)G} Insufficient achievement of curriculum expectations to date.
+{N(9602)N S(Religion)S G(Next)G} He/she is encouraged to participate more regularly.
+{N(9603)N S(Religion)S G(Next)G} His/her daily attendance needs improvement.
+{N(9604)N S(Religion)S G(Next)G} His/her punctuality needs improvement.
+{N(9605)N S(Religion)S G(Next)G} His/her co-operation with peers needs improvement.
+{N(9606)N S(Religion)S G(Next)G} His/her organizational skills and time management need improvement.
+{N(9607)N S(Religion)S G(Next)G} He/she should improve time management through use of agenda book.
+{N(9608)N S(Religion)S G(Next)G} He/she should keep up-to-date notebook for review and tests.
+{N(9609)N S(Religion)S G(Next)G} Better preparation for tests required.
+{N(9610)N S(Religion)S G(Next)G} His/her class behaviour needs improvement.
+{N(9611)N S(Religion)S G(Next)G} His/her work and study habits need improvement.
+{N(9612)N S(Religion)S G(Next)G} Greater consistency is required in the overall academic performance of this course.
+{N(9613)N S(Religion)S G(Next)G} Greater consistency is required in the completion of assignments and homework.
+{N(9614)N S(Religion)S G(Next)G} Need to follow directions more carefully when completing assignments and/or tasks.
+{N(9615)N S(Religion)S G(Next)G} He/she has talent but does not seem to work enough to develop it.
+{N(9616)N S(Religion)S G(Next)G} Cannot evaluate at this time since entry to course was too late.
+{N(9617)N S(Religion)S G(Next)G} Failure to complete practical assignments has affected his/her mark.
+{N(9618)N S(Religion)S G(Next)G} Progress is hindered by failure to submit required work.
+{N(9619)N S(Religion)S G(Next)G} His/her everyday work lacks concentration and focus.
+{N(9620)N S(Religion)S G(Next)G} Paying (increased) attention in class improves understanding.
+{N(9621)N S(Religion)S G(Next)G} He/she should staying on task needs improvement.
+{N(9622)N S(Religion)S G(Next)G} His/her work time in class needs to be used more constructively.
+{N(9623)N S(Religion)S G(Next)G} His/her minimal effort has been exercised to improve since last report.
+{N(9624)N S(Religion)S G(Next)G} Failed to make up work/ assignments after absence.
+{N(9625)N S(Religion)S G(Next)G} His/her minimal effort was put forth in major project/ assignment.
+{N(9626)N S(Religion)S G(Next)G} Journals late and/ or not submitted.
+{N(9627)N S(Religion)S G(Next)G} Increased effort in research would improve understanding.
+{N(9628)N S(Religion)S G(Next)G} He/she needs to complete reading assignments and class preparations.
+{N(9629)N S(Religion)S G(Next)G} He/she should take advantage in assessment opportunities.
+{N(9630)N S(Religion)S G(Next)G} His/her increased emphasis on completing homework required.
+{N(9631)N S(Religion)S G(Next)G} Repetition of skills will improve performance.
+{N(9632)N S(Religion)S G(Next)G} Consistent daily review will improve his/her results.
+{N(9633)N S(Religion)S G(Next)G} He/she should request help when needed.
+{N(9634)N S(Religion)S G(Next)G} He/she should take studies more seriously.
+{N(9635)N S(Religion)S G(Next)G} He/she should catch up on missed work.
+{N(9636)N S(Religion)S G(Next)G} He/she should bring required equipment/books to class.
+{N(9637)N S(Religion)S G(Next)G} Term test failed, more studying required.
+{N(9638)N S(Religion)S G(Next)G} He/she should used agenda to record homework/assignment dates.
+{N(9639)N S(Religion)S G(Next)G} He/she should read assignments/ homework in agenda book.
+{N(9640)N S(Religion)S G(Next)G} More positive attitude could improve his/her results.
+{N(9641)N S(Religion)S G(Next)G} More attention to revision, editing of written work needed.
+{N(9642)N S(Religion)S G(Next)G} Need to better prepare and rehearse for oral presentations.
+{N(9643)N S(Religion)S G(Next)G} He/she should Learn to comprehend new terms through written repetition.
+{N(9644)N S(Religion)S G(Next)G} He/she should bring text home to complete assigned work.
+{N(9645)N S(Religion)S G(Next)G} The aid of a tutor is suggested.
+{N(9646)N S(Religion)S G(Next)G} Proper study atmosphere would benefit him/her.
+{N(9647)N S(Religion)S G(Next)G} He/she should monitor the completion of homework and assignments.
+{N(9648)N S(Religion)S G(Next)G} He/she should focus on proofreading assignments.

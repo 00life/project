@@ -1,0 +1,2 @@
+I finally completed the classroom manager as a stand alone note taking application.
+There is still more I need to do.  I want to create a student page where students can sign themselve out.

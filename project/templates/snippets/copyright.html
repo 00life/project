@@ -1,0 +1,55 @@
+<style>
+.socialIcon{
+    opacity: 0.5;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+
+.socialIcon:hover{
+    opacity:1;
+    color: blue;
+}
+</style>
+
+<div class="copyright" style="
+    width:100%;
+    position: fixed;
+    bottom:0;
+    outline: 1px solid black;
+    z-index: 3;
+    ">
+
+    <div class="shareSocial" style="
+        display: flex;
+        background-color: rgba(255, 248, 220,0.5);
+        justify-content: center;
+        align-items: center;
+    ">
+        <a id="shareFacebook" target="_blank"><i class="fab fa-facebook socialIcon"></i></a>
+        <a id="sharetwitter" target="_blank"><i class="fab fa-twitter socialIcon"></i></a>
+    </div>
+
+    <div style="
+        color: white;
+        background-color:black;
+        font-size: xx-small;
+        border: px solid rgba(255, 255, 255, 1);
+        text-align:center;
+    ">
+       Copyright © <span id="year">Year</span> Project Reza Tahirkheli.  All Rights Reserved. 
+    </div>
+</div>
+
+<script type="text/javascript" language="javascript">
+var year = new Date().getFullYear();
+document.getElementById("year").innerHTML = year;
+
+var link = encodeURI(document.location.href);//[post-url]
+var title = encodeURI("Thank you for sharing this app"); //[post-title]
+var via = encodeURI("ZeroLife");//[post-username]
+var hash = encodeURI("teachers");//[post-hashtag]
+document.getElementById("shareFacebook").setAttribute("href",`https://www.facebook.com/sharer.php?u=${link}`);
+document.getElementById("sharetwitter").setAttribute("href",`https://twitter.com/share?url=${link}&text=${title}&via=${via}&hashtags=${hash}`);
+
+
+</script>

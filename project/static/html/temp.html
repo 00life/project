@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="#">
+</head>
+    
+<body style="margin:0; padding:0;">
+
+<button onclick="window.print()">Print this page</button> 
+<br>
+<table style="border-collapse:collapse; margin-left:23px;">
+    <tr>
+        <th style="width:15ch; vertical-align:text-top; text-align:left;">Assignments</th>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black; border-left:1px solid black;">1</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">2</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">3</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">4</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">5</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">6</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">7</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">8</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">9</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">10</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">11</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">12</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">13</div></td>
+        <td style="width:5ch; height:10ch;"><div style="font-size:small; transform:skewX(-30deg);width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">14</div></td>
+    </tr>
+</table>
+<div id="insert"></div>
+
+<script type="text/javascript" language="javascript">
+var parent = document.getElementById("insert")
+
+html_chart ='<table style="border-collapse:collapse; margin-left:0;">'
+for(let i=0;i<1;i++){
+    html_chart += '<tr>';
+    html_chart += `<th style="width:15ch; text-align:left; border-bottom:1px solid black; border-right:1px solid black; border-top:1px solid black;">&nbsp</th>`;
+    for(let j=0;j<14;j++){
+        html_chart += `<td style="width:5ch; height:4ch;"><div style="width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">&nbsp</div></td>`;
+    };//endfor_j
+    html_chart += '</tr>';
+};//endfor_i
+
+var names = window.opener.document.getElementById("edit_students").value.split("\n");
+for(i in names){
+    html_chart += '<tr>';
+    html_chart += `<th style="width:15ch; text-align:left; border-bottom:1px solid black; border-right:1px solid black; border-top:1px solid black;"><span style="font-size:small;">${Number(i)+1} </span><span>${names[i].replace("_"," ")}</span></th>`;
+    for(let j=0;j<14;j++){
+        html_chart += `<td style="width:5ch; height:4ch;"><div style="width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black;">&nbsp</div></td>`;
+    };//endfor_j
+    html_chart += '</tr>';
+};//endfor_i
+
+html_chart += '</table>'
+parent.innerHTML = html_chart;
+
+</script>
+</body>
+
+</html>

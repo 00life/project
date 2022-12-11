@@ -1,0 +1,159 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/navbar.css')}}">{% endblock stylesheet %}
+
+<!--Start navbar_container-->
+    <nav id="navbar_container" style="display:block; background:linear-gradient(to left, white, cornsilk 150%); width:100vw; position:fixed; z-index: 3; user-select:none;">
+
+    <!--Start navbar_container_container-->
+    <div id="navbar_container_container" style="display: flex; width: 100%; height: 60px; margin: 5px 0; box-shadow: 0 0 5px 1px black; padding: 0 10px;">
+        
+        <!--Start navbar_left-->
+        <div id="navbar_left" style="display:flex; width: 50%; justify-content: flex-start;">
+            
+            <input type="checkbox" id="hddn_login_check" style="display:none;"><!-- hidden checkbox -->
+            <div style="display: flex; height: 100%; width: fit-content; align-items: center;">
+                <img id="a_nav_logo_img" src="{{url_for('static',filename='img/logo.png')}}" style="max-height:30px; width: auto; cursor: pointer; transition: 0.5s all;">
+                <img id="login" src="{{url_for('static',filename='img/login.png')}}" style="display:none; position:absolute; cursor:pointer; max-height: 30px; width: auto; filter:grayscale(100%);">
+                <div id="stroke"></div>
+            </div>
+
+        </div> <!--End navbar_left-->
+
+        <!--Start navbar_right-->
+        <div id="navbar_right" style="display:flex; width: 50%; justify-content:flex-end;margin-right:20px;">
+            
+            <div class="menu_container">
+                <a class="menu" href="{{url_for('home.home')}}" id="{{Home}}">Home</a>
+            </div>
+            
+            <div class="menu_container">
+                <a class="menu" href="{{url_for('apps.apps')}}" id="{{Apps}}">Apps</a>
+                <div id="apps_menu" class="sub_container"></div>
+            </div>
+
+            <div class="menu_container">
+                <a class="menu" href="{{url_for('ideas.ideas')}}" id="{{Ideas}}">ideas</a>
+                <div id="ideas_menu" class="sub_container"></div>
+            </div>
+
+            <div class="menu_container">
+                <a class="menu" href="{{url_for('donate.donate')}}" id="{{Donate}}">Donate</a>
+                <div id="donate_menu" class="sub_container"></div>
+            </div>
+
+            <div class="menu_container">
+                <a class="menu" href="{{url_for('contact.contact')}}" id="{{Contact}}">Contact</a>
+            </div>
+
+            <div style="display: flex; height: 100%; width: fit-content; align-items: center;">
+                <img id="menu_bars" src="{{url_for('static',filename='img/bars.png')}}">
+            </div>
+
+        </div> <!--End navbar_right-->
+
+    </div> <!--End navbar_container_container-->
+    
+</nav> <!-- End navbar_container -->
+
+<div id="invisible_navSpace">&nbsp</div>
+
+<input type="checkbox" id="mobile_check" style="display: none;"><!--hidden checkbox-->
+<div id="mobile_menu">
+    <div class="mobile_menu_select"><a href="{{url_for('home.home')}}" id="{{Home}}" class="menu">Home</a></div>
+    <div class="mobile_menu_select"><a href="{{url_for('apps.apps')}}" id="{{Apps}}" class="menu">Apps</a></div>
+    <div class="mobile_menu_select"><a href="{{url_for('ideas.ideas')}}" id="{{Ideas}}" class="menu">Ideas</a></div>
+    <div class="mobile_menu_select"><a href="{{url_for('donate.donate')}}" id="{{Donate}}" class="menu">Donate</a></div>
+    <div class="mobile_menu_select"><a href="{{url_for('contact.contact')}}" id="{{Contact}}" class="menu">Contact</a></div>
+</div>
+
+<script type="text/javascript" language="javascript">
+
+(function startup(){//IIFE
+
+document.getElementById("a_nav_logo_img").addEventListener("click", login_check_func);
+document.getElementById("login").addEventListener("click", admin_func);
+document.getElementById("menu_bars").addEventListener("click", mobile_menu_func);
+document.getElementById("stroke").addEventListener("click", login_check_func);
+
+window.addEventListener('resize', function(){
+    if (window.matchMedia('(min-width: 830px)').matches) {
+        document.getElementById("menu_bars").style.display = "none";}//endif
+    else if (window.matchMedia('(max-width: 830px)').matches) {
+        document.getElementById("menu_bars").style.display = "flex";}//endelse
+}, true);//endfunction
+
+var xml = new XMLHttpRequest();
+xml.open("POST","{{url_for('dropmenu.dropmenu')}}",true);
+xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+var dataSend = JSON.stringify({
+        "list":"true"
+    });//endjson
+xml.send(dataSend);
+
+xml.onload = function(){
+    var dataReply = JSON.parse(this.responseText);
+    
+    for(item of dataReply['donateList']){
+        var anchor = document.createElement("a");
+        anchor.innerHTML = item[0];
+        anchor.href = "https://"+item[1]
+        anchor.target = "_blank";
+        anchor.classList.add("sub_menu");
+        document.getElementById("donate_menu").appendChild(anchor);};//endfor
+   
+    for(item of dataReply['ideasList']){
+        var anchor = document.createElement("a");
+        anchor.innerHTML = item[0];
+        anchor.href = item[1];
+        anchor.classList.add("sub_menu");
+        document.getElementById("ideas_menu").appendChild(anchor);};//endfor
+
+    for(item of dataReply['appsList']){
+        var anchor = document.createElement("a");
+        anchor.innerHTML = item[0];
+        anchor.href = item[1];
+        anchor.classList.add("sub_menu");
+        document.getElementById("apps_menu").appendChild(anchor);};//endfor
+};//endfunction
+
+}());//endIIFE
+
+function login_check_func(){
+    document.getElementById("hddn_login_check").click();
+    if(document.getElementById("hddn_login_check").checked == true){
+        document.getElementById("a_nav_logo_img").style.marginLeft = "50px";
+        document.getElementById("stroke").style.marginLeft = "50px";
+        document.getElementById("stroke").style.width = "180px";
+        document.getElementById("login").style.display = "flex";}//endif
+    else if(document.getElementById('hddn_login_check').checked == false){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("stroke").style.width = "0";
+        document.getElementById("stroke").style.marginLeft = "0";
+        document.getElementById("a_nav_logo_img").style.marginLeft = "0px";};//endelse
+};
+
+function admin_func(){
+    var pwd = prompt("Password");
+    if(pwd == "starfish"){
+        let fiveMin = new Date().getTime()*1000 + 300;
+        var pwdAdmin = {
+            value: "true",
+            expire:fiveMin};//endobject
+        sessionStorage.setItem("pwdAdmin", JSON.stringify(pwdAdmin));
+
+        var anchor = document.createElement("a");
+        anchor.href = "{{url_for('admin.admin')}}";
+        anchor.click();
+    }else{sessionStorage.removeItem("pwdAdmin");};//endif
+};
+
+function mobile_menu_func(){
+    document.getElementById("mobile_check").click();
+    if(document.getElementById("mobile_check").checked == true){
+        document.getElementById("mobile_menu").style.left = "0";}//endif
+    else if(document.getElementById("mobile_check").checked == false){
+        document.getElementById("mobile_menu").style.left = "-150%";};//endelse
+};
+
+document.getElementById("invisible_navSpace").style.height = document.getElementById("navbar_container").offsetHeight;
+</script>

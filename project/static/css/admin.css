@@ -1,0 +1,21 @@
+.menu_select{
+    max-height:50px; 
+    width:auto; 
+    margin: 5px 0px; 
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.menu_selected{
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px 1px cornflowerblue;
+    border-radius: 20px;
+}
+
+.output_data{
+    border-radius: 2px;
+    border: 1px solid grey;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

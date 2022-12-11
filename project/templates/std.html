@@ -1,0 +1,268 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/std.css')}}">{% endblock stylesheet %}
+{% set Apps = "active" %}
+{% extends "layout.html" %}
+{% block title %} Student {% endblock title %}
+
+{% block content %}
+
+<div class="body_content" style="display: flex; flex-direction:column;">
+
+    <!-- start hddn forms -->
+    <form action="" method="POST" style="display: none;">
+        <input type="text" name="send" id="send">
+        <input type="submit" id="submit">
+    </form><!-- end hddn forms -->
+
+    <!-- start nav container1 -->
+    <nav style="display:flex; flex-wrap:wrap; background-color:whitesmoke; width: 100%; box-shadow: 0 0 5px 0px grey; border-radius: 5px; padding:5px; margin-bottom: 5px; align-items:center;">
+        <div id="left_side" style="width:33%; min-width:200px;">
+            <div id="getStudent_container" style="float:left;">
+                <table>
+                    <tr>
+                        <th>Student:&nbsp</th>
+                        <td>
+                            <div style="background-color: white; border: 1px solid grey; border-radius:2px; display:flex; align-items:center;">
+                                <span><input id="pwd" type="text" style="text-align:center; width:100px; border:none; outline:none;"></span>
+                                <span><img id="getPwd" src="{{url_for('static',filename='img/send.png')}}" onclick="showSTD_func()" style="height: 30px; width: auto; cursor:pointer;filter:drop-shadow(1px 1px 0 black);"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div id="middle_side" style="text-align:center; width:33%; min-width:200px; display:flex; align-items:center; justify-content:center;">
+            
+            <label class="nav_buttons" onclick="xmlSTD_func()" style="float:left;position: relative; box-shadow: 0px 0px 5px gray; padding:2px; border-radius:5px; cursor:pointer; margin: 2px 5px; border: 1px solid grey;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="{{url_for('static', filename='img/sync.png')}}" alt="sync.png" style="max-height:15px;width:auto;filter:drop-shadow(1px 1px 0 black);">
+                </div>
+                <div style="margin-top: -5px;">Update</div>
+            </label>
+            <span>{{classCode}}&nbsp:&nbsp{{teacher}}</span>
+        </div>
+
+        <div id="right_side" style="width:33%; min-width:200px;">
+            <table style="float:right;">
+                <tr>
+                    <th>Class:&nbsp</th>
+                    <td>
+                        <div style="background-color: white; border: 1px solid grey; border-radius:2px; display:flex; align-items:center;">
+                            <span><input id="clss" type="text" value="{{classNum}}" style="text-align:center; width:100px; border:none; outline:none;"></span>
+                            <span><img id="getClass" src="{{url_for('static',filename='img/send.png')}}" style="height: 30px; width: auto; cursor:pointer; filter:drop-shadow(1px 1px 0 black);"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </nav><!--end nav container1-->
+
+    <!--Start Student Body-->
+    <div style="display:flex; justify-content:center; flex-wrap:wrap;">
+        {% for student in students %}
+        {% set student_space = student|replace('_',' ') %}
+        <input type="checkbox" id="{{student}}checkbox" style="display:none">
+            <div id="{{student}}container"style="display:none; background-color:whitesmoke; box-shadow: 0 0 2px 0 black; border-radius:5px; margin: 5px; padding: 2px;">
+                <table style="width: 100%;">
+                    <tr style="background-color:rgba(0,0,0,0.3); margin:5px;">
+                        <th id="{{student}}Label" class="timer" style="text-align: center; max-width:200px; min-width:150px; font-family: Arial, Helvetica, sans-serif;">{{student_space}}</th>
+                    </tr>
+                    <tr><td style="display:flex; justify-content: center;"><img src="{{url_for('static',filename='img/profile1.png')}}" style="max-height: 50px; max-width:auto;"></td></tr>
+                    <tr style="display:none;"><td><input id="{{student}}timeStart" type="number"></td></tr>
+                    <tr style="display:none;"><td><input id="{{student}}timeOut" type="number"></td></tr>
+                    <tr>
+                        <td align="center" style="background-color: rgba(0,0,0,0.3); border-radius:5px; display:flex; padding: 2px 15px;">
+                            <span class="timer" style="text-align: right;">Timer:&nbsp</span>
+                            <span id="{{student}}showTime" class="timer">0</span>
+                            <span id="{{student}}timeUnits" class="timer" style="text-align:left;">unit</span>
+                        </td>
+                    </tr>
+                    <tr><td><input id="{{student}}Pass" type="button" value="Pass" onclick="request_func(this)" style="width:100%; border:2px solid black"></td></tr>
+                </table>
+            </div>
+        {% endfor %}
+
+    </div><!--End Student Body-->
+
+</div><!--End Body Container-->
+
+<script type="text/javascript" language="javascript"> //Javescript starts here
+
+//### Global Variables ###
+var readyWait = 0;
+waiting = []; out = []; back = []
+
+//### Timer Function ###
+setInterval(xmlSTD_func, 1000);
+
+//### Load Startup ###
+var pwd = sessionStorage.getItem("pwd");
+document.getElementById("pwd").value = pwd;
+getStudent_call();
+
+//### Event Listeners ###
+document.getElementById("getClass").addEventListener("click",getClass_func);
+document.getElementById("getPwd").addEventListener("click",getPwd_func);
+
+//### Callback Functions ###
+
+function getStudent_call(){
+    if("{{pwdEnabled}}" == "0"){
+        document.getElementById("getStudent_container").style.display = "none";
+        document.getElementById("getPwd").click();
+    }else{document.getElementById("getStudent_container").style.display = "block"};//endelse
+};
+
+function readyWait_call(nm){
+    var readyWait = Number("{{readyWait}}")
+    var time1 = new Date().getTime()/1000;
+    var time2 = document.getElementById(nm+"timeStart").value;
+    var timeDiff = Math.round(time1 - time2)
+    let countDown = readyWait - timeDiff
+    document.getElementById(nm+"showTime").innerHTML = countDown;
+    document.getElementById(nm+"timeUnits").innerHTML = "sec";
+    if(countDown < 1){
+        document.getElementById(nm+"timeStart").value = "";
+        document.getElementById(nm+"checkbox").checked = false;
+        document.getElementById(nm+"Pass").value = "Pass";
+        document.getElementById(nm+"Pass").style.backgroundColor = "whitesmoke";
+        document.getElementById(nm+"showTime").innerHTML = 0;
+        document.getElementById(nm+"timeUnits").innerHTML = "unit";
+        back.push(nm)
+    };//endif
+};
+
+function outTimer_call(nm){
+    var time1 = new Date().getTime()/1000;
+    var time2 = document.getElementById(nm+"timeOut").value;
+    var timeDiff = Math.round((time1 - time2) / 60)
+    document.getElementById(nm+"showTime").innerHTML = timeDiff;
+    document.getElementById(nm+"timeUnits").innerHTML = "min";
+    if(document.getElementById(nm+"Pass").value == "Pass"){
+        document.getElementById(nm+"timeUnits").innerHTML = "unit"};//endif
+};
+
+//### Regular Functions ###
+function getClass_func(){
+    document.getElementById("send").value = document.getElementById("clss").value;
+    document.getElementById("submit").click();
+};
+
+function getPwd_func(){
+    var pwdStd = document.getElementById("pwd").value;
+};
+
+function request_func(elem){
+    var nm = elem.id.slice(0,-4);
+    document.getElementById(nm+"checkbox").click();
+    if(document.getElementById(elem.id).value == "Pass" &&
+        document.getElementById(nm+"checkbox").checked == true){
+            document.getElementById(elem.id).value = "Waiting";
+            document.getElementById(elem.id).style.backgroundColor = "yellow";
+            try{back.splice(back.findIndex(name=>name == nm),1)}catch{};
+            waiting.push(nm);}
+    else if(document.getElementById(elem.id).value == "Ready" && 
+            document.getElementById(nm+"checkbox").checked == false){
+                document.getElementById(elem.id).value = "Out";
+                document.getElementById(elem.id).style.backgroundColor = "tomato";
+                try{back.splice(back.findIndex(name=>name == nm),1)}catch{};
+                out.push(nm);}
+    else if(document.getElementById(elem.id).value == "Out" && 
+            document.getElementById(nm+"checkbox").checked == true){
+                document.getElementById(elem.id).value = "Pass";
+                document.getElementById(elem.id).style.backgroundColor = "whitesmoke";
+                document.getElementById(nm+"checkbox").checked = false;
+                try{out.splice(out.findIndex(name=>name == nm),1)}catch{};
+                back.push(nm);}
+    else{   
+        document.getElementById(elem.id).value = "Pass";
+        document.getElementById(elem.id).style.backgroundColor = "whitesmoke";
+        document.getElementById(nm+"checkbox").checked = false;
+        try{waiting.splice(waiting.findIndex(name=>name == nm),1)}catch{};
+        try{out.splice(out.findIndex(name=>name == nm),1)}catch{};
+        back.push(nm);};//endif
+};
+
+function xmlSTD_func(){
+    var students = "{{students|safe}}"
+    if(students == "[]"){return};//endif Guard Clause
+    
+    var xml = new XMLHttpRequest();
+    xml.open("POST","{{url_for('xmlSTD_func.xmlSTD_func')}}",true);
+    xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xml.onload = function(){
+        var dataReply = JSON.parse(this.responseText);
+        readyWait = dataReply['readyWait'];
+
+        for(nm of dataReply['present']){
+            document.getElementById(nm+"checkbox").checked = false;
+            document.getElementById(nm+"Pass").value = "Pass";
+            document.getElementById(nm+"Pass").style.backgroundColor = "whitesmoke";
+            document.getElementById(nm+"timeOut").value = "";
+            document.getElementById(nm+"timeUnits").innerHTML = "unit";
+            document.getElementById(nm+"showTime").innerHTML = "0";};//endfor
+        for(nm of dataReply['waiting']){
+            document.getElementById(nm+"checkbox").checked = true;
+            document.getElementById(nm+"Pass").value = "Waiting";
+            document.getElementById(nm+"Pass").style.backgroundColor = "yellow";};//endfor
+        for(nm of dataReply['ready']){
+            document.getElementById(nm+"checkbox").checked = true;
+            document.getElementById(nm+"Pass").value = "Ready";
+            document.getElementById(nm+"Pass").style.backgroundColor = "palegreen";
+            if(document.getElementById(nm+'timeStart').value == ""){
+                document.getElementById(nm+'timeStart').value = new Date().getTime()/1000};//endif
+                readyWait_call(nm);};//endfor
+        for(nm of dataReply['out']){
+            document.getElementById(nm+"checkbox").checked = false;
+            document.getElementById(nm+"Pass").value = "Out";
+            document.getElementById(nm+"Pass").style.backgroundColor = "tomato";
+            document.getElementById(nm+"timeStart").value = "";
+            if(document.getElementById(nm+'timeOut').value == ""){
+                document.getElementById(nm+'timeOut').value = new Date().getTime()/1000};
+                outTimer_call(nm);};//endfor
+    };//endfunction
+
+    var dataSend = JSON.stringify({
+        "waiting": waiting,
+        "out":out,
+        "back": back,
+        "classNum":"{{classNum}}",
+        "key":"xmlSTD_func"
+        });//endjson
+    xml.send(dataSend);
+    out = []; back = []; waiting = []; present = [];
+};
+
+function showSTD_func(){
+    var xml = new XMLHttpRequest();
+    xml.open("POST","{{url_for('showSTD_func.showSTD_func')}}",true);
+    xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xml.onload = function(){
+        var dataReply = JSON.parse(this.responseText);
+        var students = dataReply['students'];
+        var passwords = dataReply['passwords'];
+        var pwdEnabled = dataReply['pwdEnabled'];
+        
+        var inx = passwords.indexOf(document.getElementById("pwd").value);
+        var stdName = students[inx] ?? "";
+
+        if(pwdEnabled == "1"){
+            if(stdName == ""){return};
+            for(name of students){document.getElementById(name+"container").style.display = "none"};//endfor
+            document.getElementById(stdName+"container").style.display = "flex";
+        } else if (pwdEnabled == "0"){
+            for(name of students){document.getElementById(name+"container").style.display = "flex";};//endfor
+        };//endelse
+    };//endfunction
+
+    var dataSend = JSON.stringify({
+        "classNum":"{{classNum}}",
+        "key":"showSTD_func"
+        });//endjson
+    xml.send(dataSend)
+
+    sessionStorage.setItem('pwd',document.getElementById("pwd").value)
+};
+</script>
+{% endblock content %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="#">
+</head>
+    
+<body style="margin:0; padding:0;">
+
+<button onclick="window.print()">Print this page</button> 
+<br>
+
+<div id="insert"><!--Insert Table Here--></div>
+
+<script type="text/javascript" language="javascript">
+
+var names = window.opener.document.getElementById("edit_students").value.split("\n");
+var assignments = window.opener.document.getElementById("edit_assignments").value.split("\n");
+var categories = window.opener.document.getElementById("edit_categories").value.split("\n");
+var numAssignPerLine = Math.floor(14 / categories.length);
+var numLines = Math.ceil(assignments.length / numAssignPerLine);
+var numEntry = numAssignPerLine*categories.length;
+
+var html_chart = ''; var assignNum1 = 0; var assignNum2 = 0; var assignNum3 = 0; var catName; var assignName; var mark; var total;
+
+// ### Display the assignment title and category ###
+for(let l=0;l<numLines;l++){ 
+    html_chart += '<table>';
+    html_chart += '<tr>';
+    html_chart += `<th style="width:12ch; vertical-align:text-top; text-align:left;">&nbsp</th>`;
+    for(let z=0;z<numAssignPerLine;z++){
+        for(let k=0;k<categories.length;k++){
+            assignName = assignments[assignNum1] ?? "";
+            assignName = assignName.length < 16 ? assignName : assignName.slice(0,15);
+            catName = assignName == "" ? "" : categories[k].length < 6 ? categories[k] : categories[k].slice(0,5);
+           
+            html_chart += `<td style="height:10ch;">`;
+            html_chart +=   `<div style="width:5ch; height:100%; border-right:1px solid black;border-bottom:1px solid black; border-left:1px solid black; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;">`;
+            html_chart +=       `<div style="transform:rotate(-90deg); width:100%; padding-left:10px">`;
+            html_chart +=           `<span id="${assignNum1}" style="font-weight:bold; font-size:x-small">${assignName}</span>`;
+            html_chart +=           '<br>';
+            html_chart +=           `<span style="font-size:x-small;">${catName}</span>`;
+            html_chart +=       '</div>';
+            html_chart +=   '</div>';
+            html_chart += '</td>';
+        };//endfor_k
+        assignNum1 += 1;
+    };//endfor_z
+    html_chart +=`</tr>`;
+
+    //### Display the total mark for assignment categories ###
+    html_chart += '<tr>';
+    html_chart += `<th style="text-align:center; border-bottom:1px solid black; border-right:1px solid black;">Total</th>`;
+    for(let z=0;z<numAssignPerLine;z++){
+        for(let k=0;k<categories.length;k++){
+            try{total = window.opener.document.getElementById(`${assignNum2}total${k}`).value}catch{total=""};
+            html_chart += '<td style="width:5ch; height:4ch;">';
+            html_chart +=   `<div style="width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black; text-align:center; font-weight:bold;">${total}</div>`;
+            html_chart += '</td>';
+        };//endfor_k
+        assignNum2 += 1;
+    };//endfor_Z
+    html_chart += '</tr>';
+
+    // ### Display the mark for assignment categories
+    for(let i=0;i<names.length;i++){
+        html_chart +=`<tr>`;
+        html_chart +=`<th style="width:15ch; text-align:left; border-bottom:1px solid black; border-right:1px solid black;">${names[i].replace("_"," ")}</th>`;
+        for(let z=0;z<numAssignPerLine;z++){
+            for(let k=0;k<categories.length;k++){
+                try{mark = window.opener.document.getElementById(`${assignNum3}assign${i}name${k}cat`).value}catch{mark=""};
+                html_chart += '<td style="width:5ch; height:4ch;">';
+                html_chart +=   `<div style="width:100%; height:100%; border-right:1px solid black;border-bottom:1px solid black; text-align:center">${mark}</div>`;
+                html_chart += '</td>';
+            };//endfor_k
+            assignNum3 += 1;
+        };//endfor_Z
+        assignNum3 = assignNum3 - numAssignPerLine;
+        html_chart +=`</tr>`;
+    };//endfor_i
+    assignNum3 = numAssignPerLine;
+    html_chart+='</table>';
+};//endif_l
+
+document.getElementById("insert").innerHTML = html_chart;
+
+
+
+
+
+</script>
+</body>
+
+</html>

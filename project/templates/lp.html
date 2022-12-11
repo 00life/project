@@ -1,0 +1,261 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/lp.css')}}">{% endblock stylesheet %}
+{% set featured = "active" %}
+{% extends "layout.html" %}
+{% block title %} List Parser {% endblock title %}
+
+{% block content %}
+
+<div class="everything_container">
+
+    <table class="copy_paste_container">
+        <tr>
+            <td></td>
+            <th>Numbers</th>
+        </tr>
+        <tr class="table_border">
+            <td>Superscript:</td>
+            <td><pre>⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ⁽ ⁾</pre></td>
+        </tr>
+        <tr class="table_border">
+            <td>Subscript:</td>
+            <td><pre>₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎</pre></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <th>Superscript Letters</th>
+        </tr>
+        <tr class="table_border">
+            <td>Lowercase:</td>
+            <td><pre>ᵃ ᵇ ᶜ ᵈ ᵉ ᶠ ᵍ ʰ ⁱ ʲ ᵏ ˡ ᵐ ⁿ ᵒ 
+ᵖ ʳ ˢ ᵗ ᵘ ᵛ ʷ ˣ ʸ ᶻ</pre></td>
+        </tr>
+        <tr class="table_border">
+            <td>Uppercase:</td>
+            <td><pre>ᴬ ᴮ ᴰ ᴱ ᴳ ᴴ ᴵ ᴶ ᴷ ᴸ ᴹ ᴺ ᴼ ᴾ ᴿ 
+ᵀ ᵁ ⱽ ᵂ</pre></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <th>Greek Letters</th>
+        </tr>
+        <tr class="table_border">
+            <td>Symbols:</td>
+            <td><pre>ᵅ ᵝ ᵞ ᵟ ᵋ ᶿ ᶥ ᶲ ᵠ ᵡ ᵦ ᵧ ᵨ ᵩ ᵪ </pre></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <th>Unicode characters</th>
+        </tr>
+        <tr class="table_border">
+            <td>Symbols:</td>
+            <td><pre>™ ® ℠ © ”</pre></td>
+        </tr>
+        <tr>
+            <th colspan="2">Custom Characters</th>
+        </tr>
+        <tr class="table_border">
+            <td colspan="2">
+<pre>
+\  = beginning of text
+\\ = end of the text 
+\s = space character
+\d = single number digit
+\d+ = multiple number digits
+\w = single word/letter character
+\w+ = multiple word/letter characters
+\c = lower-case character
+\C = upper-case character
+\c+ = multiple lower-case characters
+\C+ = multiple upper-case characters
+\t = tab character
+</pre>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">Regular Expressions (i.e. Regex)</th>
+        </tr>
+        <tr class="table_border">
+            <td colspan="2">
+<pre>
+...
+</pre>
+            </td>
+        </tr>
+    </table>
+
+    <form method="POST" action="" class="input_list">
+
+        <table class="input_table">
+            <tr class="options">
+                <td></td>         
+                <td>line-by-line: <input type="checkbox" id="lbl_checkbox" name="lbl_checkbox" onclick="lbl_check()"></td>
+                <td align="center">cal start ±: <input type="number" id="cal_start" name="cal_start" value="{{cal_start}}"></td>
+                <td align="center">cal end ±: <input type="number" id="cal_end" name="cal_end" value="{{cal_end}}"></td>
+            </tr>
+            <tr class="input_column_label">
+                <th></th>
+                <th>Target</th>
+                <th>Post-Spaces</th>
+                <th>Post-Enters</th>
+            </tr>
+            <tr class="start_end">
+                <td>Start</td>
+                <td><input type="text" id="st" name="st" value="{{start_target}}"></td>
+                <td><input type="number" id="sps" name="sps" value="{{start_post_space}}"></td>
+                <td><input type="number" id="spe" name="spe" value="{{start_post_enter}}"></td>
+            </tr>
+            <tr class="start_end">
+                <td>End</td>
+                <td><input type="text" id="et" name="et" value="{{end_target}}"></td>               
+                <td><input type="number" id="eps" name="eps" value="{{end_post_space}}"></td>
+                <td><input type="number" id="epe" name="epe" value="{{end_post_enter}}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="1"><input type="button" onclick="Reset_Param()" value="Reset"></td>
+                <td colspan="1"><input type="submit" name="input_parse_all" value="Parse ALL" onclick="clickclear()"></td>
+                <td colspan="1"><input type="submit" id="input_parse_next" name="input_parse_next" value="Parse NEXT" onclick="clickup()"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="1">Paste List Below:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3">
+<textarea id="input_textarea" name="input_text">{{input_text}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="button" onclick="Clear_Input_TextArea()" value="Clear"></td>
+            </tr>
+            <input type="text" id="next_count" name="next_count" style="display:none">
+            <input type="text" id="next_limit" value="{{next_limit}}" style="display:none">
+            <input type="text" id="list_act" name="list_act" style="display:none">       
+        </table>
+        
+    </form>
+    
+    <div class="output_list_container">
+
+        <div class="arrows">
+            <span>>>></span>
+        </div>
+              
+        <form method="POST" action="" class="output_list">
+
+            <table class="output_table"> 
+
+                <tr class="input_column_label">
+                    <th colspan="3">Parsed List</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="liststyle" id="liststyle" onchange="list_style()">
+                            <option value="">items: {{count}}</option>
+                            <option value="∙ ">bullet: {{count}}</option>
+                            <option value="number">number: {{count}}</option>
+                        </select>
+                    </td>
+                    <td><input type="button" onclick="clickdown()" value="Undo"></td>
+                    <td><input type="button" onclick="Copy()" value="Copy"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <textarea id="output_textarea" name="output_text">{{output_text}}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><input type="button" name="out_clear" onclick="Clear_Output_TextArea()" value="Clear"></td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="demo"></div>
+
+<script type="text/javascript" language="javascript">
+    function startup_func(){
+        if("{{lbl_checkbox}}" == "True"){document.getElementById("lbl_checkbox").checked = true}
+        else if("{{lbl_checkbox}}" == "False"){document.getElementById("lbl_checkbox").checked = false};
+        var ls = sessionStorage.getItem("liststyle");
+        (ls == null )?document.getElementById("liststyle").value = "items: " :
+        document.getElementById("liststyle").value = ls;
+        document.getElementById("list_act").value = ls;
+    };//end of function
+
+    function Clear_Input_TextArea() {
+        document.getElementById("input_textarea").value="";
+        clickclear();};//end of function
+    
+    function Clear_Output_TextArea() {
+        document.getElementById("output_textarea").value="";
+        document.getElementById("demo").value="clear";};//end of function
+
+    function Reset_Param() {
+        document.getElementById("st").value="\\";
+        document.getElementById("sps").value=0;
+        document.getElementById("spe").value=0;
+        document.getElementById("et").value="\\\\";
+        document.getElementById("eps").value=0;
+        document.getElementById("epe").value=0;
+        document.getElementById("cal_start").value=0;
+        document.getElementById("cal_end").value=0;
+        clickclear()};//end of function
+    
+    function Copy(){
+        var copyText = document.getElementById('output_textarea');
+        copyText.select();
+        document.execCommand('copy');
+        let sel = document.getSelection()
+        sel.removeAllRanges();};//end of function
+
+    function clickup() {
+        if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.cc && "{{next_limit}}" != "limit") {
+                sessionStorage.cc = Number(sessionStorage.cc)+1;}//end of if
+            else {sessionStorage.cc = 1} //end of else
+            document.getElementById("next_count").value = sessionStorage.cc;} //end of if
+        else {
+            alert("web storage unsupported...");}//end of else
+    };//end of function
+
+    function clickdown() {
+        if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.cc > -1) {
+                sessionStorage.cc = Number(sessionStorage.cc)-2;}//end of if
+                if(sessionStorage.cc == -2){
+                    sessionStorage.cc = Number(sessionStorage.cc)+1;}//end of if
+            document.getElementById("next_count").value = sessionStorage.cc;
+            document.getElementById("input_parse_next").click();}//end of if
+        else {
+            alert("web storage unsupported...");}//end of else
+    };//end of function
+
+    function clickclear() {
+        if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.cc) {
+                sessionStorage.cc = Number(0);}//end of if
+        } //end of if
+        else {
+            alert("web storage unsupported...");}//end of else
+    };//end of function
+    
+    function list_style() {
+        var item = document.getElementById("liststyle").value;
+        document.getElementById("list_act").value = item;
+        sessionStorage.setItem("liststyle",item);
+    };//end of function
+
+</script>
+{% endblock content %}

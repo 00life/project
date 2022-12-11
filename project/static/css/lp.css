@@ -1,0 +1,88 @@
+*{box-sizing:border-box;}
+
+.everything_container{
+    text-align:center;
+}
+
+.copy_paste_container{
+    display:inline-flex;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:425px;
+}
+
+.copy_paste_container th{
+    text-align:center;
+}
+
+.table_border td{
+    border:1px solid black;
+}
+
+.input_table input[TYPE=number]{
+    width:50px;
+    align-self: center;
+}
+
+.input_list,
+.output_list,
+.output_list_container{
+    display:inline-flex;
+    height: 25rem;
+}
+
+.input_table input[TYPE="text"],
+.input_column_label{
+    width:130px;
+    text-align:center;
+}
+
+.start_end input[TYPE="number"]{
+    width: 130px;
+    text-align:center;
+}
+
+
+.input_table input[TYPE="submit"],
+.input_table input[TYPE="button"], 
+.input_table textarea,
+.output_list input[TYPE="button"],
+.output_list input[TYPE="submit"],
+.output_list input[TYPE="reset"],
+.listsyle{
+    width:100%;
+}
+
+.output_table:nth-child(1) td{
+    width: 1px;
+}
+
+.input_table textarea{
+    height: 15rem;
+}
+
+.output_list textarea{
+    height: 21rem;
+    width:390px;
+}
+
+.arrows span{
+    position: relative;
+    height: fit-content;
+    top:50%;
+    padding-right: 10px;
+}
+
+.copy_paste_container,
+.input_list,
+.output_list_container{
+    margin: 0 5px;
+}
+
+.alignright{
+    text-align:right;
+}
+
+.input_parameters{
+    content: 76;
+}

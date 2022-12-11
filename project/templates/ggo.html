@@ -1,0 +1,2032 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/ggo.css')}}">{% endblock stylesheet %}
+{% set Apps = "active" %}
+{% extends "layout.html" %}
+{% block title %} GGO {% endblock title %}
+
+{% block content %}
+<div class="body_container">
+<form action="" method="post">
+    <div style="display:flex; width:fit-content;">
+        <div id="container_student" style="position:sticky; left:0px; margin-right:5px; z-index: 1;">
+            <table style="background-color:azure; box-shadow: 0 0 5px 2px grey; margin-bottom: 5px; border-radius: 2px; border:5px solid transparent; position:sticky; top: 70px;">
+                <tr>
+                    <td colspan="5">
+                        <div id="options_1" style="display: flex; justify-content:center;">
+
+                            <label class="nav_buttons" for="checkbox_editClass" onclick="func_openWindow('editClass')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/edit.png')}}" alt="edit" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Edit</div>
+                            </label>
+                        
+                            <label class="nav_buttons" onclick="func_saveFile()" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/saveFile.png')}}" alt="minus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Save</div>
+                            </label>
+                            
+                            <input id="hddn_loadFile" type="file" onchange="func_loadFile()" style="display:none;"><!--hidden input-->
+                            <label id="btn_loadFile" class="nav_buttons" style="width:57px;" onclick="(()=>document.getElementById('hddn_loadFile').click())()">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/loadFile.png')}}" alt="minus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Load</div>
+                            </label>
+                            
+                            <label class="nav_buttons" for="checkbox_editMore" onclick="func_openWindow('editMore')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/ellipsis.png')}}" alt="minus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">More</div>
+                            </label>
+                            
+                        </div><!--end options_1-->
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <span style="display:flex; justify-content:center; align-items:center;">
+                            <label class="nav_buttons" onclick="func_addRemoveStudent('remove')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/minusPerson.png')}}" alt="minus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Remove</div>
+                            </label>
+                            <label class="nav_buttons" onclick="func_addRemoveStudent('add')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/addPerson.png')}}" alt="plus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Add</div>
+                            </label>
+                            <label class="nav_buttons" onclick="func_addRemoveAssignment('remove')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/minusFile.png')}}" alt="minus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Remove</div>
+                            </label>
+                            <label class="nav_buttons" onclick="func_addRemoveAssignment('add')" style="width:57px;">
+                                <div style="display:flex; justify-content:center;"><img src="{{url_for('static', filename='img/plusFile.png')}}" alt="plus" style="max-height:20px;width:auto; filter:drop-shadow(1px 1px 0 black);"></div>
+                                <div style="margin-top: -5px; text-align:center;">Add</div>
+                            </label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" onchange="func_checkboxAll(this)"></td>
+                    <td><label id="assignAll"class="btn_index" style="width:30px; text-align:center; border: 2px solid gainsboro;" onclick="func_allAssign(this)">All</label></td>
+                    <td><input type="text" value="Names" style="width:140px; font-weight:bold;" disabled></td>
+                    <td style="font-weight:bold;"><input id="miss" type="text" style="width:4ch; text-align:center;" disabled></td>
+                    <td style="font-weight:bold;"><input id="classAvg" type="text" style="width:4ch; text-align:center;" disabled></td>
+                    <td style="font-size:small; width: 100%;">%</td>
+                </tr>
+                <input type="checkbox" id="checkbox_all" style="display:none;"><!--hidden checkbox for all button-->
+            </table> 
+            
+            <div id="call_tempStudent"><!--Insert html_student here--></div>
+           
+        </div>
+        <div id="container_assignment" style="display:flex; white-space:nowrap;">
+            <template id="temp_assignment">
+            <div class="subcontainer_assignment" style="background-color:azure; display:inline-block; width:90px; border-radius:2px; box-shadow: 0 0 2px 1px grey; padding: 5px; width:min-content;">
+                <table style="border: 1px solid grey;width:100%; position:sticky; top:75px; border-radius:2px;">
+                    <tr class="contain_assign_icons" style="display:flex; background-color:var(--clr-darkTrans);">
+                        <th  style="width:100%; display:flex; align-items:center;">
+                            <span><img class="assign_icons" src="{{url_for('static',filename='img/edit2.png')}}" alt="edit" title="Enable Editing" onclick="func_editAssign(this)"></span>
+                            <span><img class="assign_icons" src="{{url_for('static',filename='img/email.png')}}" alt="email" title="Email Student Grades" onclick="func_emailAll(this,'grades')"></span>
+                            <span><img class="assign_icons" src="{{url_for('static',filename='img/remind.png')}}" alt="email" title="Email Reminder to Complete" onclick="func_emailAll(this,'remind')"></span>
+                        </th>
+                        <td class="factorDisplay" style="display:none; align-items:center;">
+                            <span style="font-size:small; font-weight:bold; color:palegreen; text-shadow:var(--clr-textShadow);">Curve:&nbsp</span>
+                            <input class="factorInput" type="text" style="width:4ch; height:2ch; text-align:center;" value="1" onchange="func_inputChange()">
+                        </td>
+                        <input class="hddn_numInput" type="number" style="display:none; width:1ch;"><!--hidden checkbox-->
+                    </tr>
+                    <tr>
+                        <td class="td_select" colspan="2">
+                            <!-- html_types insert here -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="font-size:smaller;"><center><input class="assign_title" type="text" style="width:100%; text-align:center;" onchange="func_inputChange()" placeholder="Title"></center></th>
+                    </tr>
+                </table>
+                <div class="cat_row" style="display:flex; justify-content:center;">
+                    <!--html_cat insert here-->
+                </div>
+                <div style="height:15px;">&nbsp</div>
+                <div class="insertGrades" style="margin-left:15px;">
+                    <!--html_grades insert here-->  
+                </div>
+            </div>
+            </template>
+        </div><!--end container_assignment-->
+    </div>
+</form><!--end form-->
+</div><!--end body_container-->
+<div style="height:30px;">&nbsp</div>
+
+<input type="checkbox" id="checkbox_editClass" style="display:none;"> <!--hidden checkbox-->
+<div id="editClass" class="popup_box" style="overflow-y: auto;">
+    <div style="display:flex; position:sticky;top:0">
+        <div style="display:flex; justify-content:flex-start; margin-left:5px;"><input type="button" value="Advanced" onclick="func_openWindow('advanced')" style="font-weight:bold;"></div>
+        <div style="display:flex; width:100%; justify-content:flex-start; margin-left: 5px;"><input type="button" value="Update" onclick="func_updateAll()" style="font-weight:bold;"></div>
+        <div style="display:flex; width: 100%; justify-content:flex-end;"><label for="checkbox_editClass" onclick="call_closeAllWindows(this)" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label></div>
+    </div>
+    <div class="table_container" style="display:flex; flex-wrap:wrap; justify-content:center;">
+
+        <table class='table_mainEdit'>
+            <tr>
+                <th><center><span>Students:</span><span id="numOfStudents"></span></center></th>
+                <th><center><span>Emails</span><span id="numOfEmails"></span></center></th>
+            </tr>
+            <tr>
+                <td><center><textarea id="edit_students" class="table_mainEdit__textarea" cols="20" rows="10" onchange="func_cleanList('edit_students')" placeholder="Enter Names"></textarea></center></td>
+                <td><center><textarea id="edit_emails" class="table_mainEdit__textarea" cols="10" rows="10" onchange="func_cleanList('edit_emails')" placeholder="Enter Emails"></textarea></center></td>
+            </tr>
+        </table>
+        <table class='table_mainEdit'>
+            <tr>
+                <th colspan="2"><center><span>Assignments:</span><span id="numOfAssignments"></span></center></th>
+            </tr>
+            <tr>
+                <td colspan="2"><center><textarea id="edit_assignments" class="table_mainEdit__textarea" cols="20" rows="10" onchange="func_cleanList('edit_assignments')" placeholder="Enter Assignments"></textarea></center></td>
+                
+            </tr>
+        </table>
+        <table class='table_mainEdit'>
+            <tr>
+                <th><center><span>Categories:</span><span id="numOfCategories"></span></center></th>
+                <th style="position:absolute; margin-left:-15px;"><center><span>Weights:</span><span id="totalWeight"></span></center></th>
+            </tr>
+            <tr>
+                <td><center><textarea id="edit_categories" class="table_mainEdit__textarea" cols="20" rows="10" onchange="func_cleanList('edit_categories')" placeholder="Enter Categories"></textarea></center></td>
+                <td><center><textarea id="edit_weights" class="table_mainEdit__textarea" cols="5" rows="10" onchange="func_cleanList('edit_weights')" style="text-align:center;" placeholder="Enter Weights"></textarea></center></td>
+            </tr>
+        </table>
+        <table class='table_mainEdit'>
+            <tr>
+                <th><center><span>Assessments:</span><span id="numOfAssessments"></span></center></th>
+                <th style="position:absolute;margin-left:-15px;"><center><span>Worth:</span><span id="totalWorth"></span></center></th>
+            </tr>
+            <tr>
+                <td><center><textarea id="edit_assessments" class="table_mainEdit__textarea" cols="20" rows="10" onchange="func_cleanList('edit_assessments')" placeholder="Enter Assessments"></textarea></center></td>
+                <td><center><textarea id="edit_worth" class="table_mainEdit__textarea" cols="5" rows="10" onchange="func_cleanList('edit_worth')" style="text-align:center;" placeholder="Enter Worth"></textarea></center></td>
+            </tr>
+        </table>
+    </div><!--end table_container-->
+</div><!--end editClass-->
+
+<input type="checkbox" id="checkbox_editStudent" style="display:none;"> <!--hidden checkbox-->
+<div id="editStudent" class="popup_box" style="display:none; max-height: 85%; height:min-content;">
+
+    <div style="display:flex;">
+        <div style="width:100%;">
+            <div style="display:flex; width:100%; margin-bottom:5px;">
+                <label data-type="comment" for="checkbox_editComment" onclick="func_openWindow(this);"><input type="button" value="Comments" style="font-weight:bold;"></label>
+            </div>
+        </div>
+        <div style="width:100%;">
+            <div style="display:flex; width: 100%; justify-content:flex-end;"><label for="checkbox_editStudent" onclick="call_closeAllWindows(this)" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label></div>
+        </div>
+    </div>
+
+    <div style="display:flex; background-color:azure; flex-wrap:wrap; justify-content:center; overflow-y: scroll; border-radius:2px; box-shadow: 0 0 2px 1px grey;">
+        <div style="width:clamp(350px,50%,100%); overflow-y:hidden;">
+            <div style="margin:5px 5px;">
+                <span><input type="text" id="infoName" style="width:140px;" disabled></span>
+                <span><input type="text" id="infoCurrent" style="width:4ch; text-align:center;" disabled>% Overall</span>
+            </div>
+            <div style="margin:5px 5px;">
+                <table id="infoCatAvg"><!--Insert Category Average Here--></table>
+            </div>
+        </div>
+        <div style="width:clamp(350px,50%,100%); overflow-x:scroll;">
+            <div style="margin:5px 5px;">
+                <table id="infoAssign"><!--Insert Assignment Info Here--></table>
+            </div>
+        </div>
+    </div>
+</div><!--end checkbox_editStudent-->
+
+<input type="checkbox" id="checkbox_editMore" style="display:none;"> <!--hidden checkbox-->
+<div id="editMore" class="popup_box" style="overflow-y:auto;">
+
+    <div style="display:flex;">
+        <div style="width:100%; display:flex; justify-content:flex-start; margin-bottom:2px; flex-wrap: wrap;">
+            <div style="display:flex; margin-right:5px;">
+                <input type="button" value="Calendar" style="font-weight:bold; width:80px;" onclick="func_openWindow('calendar')">
+            </div>
+            <div style="display:flex; margin-right:5px;">
+                <input type="button" value="Print" style="font-weight:bold; width:80px;" onclick="func_printPage()">
+            </div>
+            <select id="printSelect" style="width:80px;">
+                <option value="none"></option>
+                <option value="template">Template Grade Entry</option>
+                <option value="grades">Student Grades</option>
+                <option value="calendar">Calendar Schedule</option>
+            </select>
+        </div>
+        <div style="width:100%;">
+            <div style="display:flex; width: 100%; justify-content:flex-end;"><label for="checkbox_editMore" onclick="call_closeAllWindows(this)" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label></div>
+        </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+        <div style="width:clamp(350px,50%,100%);">
+            <table>
+                <tr><th colspan="2">Enter Email Information</th></tr>
+                <tr>
+                    <td style="text-align:center;">Your Email:</td>
+                    <td><input type="text" id="myEmail"></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">Email Password:</td>
+                    <td><input type="password" id="myPassword"></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">Email Provider:</td>
+                    <td>
+                        <select id="myProvider" style="width:100%;">
+                            <option value=""></option>
+                            <option value="hotmail">Hotmail</option>
+                            <option value="google">Google</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr><td colspan="2">&nbsp</td></tr>
+                <tr>
+                    <th colspan="2">Grades Color Alert</th>
+                </tr>
+                <tr>
+                    <td class="shadowOutline" style="text-align:center;color:red;text-shadow:var(--clr-textShadow);">Red:</td>
+                    <td>
+                        <select id="redGrades" onchange="func_inputChange()" style="width:100%; text-align:center;">
+                            <option value=""></option>
+                            <option value="0-49-red">0-49%</option>
+                            <option value="50-59-red" selected>50-59%</option>
+                            <option value="60-69-red">60-69%</option>
+                            <option value="70-79-red">70-79%</option>
+                            <option value="80-100-red">80-100%</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="shadowOutline" style="text-align:center;color:orange;text-shadow:var(--clr-textShadow);">orange:</td>
+                    <td>
+                        <select id="orangeGrades" onchange="func_inputChange()" style="width:100%; text-align:center;">
+                            <option value=""></option>
+                            <option value="0-49-orange">0-49%</option>
+                            <option value="50-59-orange">50-59%</option>
+                            <option value="60-69-orange">60-69%</option>
+                            <option value="70-79-orange">70-79%</option>
+                            <option value="80-100-orange">80-100%</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="shadowOutline" style="text-align:center;color:green;text-shadow:var(--clr-textShadow);">Green:</td>
+                    <td>
+                        <select id="greenGrades" onchange="func_inputChange()" style="width:100%; text-align:center;">
+                            <option value=""></option>
+                            <option value="0-49-green">0-49%</option>
+                            <option value="50-59-green">50-59%</option>
+                            <option value="60-69-green">60-69%</option>
+                            <option value="70-79-green">70-79%</option>
+                            <option value="80-100-green">80-100%</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;color:blue; text-shadow:var(--clr-textShadow);">Blue:</td>
+                    <td>
+                        <select id="blueGrades" onchange="func_inputChange()" style="width:100%; text-align:center;">
+                            <option value=""></option>
+                            <option value="0-49-blue">0-49%</option>
+                            <option value="50-59-blue">50-59%</option>
+                            <option value="60-69-blue">60-69%</option>
+                            <option value="70-79-blue">70-79%</option>
+                            <option value="80-100-blue">80-100%</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div>&nbsp</div>
+        </div>
+        <div style="display:flex; flex-direction:column; width:clamp(350px,50%,100%);">
+            <div style="display:flex;font-weight:bold; align-items:center;">
+                <input type="button" value="Email All" style="font-weight:bold;" onclick="func_emailAll('','announce')">
+                <div style="flex-grow: 1;"><input id="mySub" type="text" style="width:100%;" placeholder="Type Subject"></div>
+            </div>
+            <textarea id="myMsg" style="border-radius:2px; flex-grow:1; min-height:100px;" placeholder="Type Message"></textarea>
+        </div>
+    </div>
+</div><!--end checkbox_editMore-->
+
+<input type="checkbox" id="checkbox_editComment" style="display:none;"><!--hidden checkbox-->
+<textarea id="boxComment" style="width:100%; height:100%; display:none;"><!--comments loads here--></textarea>
+<div id="editComment" class="popup_box" style="display:none; overflow-y:auto;">
+
+    <div style="display:flex;">
+        <div style="width:100%;">
+            <div style="display:flex; width:100%; flex-flow:row wrap; align-items:center;">
+                <input type="button" id="backComment" value="Back" data-type="editStudent" style="margin-right:5px; font-weight:bold; width:75px; height:min-content;" onclick="func_openWindow(this)">
+                <input type="button" id="emailComment" value="Email" style="margin: 5px 5px; font-weight:bold; width:75px;" onclick="func_emailAll(this,'comment')">
+                <input id="hddn_loadComment" type="file" onchange="func_loadComment()" style="display:none;">
+                <input type="button" id="btn_loadComment" value="Load" style="margin: 5px 5px; font-weight:bold; width:75px;" onclick="(()=>document.getElementById('hddn_loadComment').click())()">
+                <input type="button" value="Create" style="margin: 5px 5px; font-weight:bold; width:75px;" onclick="func_createComment()">
+            </div>
+        </div>
+        <div style="flex-grow:1;">
+            <div style="display:flex; justify-content:flex-end; text-align:right;"><label for="checkbox_editComment" onclick="call_closeAllWindows(this);" style="font-size:large;cursor:pointer; width:75px;">Close <i class="fas fa-window-close"></i></label></div>
+        </div>
+    </div>
+
+    <div style="display:flex; margin-bottom:5px; margin-right:5px; flex-wrap: wrap;">
+        <div style="flex-grow:1; display:flex; justify-content: flex-start;">
+            <span><input type="text" id="nameComment" style="width:140px;" disabled>&nbsp</span>
+            <span><input type="text" id="currentComment" style="width:4ch; text-align:center;" disabled>%</span>
+        </div>
+        <div style="display:flex; justify-content:flex-end;">
+            <span style="align-self: center; font-weight:bold; color:green; margin-left:10px;">Max <span id="maxCat">Category</span>:&nbsp<input type="text" id="maxComment" style="width:4ch; text-align:center;" disabled>%</span>
+            <span style="align-self: center; font-weight:bold; color:red; margin-left:10px;">Min <span id="minCat">Category</span>:&nbsp<input type="text" id="minComment" style="width:4ch; text-align:center;" disabled>%</span>
+        </div>
+    </div>
+    <div class="searchBar" style="display:flex; background-color:rgba(220, 220, 220,0.5); flex-flow: row wrap; justify-content:flex-end;border-radius:2px; box-shadow: 0px 0px 2px 0px gray; padding:2px; align-items:center; align-content:center;">
+        <input type="button" value="Reset" style="font-weight:bold;" onclick="(()=>{sessionStorage.clear();document.getElementById('commentOutput').value = '';document.getElementById('selectPronoun').value = '';document.getElementById('selectStrand').value = '';document.getElementById('selectCategory').value = '';document.getElementById('selectGeneral').value = '';document.getElementById('selectLevel').value = '';func_commentFilter()})()">
+        <div style="font-weight:bold; margin-left:10px; flex-grow: 1;">Search:</div>
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="text-align:right;">Pronoun:</td>
+                <td>
+                    <select id="selectPronoun" style="width:100px;" onchange="func_commentFilter()">
+                        <option value="blank"></option>
+                        <option value="tags">Search Tags</option>
+                        <option value="0">First Name</option>
+                        <option value="1">Last Name</option>
+                        <option value="2">He/Him</option>
+                        <option value="3">She/Her</option>
+                        <option value="4">None</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="text-align:right;">Strand:</td>
+                <td>
+                    <select id="selectStrand" style="width:100px;" onchange="func_commentFilter()">
+                        <option value="blank"></option>
+                        <option value="0">Special Eduction & Resource</option>
+                        <option value="1">Career Studies</option>
+                        <option value="2">Cooperative Education</option>
+                        <option value="3">Buisness & Computer Studies</option>
+                        <option value="4">Science</option>
+                        <option value="5">Physical Education & Health</option>
+                        <option value="6">Mathematics</option>
+                        <option value="7">English</option>
+                        <option value="8">Geography</option>
+                        <option value="9">Modern Language</option>
+                        <option value="10">Visual Arts</option>
+                        <option value="11">Music</option>
+                        <option value="12">Drama</option>
+                        <option value="13">Technology</option>
+                        <option value="14">Religion</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="text-align:right;">Categories:</td>
+                <td>
+                    <select id="selectCategory" style="width:100px;" onchange="func_commentFilter()"></select>
+                        <!--insert category options here-->
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="text-align:right;">Level:</td>
+                <td>
+                    <select id="selectLevel" style="width:100px;" onchange="func_commentFilter()">
+                        <option value="blank"></option>
+                        <option value="auto">Auto</option>
+                        <option value="0-49">0-49%</option>
+                        <option value="50-59">50-59%</option>
+                        <option value="60-69">60-69%</option>
+                        <option value="70-79">70-79%</option>
+                        <option value="80-100">80-100%</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table style="margin-left:10px;">
+            <tr>
+                <td style="text-align:right;">General:</td>
+                <td>
+                    <select id="selectGeneral" style="width:100px;" onchange="func_commentFilter()">
+                        <option value="blank"></option>
+                        <option value="0">Strengths</option>
+                        <option value="1">Improve</option>
+                        <option value="2">Next Step</option>
+                        <option value="3">Course Change</option>
+                        <option value="4">Graduates</option>
+                        <option value="5">Behavior</option>
+                        <option value="6">General</option>
+                        <option value="7">Final</option>
+                        <option value="8">Favorite Codes</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div><!--end searchBar-->
+    <div id="commentInsert" style="background-color:var(--clr-gradientLR); min-height: 200px; max-height:200px; overflow-y:scroll; box-shadow: 0 0 2px 1px grey; border-radius:2px; margin-top:5px;">
+        <!--insert comments here-->
+    </div>
+    <div style="display:flex; background-color:azure;min-height: 100px; box-shadow: 0 0 2px 1px grey; border-radius:2px; margin-top:10px; padding:5px; overflow-y:scroll;">
+        <textarea id="commentOutput" style="flex:100%; resize:none;"></textarea>
+    </div><!--insert output here-->
+</div><!--end checkbox_editComment-->
+
+<input type="checkbox" id="checkbox_advanced" style="display:none;"> <!--hidden checkbox-->
+<div id="advanced" class="popup_box" style="display:none; width: 50%;">
+
+    <div style="display:flex;">
+        <div style="width:100%;">
+            <div style="display:flex; width:100%;">
+                <label for="checkbox_mainEdit" onclick="func_openWindow('editClass')"><input type="button" value="Back" style="margin: 5px 0; font-weight:bold;"></label>
+            </div>
+        </div>
+        <div style="width:100%;">
+            <div style="display:flex; width: 100%; justify-content:flex-end;"><label for="checkbox_advanced" onclick="call_closeAllWindows(this)" style="font-size:large;cursor:pointer;">Close <i class="fas fa-window-close"></i></label></div>
+        </div>
+    </div>
+    <center>
+        <div>
+            <div style="font-weight:bold; margin-bottom:10px;">Assignment Category Weights:</div>
+            
+            <table id="advancedParent">
+                <!--insert assignment and category weights here-->
+                <tr>
+                    <td>Assignment</td>
+                    <td><input type="text" value="1" style="width:4ch;"></td>
+                    <td><input type="text" value="2" style="width:4ch;"></td>
+                </tr>
+            </table>
+        </div>
+    </center>
+</div><!--end checkbox_advanced-->
+
+<input type="number" id="yearChoose" style="display:none;"> <!--hidden number-->
+<input type="number" id="monthChoose" style="display:none;"> <!--hidden number-->
+<input type="checkbox" id="checkbox_calendar" style="display:none;"> <!--hidden checkbox-->
+<div id="calendar" class="popup_box" style="display:none; height:100%; overflow-x:auto;">
+    
+    <div style="display:flex; height:100%;">
+        <div style="display:flex; flex-direction:column; justify-content:flex-start;">
+            <div style="display:flex; width:100%; font-size: large; font-weight:bold; text-align:center;">
+                <label for="checkbox_mainEdit" onclick="func_openWindow('editMore')" style="margin-right:20px;"><input type="button" value="Back" style="font-weight:bold; margin-bottom:5px;"></label>
+                <span id="dateBack" style="float:left; cursor:pointer;" onclick="(()=>document.getElementById('monthChoose').stepDown())();func_calendar()"><img src="{{url_for('static',filename='img/leftArrow.png')}}" alt="backward" style="max-height:30px; width:auto;"></span>
+                <span style="flex-grow:1;">
+                    <span><input type="button" value="Reset Month" style="font-size:medium; width:110px;" onclick="func_clearCalendar('resetMonth')"></span>
+                    <span id="dateMonth">Month</span>
+                    <span id="dateYear">Year</span>
+                    <span><input type="button" value="Reset All" style="font-size:medium; width:110px;" onclick="func_clearCalendar('resetAll')"></span>
+                </span>
+                <span id="dateForward" style="float:right; cursor:pointer" onclick="(()=>document.getElementById('monthChoose').stepUp())();func_calendar()"><img src="{{url_for('static',filename='img/rightArrow.png')}}" alt="forward" style="max-height:30px; width:auto;"></span>
+                <div style="display:flex; justify-content:flex-end; margin-left:20px;"><label for="checkbox_calendar" onclick="call_closeAllWindows(this)" style="font-size:large;cursor:pointer; display:flex; align-items:center; height:min-content; font-weight:normal;"><span style="margin-right:5px;">Close</span><i class="fas fa-window-close"></i></label></div>
+            </div>
+            <div style="height: 100%;">
+                <table class="calendar" style="width:100%;height:100%; text-align:center;">
+                    <tr style="height:min-content;">
+                        <td><input type="text" disabled value="Sunday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Monday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Tuesday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Wednesday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Thursday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Friday" style="width:100%; text-align:center;"></td>
+                        <td><input type="text" disabled value="Saturday" style="width:100%; text-align:center;"></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="0td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray;" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="0td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="0td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="0td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="0td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="1td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="1td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="1td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="1td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="1td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="2td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="2td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="2td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="2td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="2td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="3td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="3td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="3td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="3td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="3td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="4td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="4td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell" ><textarea id="4td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="4td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="4td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                    <tr>
+                        <td style="background-color:lightgrey;"><textarea id="5td0" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td1" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid green" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="5td2" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid orange" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td3" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid red" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:seashell;"><textarea id="5td4" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid purple" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td><textarea id="5td5" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid blue" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>
+                        <td style="background-color:lightgrey;"><textarea id="5td6" style="font-size:small; height:100%; width:100%; resize:none; border:2px solid gray" onchange="call_dataSaveLoad('sessionSaveCalendar')"></textarea></td>          
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!--end checkbox_calendar-->
+
+<div id="snackbar" style="z-index:100;">Default Message...</div>
+<audio id="clickAudio" controls preload="auto" style="display: none;">
+    <source src="{{url_for('static',filename='audio/click.wav')}}" type="audio/wav"></audio>
+
+<script type="text/javascript" language="javascript">
+
+// ### Important Global List Variables ###
+var names; var assignments; var assessments; var categories; var weights;
+
+(function IIFE_Defaults(){
+    document.getElementById("edit_students").value = "Bruce_Wayne\nTony_Stark\nOliver_Queen\nLex_Luthor";
+    document.getElementById("edit_emails").value = "reza.s.tahirkheli@gmail.com\nrez_effect@hotmail.com\npawn88@live.com";
+    document.getElementById("edit_assignments").value = "Biochemistry\nHomeostasis\nGenetics\nMetabolic_Process";
+    document.getElementById("edit_categories").value = "Knowledge\nThinking\nCommunication\nApplication";
+    document.getElementById("edit_weights").value = "30\n20\n10\n10";
+    document.getElementById("edit_assessments").value = " \nTests\nQuizzes\nAssignments\nReports\nReview\nHomework\nPractice\nExam";
+    document.getElementById("edit_worth").value = "0\n60\n10\n5\n10\n5\n5\n2\n30";
+    
+    let names = document.getElementById("edit_students").value.split("\n");
+    let assignments = document.getElementById("edit_assignments").value.split("\n");
+    let categories = document.getElementById("edit_categories").value.split("\n");
+
+    if(names.length<2 && names[0]==""){document.getElementById("numOfStudents").innerHTML=0
+    }else{document.getElementById("numOfStudents").innerHTML = names.length ?? "";};//endelse
+    if(assignments.length<2 && assignments[0]==""){document.getElementById("numOfAssignments").innerHTML=0
+    }else{document.getElementById("numOfAssignments").innerHTML = assignments.length ?? "";};//endelse
+    if(categories.length<2 && categories[0]==""){document.getElementById("numOfCategories").innerHTML=0
+    }else{document.getElementById("numOfCategories").innerHTML = categories.length ?? "";};//endelse
+
+    let weights = document.getElementById("edit_weights").value.split("\n");
+    try{document.getElementById("totalWeight").innerHTML = weights.reduce((accum,val)=>accum+Number(val),0) ?? "";}
+    catch{document.getElementById("totalWeight").innerHTML = 0};
+    let worth = document.getElementById("edit_worth").value.split("\n");
+    try{document.getElementById("totalWorth").innerHTML = worth.reduce((accum,val)=>accum+Number(val),0) ?? "";}
+    catch{document.getElementById("totalWorth").innerHTML = 0};
+
+    document.getElementById("monthChoose").value = new Date().getMonth();
+    document.getElementById("yearChoose").value = new Date().getFullYear();
+}());
+
+(function IIFE_Listeners(){
+    document.getElementById("edit_students").addEventListener("change", ()=>{
+        document.getElementById("numOfStudents").innerHTML = document.getElementById("edit_students").value.split("\n").length ?? "";
+        if(document.getElementById("edit_students").value == ""){document.getElementById("numOfStudents").innerHTML = 0};});
+    document.getElementById("edit_assignments").addEventListener("change", ()=>{
+        document.getElementById("numOfAssignments").innerHTML = document.getElementById("edit_assignments").value.split("\n").length ?? "";
+        if(document.getElementById("edit_assignments").value == ""){document.getElementById("numOfAssignments").innerHTML = 0};});
+    document.getElementById("edit_categories").addEventListener("change", ()=>{
+        document.getElementById("numOfCategories").innerHTML = document.getElementById("edit_categories").value.split("\n").length ?? "";
+        if(document.getElementById("edit_categories").value == ""){document.getElementById("numOfCategories").innerHTML = 0};});
+    document.getElementById("edit_assessments").addEventListener("change", ()=>{
+        document.getElementById("numOfAssessments").innerHTML = document.getElementById("edit_assessments").value.split("\n").length ?? "";
+        if(document.getElementById("edit_assessments").value == ""){document.getElementById("numOfAssessments").innerHTML = 0};});
+    document.getElementById("edit_weights").addEventListener("change", ()=>{
+        let weights = document.getElementById("edit_weights").value.split("\n");
+        try{document.getElementById("totalWeight").innerHTML = weights.reduce((accum,val)=>accum+Number(val),0) ?? "";}catch{}});
+    document.getElementById("edit_worth").addEventListener("change", ()=>{
+        let worth = document.getElementById("edit_worth").value.split("\n");
+        try{document.getElementById("totalWorth").innerHTML = worth.reduce((accum,val)=>accum+Number(val),0) ?? "";}catch{}});
+    
+    // ### audio on buttons
+    var elemBtn = Array.prototype.slice.call(document.querySelectorAll("input[type='button'],.nav_buttons"));
+    for(btn of elemBtn){btn.addEventListener("mousedown",function(){
+        try{document.getElementById("clickAudio").play()}catch{};})};//endfor_btn
+}());
+
+(function IIFE_load_commentsTXT(){
+    var xml = new XMLHttpRequest();
+    xml.open("GET", "{{url_for('static',filename='data/comments.txt')}}");
+    xml.onload = function(){
+        document.getElementById("boxComment").value = xml.responseText;
+    };//endfunction
+    xml.send();
+})();
+
+function func_calendar(){
+    var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    monthStr = String(month).length==1?"0"+String(month):month;
+    var day = date.getDay();
+    var dat = date.getDate();
+    var monthChoose = month;
+    var yearChoose = year;
+
+    monthChoose = document.getElementById("monthChoose").value;
+    yearChoose = document.getElementById("yearChoose").value;
+    
+    if(monthChoose<1){
+        document.getElementById("monthChoose").value = 12;
+        document.getElementById("yearChoose").value = Number(document.getElementById("yearChoose").value)-1;
+        
+    }else if(monthChoose>11){
+        document.getElementById("monthChoose").value = 0;
+        document.getElementById("yearChoose").value = Number(document.getElementById("yearChoose").value)+1;
+        monthChoose = 0;
+        yearChoose = Number(yearChoose)+1
+    };//endif
+    chooseMonthStr = String(monthChoose).length==1?"0"+String(monthChoose):String(monthChoose);
+
+    var firstDay = new Date(yearChoose, monthChoose, 1);
+    var lastDay = new Date(yearChoose, monthChoose + 1, 0);
+    var indexFirst = days.findIndex(day=>day==firstDay.toString().slice(0,3));
+    var numberLast = Number(lastDay.toString().slice(8,10).trim());
+    
+    for(ids of call_idsFind("r","cal","c")){
+        document.getElementById(ids).dataset.date = String(yearChoose)+chooseMonthStr+"-"+ids;
+        document.getElementById(ids).value=""};//endfor
+    document.getElementById("0td"+indexFirst).value = 1;
+    document.getElementById("0td"+indexFirst).dataset.dat = 1;
+
+    document.getElementById("dateMonth").innerHTML = months[monthChoose];
+    document.getElementById("dateYear").innerHTML = yearChoose;
+
+    var today; var tomorrow; var next; var elem;
+    for(let r=0;r<6;r++){
+        for(let c=0;c<7;c++){
+            nextC = c+1
+            nextR = r+1
+            today = document.getElementById(r+"td"+c);
+            tomorrow = document.getElementById(r+"td"+nextC)??document.getElementById(nextR+"td"+0)
+            if(today.value!=0&&today.value<numberLast){
+                tomorrow.value = Number(today.value) + 1;
+                tomorrow.dataset.dat = Number(today.value) + 1;};//endif
+            if(today.dataset.date.slice(4,6)==monthStr&&(today.value)==dat){
+                document.getElementById(r+"td"+c).style.backgroundColor = "aqua";
+            }else{document.getElementById(r+"td"+c).style.backgroundColor="initial"};//endelse
+        };//endfor_c
+    };//endfor_r
+    
+    call_dataSaveLoad("sessionLoadCalendar");
+};
+
+// ### Global Variables ###
+func_updateAll();
+func_calendar();
+
+// ### Functions ###
+function func_openWindow(id){
+    if(typeof(id)=="string"){
+        call_closeAllWindows(id);
+        if(document.getElementById("checkbox_"+id).checked){document.getElementById(id).style.display = "none";
+        }else{document.getElementById(id).style.display = "block";};//endif
+    }else if(typeof(id)=="object"){
+        var type = id.dataset.type;
+        if(type=="index"){
+            call_closeAllWindows("editStudent");
+            if(document.getElementById("checkbox_editStudent").checked==false){
+                document.getElementById("editStudent").style.display = "block";
+            }else if(document.getElementById("checkbox_editStudent").checked==true){
+                document.getElementById("editStudent").style.display = "none"};//endelse
+            call_displayStudentInfo(id);
+        }else if(type=="comment"){
+            call_closeAllWindows("editComment");
+            if(document.getElementById("checkbox_editComment").checked==false){
+                document.getElementById("editComment").style.display = "block";
+                document.getElementById("checkbox_editComment").checked = true;
+            }else if(document.getElementById("checkbox_editComment").checked==true){
+                document.getElementById("editComment").style.display = "none"};//endelse
+                call_displayStudentComment(id);
+        }else if(type=="editStudent"){
+            call_closeAllWindows("editStudent");
+            document.getElementById(id.dataset.name+"!index").click();
+        }else if(type=="editComment"){
+            call_closeAllWindows("editComment");
+            func_openWindow(document.querySelector("label[data-type='comment']"));
+        };//endelse
+        
+    };//endelse
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function call_snackbar(msg){
+  var elem = document.getElementById("snackbar");
+  elem.innerHTML = msg;
+  elem.className = "show";
+  setTimeout(function(){elem.className = elem.className.replace("show", ""); }, 3000);
+};
+
+function func_cleanList(id){
+    let item = []; var strValue = "";
+    strValue = document.getElementById(id).value.split("\n");
+
+    for(val of strValue){
+        if(val != ""){item.push(val.trim().split(/\s+/).join("_"))};};//endif_endfor
+        
+    document.getElementById(id).value = item.join("\n");
+};
+
+function func_saveFile(){
+    var data = call_dataSaveLoad("save","");
+    var file = new Blob([JSON.stringify(data)], {type:"text"});
+    var anchor = document.createElement("a")
+    anchor.href = URL.createObjectURL(file);
+    anchor.download = "classroom.txt";
+    anchor.click();
+};
+
+function func_loadFile(){
+    var file = document.getElementById("hddn_loadFile").files[0];
+    var reader = new FileReader();
+    reader.onload = function(){
+        var data = JSON.parse(reader.result);
+        call_dataSaveLoad("load",data);
+        call_dataSaveLoad("loadNoUpdate",data);
+    };//endfunction
+    reader.readAsText(file);
+    call_snackbar("File Loaded");
+};
+
+function func_updateAll(){
+    call_tempStudent();
+    call_tempAssignment();
+    call_tempGrades();
+    call_styleBorders();
+};
+
+function func_editAssign(e){
+    if(document.getElementById("checkbox_all").checked){
+        document.getElementById("assignAll").click();
+        var idsAssign;
+        for(let j=0;j<assignments.length;j++){
+            idsAssign = j+"assign_icon0";
+            if(e.id!=idsAssign){document.getElementById(idsAssign).click()};//endif
+        };//endfor_j
+    };//endif
+
+    var idsAssign = call_idsFind(e.dataset.assign,"$","$");
+    document.getElementById(e.dataset.assign+"checkbox_editAssign").stepUp();
+    if(document.getElementById(e.dataset.assign+"checkbox_editAssign").value == 1){
+        call_bugFix(0,e); // alignment issues
+        e.style.backgroundColor = "azure";
+        document.getElementById(e.dataset.assign+"total!").parentElement.style.display = "none";
+        document.getElementById(e.dataset.assign+"factorDisplay").style.display = "flex";
+        for(ids of idsAssign){document.getElementById(ids).style.display = "block";};//endfor
+        for(ids of call_idsFind(e.dataset.assign,"*","!")){document.getElementById(ids).style.display = "none";};//endfor
+        for(k in categories){document.getElementById(e.dataset.assign+"total"+k).parentElement.style.display = "block";};//endfor
+    }else if(document.getElementById(e.dataset.assign+"checkbox_editAssign").value == 2){
+        call_bugFix(1,e); //alignment issues
+        e.style.backgroundColor = "var(--clr-gradientRL)";
+        for(ids of idsAssign){document.getElementById(ids).style.display = "none";};//endfor_ids
+        for(k in categories){document.getElementById(e.dataset.assign+"total"+k).parentElement.style.display = "none";};//endfor_k
+        for(k in categories){document.getElementById(e.dataset.assign+"%avg"+k).parentElement.style.display = "block";};//endfor_k
+        for(ids of call_idsFind(e.dataset.assign,"%","%")){document.getElementById(ids).style.display = "block";};//endfor_ids
+    }else{
+        call_bugFix(2,e); //alignment issues
+        e.style.backgroundColor = "var(--clr-darkTrans)";
+        document.getElementById(e.dataset.assign+"checkbox_editAssign").value = '';
+        document.getElementById(e.dataset.assign+"total!").parentElement.style.display = "block";
+        document.getElementById(e.dataset.assign+"factorDisplay").style.display = "none";
+        for(ids of idsAssign){document.getElementById(ids).style.display = "none";};//endfor
+        for(ids of call_idsFind(e.dataset.assign,"*","!")){document.getElementById(ids).style.display = "block";};//endfor
+        for(k in categories){document.getElementById(e.dataset.assign+"%avg"+k).parentElement.style.display = "none";};//endfor
+        for(ids of call_idsFind(e.dataset.assign,"%","%")){document.getElementById(ids).style.display = "none";};//endfor_ids
+    };//endif
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function func_addRemoveStudent(key){
+    var stringNames = "";
+
+    call_dataSaveLoad("sessionSave","");
+    call_dataSaveLoad("sessionSaveAssign","");
+    if(key=="remove"){
+        names.splice(names.length - 1,1);
+        stringNames = names.join("\n");
+        document.getElementById("edit_students").value = stringNames;
+        func_updateAll()
+        call_dataSaveLoad("sessionLoad","");
+        call_dataSaveLoad("sessionLoadAssign","");
+        call_snackbar("Student Removed");
+    }else if(key=="add"){
+
+        if(document.getElementById(names.length - 1 + "!name").value == " "){
+            call_snackbar("Enter Student Name");return};//endif guardClause
+
+        names.push(" ");
+        stringNames = names.join("\n");
+        document.getElementById("edit_students").value = stringNames;
+        func_updateAll()
+        call_dataSaveLoad("sessionLoad","");
+        call_dataSaveLoad("sessionLoadAssign","");
+        document.getElementById(names.length -1 +"!name").disabled = false;
+        call_snackbar("Student Added");
+    };//endelse
+
+    call_bugFix(4);// prevent undefine values in grades
+    document.getElementById("numOfStudents").innerHTML = names.length;
+};
+
+function func_addRemoveAssignment(key){
+    var stringAssignments = "";
+    
+    call_dataSaveLoad("sessionSave","");
+    call_dataSaveLoad("sessionSaveAssign","");
+    if(key=="remove"){
+        assignments.splice(assignments.length - 1,1);
+        call_snackbar("Assignment Removed");
+
+    }else if(key=="add"){
+
+        if(document.getElementById(assignments.length - 1 + "title").value == ""){
+            call_snackbar("Enter Assignment Title");return};//endif guardClause
+
+        var lastAssignment = document.getElementById(assignments.length - 1 + "title").value;
+        assignments.push(" ");
+        
+        call_snackbar("Assignment Added");
+        
+    };//endelse
+
+    stringAssignments = assignments.join("\n");
+    document.getElementById("edit_assignments").value = stringAssignments;
+    document.getElementById("numOfAssignments").innerHTML = assessments.length;
+    func_updateAll()
+
+    call_dataSaveLoad("sessionLoad","");
+    call_dataSaveLoad("sessionLoadAssign","");
+
+    call_bugFix(5); // removes 'undefined' from grades 
+    call_bugFix(8,"add"); // turns 'undefined' into '1' in factorInput
+    call_bugFix(9,"add"); //turns 'undefined' from advanced to default category weights
+    
+};
+
+function func_checkboxAll(e){
+    var boolList = [];
+    for(let i=0;i<names.length;i++){boolList.push(document.getElementById(i+"checkbox").checked)};//endfor_ids
+    
+    if(e.checked){
+        if(boolList.every(check=>check==false)){
+            for(let i=0;i<names.length;i++){document.getElementById(i+"checkbox").checked = true};//endfor
+        }else{
+            for(let i=0;i<names.length;i++){document.getElementById(i+"checkbox").checked = true};//endfor
+        };//endelse
+    }else{
+        if(boolList.every(check=>check==true)){
+            for(let i=0;i<names.length;i++){document.getElementById(i+"checkbox").checked = false};//endfor
+        }else{
+            for(let i=0;i<names.length;i++){document.getElementById(i+"checkbox").checked = false};//endfor
+        };//endelse
+    };//endelse_e
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function func_emailAll(e,mode){
+    var ans = confirm("Are you sure you want to email")
+    if(!ans){return};//endif GuardClause
+
+    emails = document.getElementById("edit_emails").value.split("\n") ?? "";
+    var myEmail = document.getElementById("myEmail").value;
+    var myPassword = document.getElementById("myPassword").value;
+    var myProvider = document.getElementById("myProvider").value;
+    var myMsg = document.getElementById("myMsg").value;
+    var mySub = document.getElementById("mySub").value;
+
+    if(myEmail==""||myPassword==""||myProvider==""){call_snackbar("Missing Email Information");return};
+    if(myEmail.indexOf("@")==-1){call_snackbar("Email Address Invalid");return}
+
+    var xml = new XMLHttpRequest();
+    xml.open("POST","{{url_for('func_emailAll.func_emailAll')}}",true);
+    xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xml.onload = function(){
+        var dataReply = JSON.parse(this.responseText);
+        call_snackbar(dataReply['reply']);
+    };//endfunction
+
+    var dataSend = {};
+    dataSend["senderEmail"] = myEmail;
+    dataSend["passwordEmail"] = myPassword;
+    dataSend["providerEmail"] = myProvider;
+    dataSend["messageEmail"] = myMsg;
+    dataSend["subjectEmail"] = mySub;
+    
+    if(mode=="grades"){
+        var checkList = [];
+        for(let i=0;i<names.length;i++){
+            if(document.getElementById(i+"checkbox").checked){
+                checkList.push(true)}else{checkList.push(false)};//endelse
+        };//endfor_i
+        var someStudents = checkList.some(item=>item);
+        if(!someStudents){call_snackbar("At least one student checkbox must be checked");return};//endif_GuardClause
+        
+        // email grades for all assignments
+        if(document.getElementById("checkbox_all").checked){
+            document.getElementById("assignAll").click();
+            var idsGrades;
+            for(let j=0;j<assignments.length;j++){
+                idsGrades = j+"assign_icon1";
+                if(e.id!=idsGrades){document.getElementById(idsGrades).click()};//endif
+            };//endfor_j
+        };//endif
+
+        // email grades for individual assignments
+        dataSend["type"] = "grades";
+        dataSend["assign"] = assignments[e.dataset.assign];
+        dataSend["avg"] = document.getElementById(e.dataset.assign+"total!").value;
+        n = 0;
+        for(let i=0;i<names.length;i++){
+            if(document.getElementById(i+"checkbox").checked){
+                dataSend[n] = {};
+                dataSend[n]["name"] = names[i].replaceAll("_"," ");
+                dataSend[n]["email"] = emails[i];
+                dataSend[n]["subject"] = assignments[i] + " grades for " + names[i].replaceAll("_"," ")+" "+dataSend["subjectEmail"];
+                dataSend[n]["current"] = document.getElementById(i+"!avg").value;
+                dataSend[n]["grade"] = document.getElementById(`${e.dataset.assign}assign${i}name!cat`).value;
+                dataSend[n]["cat"] = {};
+                dataSend[n]["total"] = {};
+                dataSend[n]["catAvg"] = {};
+                for(let k=0;k<categories.length;k++){
+                    dataSend[n]["cat"][categories[k]] = document.getElementById(`${e.dataset.assign}assign${i}name${k}cat`).value;
+                    dataSend[n]["total"][categories[k]] = document.getElementById(`${e.dataset.assign}total${k}`).value;
+                    dataSend[n]["catAvg"][categories[k]] = document.getElementById(`${e.dataset.assign}%avg${k}`).value;
+                };//end_k
+                n++
+            };//endif
+        };//endfor_i
+        dataSend["num"] = n;
+
+    }else if(mode=="remind"){
+        var checkList = [];
+        for(let i=0;i<names.length;i++){
+            if(document.getElementById(i+"checkbox").checked){
+                checkList.push(true)}else{checkList.push(false)};//endelse
+        };//endfor_i
+        var someStudents = checkList.some(item=>item);
+        if(!someStudents){call_snackbar("At least one student checkbox must be checked");return};//endif_GuardClause
+
+        // email reminder for all assignments
+        if(document.getElementById("checkbox_all").checked){
+            document.getElementById("assignAll").click();
+            var idsRemind = j+"assign_icon2";
+            for(let j=0;j<assignments.length;j++){
+                if(e.id!=idsRemind){document.getElementById(idsRemind).click()};//endif
+            };//endfor_j
+        };//endif
+
+        // email reminder for individual assignments
+        dataSend["type"] = "remind";
+        dataSend["assign"] = assignments[e.dataset.assign];
+        dataSend["subjectEmail"] += "Incomplete Assignments "+dataSend["subjectEmail"] ;
+        n = 0;
+        for(let i=0;i<names.length;i++){
+            if(document.getElementById(i+"checkbox").checked&&document.getElementById(`${e.dataset.assign}assign${i}name!cat`).value == ""){
+                dataSend[n] = {};
+                dataSend[n]['name'] = names[i].replaceAll("_"," ");
+                dataSend[n]['email'] = emails[i];
+                n++; 
+            };//endif
+        };//endfor
+        dataSend["num"] = n;
+
+    }else if(mode=="comment"){
+        dataSend["type"] = "comment";
+        dataSend["recieverEmail"] = emails[e.dataset.name];
+        dataSend["subjectEmail"] += "Comments for " + names[e.dataset.name].replaceAll("_"," ")+" "+dataSend["subjectEmail"];
+        dataSend["commentEmail"] = document.getElementById("commentOutput").value;
+
+    }else if(mode=="announce"){
+        dataSend["type"] = "announce";
+        dataSend["recieverEmail"] = emails;
+
+        var ans = confirm("Include calendar month schedule?");
+        if(ans){
+            var val; var day; var itemList = [];
+            var month = document.getElementById("dateMonth").innerHTML
+        
+            for(ids of call_idsFind("r","cal","c")){
+                val = document.getElementById(ids).value;
+                day = isFinite(Number(val[1])) ? val.slice(0,2):val.slice(0,1);
+
+                if(day.length==1 && val.slice(1,).trim()!=""){
+                    itemList.push(`${month} ${day} ${val.slice(1,).trim()}`);
+                }else if(day.length==2 && val.slice(2,).trim()!=""){
+                    itemList.push(`${month} ${day} ${val.slice(2,).trim()}`)
+
+                };//endelse
+            };//endfor_ids
+
+            dataSend["messageEmail"] += "\n\n"+itemList.join("\n");
+        };//endif 
+
+    };//endelse
+
+    xml.send(JSON.stringify(dataSend));
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function func_createComment(){
+    var commentOutput = document.getElementById("commentOutput").value;
+    if(commentOutput.indexOf("{") > -1 && commentOutput.indexOf("}") > -1){
+        var data = commentOutput;
+        var file = new Blob([data], {type:"text"});
+        var anchor = document.createElement("a")
+        anchor.href = URL.createObjectURL(file);
+        anchor.download = "comments.txt";
+        anchor.click();
+        call_snackbar("Comment File Created");
+    }else{
+        document.getElementById("commentOutput").placeholder =
+        "<<CREATE YOUR COMMENTS HERE>> <<Click on the 'Create' button again when your done>>"
+        call_snackbar("Type your Comment in the Correct Format");
+    };//endelse
+};
+
+function func_loadComment(){
+    var file = document.getElementById("hddn_loadFile").files[0];
+    var reader = new FileReader();
+    reader.onload = function(){
+        var data = JSON.parse(reader.result);
+        document.getElementById("commentOutput").value = data;
+    };//endfunction
+    reader.readAsText(file);
+    call_snackbar("Comment File Loaded");
+};
+
+function func_allAssign(e){
+    var elements = document.querySelectorAll(".contain_assign_icons");
+    document.getElementById("checkbox_all").click();
+    if(document.getElementById("checkbox_all").checked){
+        for(element of elements){element.style.backgroundColor = "palegreen";};//endfor
+    }else{
+        for(element of elements){element.style.backgroundColor = "var(--clr-darkTrans)";};//endfor
+    }//endelse
+
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function func_clearCalendar(e){
+    if(e=="resetMonth"){
+        var ans = confirm("Are you sure you want to clear this month's items?");
+        if(!ans){return};//end_if GuardClause
+        
+        for(ids of call_idsFind("r","cal","c")){document.getElementById(ids).value = "";};//endfor_ids
+        document.getElementById("dateForward").click();
+        call_dataSaveLoad("sessionSaveCalendar");
+        document.getElementById("dateBack").click();
+        
+    }else if(e="resetAll"){    
+        var ans = confirm("Are you sure you want to clear all calendar items?");
+        if(!ans){return};//end_if GuardClause
+        dataCalendar = {};
+        sessionStorage.setItem("calendar",JSON.stringify(dataCalendar));
+        func_calendar();
+    };//endelse
+};
+
+function func_printPage(){
+    if(document.getElementById("printSelect").value=="template"){
+        window.open("{{url_for('static', filename='html/temp.html')}}","template");
+    }else if(document.getElementById("printSelect").value=="grades"){
+        window.open("{{url_for('static', filename='html/grades.html')}}","grades");
+    }else if(document.getElementById("printSelect").value=="calendar"){
+        window.open("{{url_for('static', filename='html/calendar.html')}}","calendar");
+    }else if(document.getElementById("printSelect").value=="none"){
+        call_snackbar("Please choose what you want to print");
+    };//endelse
+};
+
+// ### Callback Functions ###
+
+function call_closeAllWindows(e){
+    if(typeof(e)=="string"){
+        var windowList = ["editClass","editStudent","editMore","editComment","advanced","calendar"];
+        if(windowList.findIndex(item=>item==e) != -1){
+            windowList.splice(windowList.findIndex(item=>item==e),1)};//endif
+        for(win of windowList){
+            try{document.getElementById(win).style.display = "none"}catch{};
+            try{document.getElementById("checkbox_"+win).checked = false}catch{};
+        };//endfor
+    }else if(typeof(e)=="object"){
+        var ids = e.getAttribute("for").replace("checkbox_","");
+        document.getElementById(ids).style.display = "none";
+    };//endelse
+};
+
+function call_dataSaveLoad(option, dataIn){
+    var edit = ["edit_students","edit_emails","edit_assignments",
+                "edit_categories","edit_weights","edit_assessments","edit_worth"];
+    var grades = call_idsFind("$","$","$");
+    var title = call_idsFind("title","*","*");
+    var total = call_idsFind("*","total","*");
+    var select = call_idsFind("select","*","*");
+    var factor = call_idsFind("factor","*","*");
+    var advanced= call_idsFind("&","adv","&");
+    var calendar = call_idsFind("r","cal","c");
+    var other = ["myEmail","myPassword","myProvider","redGrades","orangeGrades","greenGrades","blueGrades"]
+
+    var combined = edit.concat(grades,title,total,select,factor,advanced,other,calendar);
+    var dataOut = {};
+    var dataEditAssign = {};
+    var dataCalendar = {};
+
+    if(option == "save"){
+        for(ids of combined){dataOut[ids] = document.getElementById(ids).value};//endfor
+        try{var cache = JSON.parse(sessionStorage.getItem("calendar"))}catch{};
+        dataOut["calendar"] = cache;
+        return dataOut
+
+    }else if(option == "load"){
+        for(ids of combined){document.getElementById(ids).value = dataIn[ids]};//endfor
+        func_updateAll();
+        sessionStorage.setItem("calendar",JSON.stringify(dataIn["calendar"]));
+
+    }else if(option == "loadNoUpdate"){
+        for(ids of combined){document.getElementById(ids).value = dataIn[ids]};//endfor
+        call_updateGrades("1");
+
+    }else if(option == "sessionSave"){        
+        for(ids of combined){try{dataOut[ids] = document.getElementById(ids).value}catch{}};//endfor
+        sessionStorage.setItem("data",JSON.stringify(dataOut));
+    
+    }else if(option == "sessionSaveCalendar"){
+        for(ids of calendar){
+            dataSet = document.getElementById(ids).dataset.date;
+            dataCalendar[dataSet] = [document.getElementById(ids).value];
+        };//endfor
+        sessionStorage.setItem("calendar",JSON.stringify(dataCalendar));
+        try{document.getElementById("clickAudio").play()}catch{};
+    
+    }else if(option == "sessionSaveAssign"){
+        for(ids of call_idsFind("editAssign","*","*")){try{dataEditAssign[ids] = document.getElementById(ids).value}catch{}};//endfor
+        sessionStorage.setItem("dataEditAssign",JSON.stringify(dataEditAssign));
+
+    }else if(option == "sessionLoad"){
+        try{var cache = JSON.parse(sessionStorage.getItem("data"))}catch{};
+        func_updateAll();
+        for(ids of combined){try{document.getElementById(ids).value = cache[ids];}catch{}};//endfor
+        call_updateGrades("2")
+
+    }else if(option == "sessionLoadCalendar"){
+        try{var cache = JSON.parse(sessionStorage.getItem("calendar"))}catch{};
+        for(idsDate in cache){
+            ids = idsDate.slice(idsDate.indexOf("-")+1,);
+            if(document.getElementById(ids).dataset.date == idsDate){
+                document.getElementById(ids).value = cache[idsDate];
+            };//endif
+        };//endfor
+
+    }else if(option == "sessionLoadNoUpdate"){
+        try{var cache = JSON.parse(sessionStorage.getItem("data"))}catch{};
+        for(ids of combined){try{document.getElementById(ids).value = cache[ids];}catch{}};//endfor
+        call_updateGrades("3");
+        
+    }else if(option == "sessionLoadAssign"){
+        try{var dataEditAssign = JSON.parse(sessionStorage.getItem("dataEditAssign"))}catch{};
+        for(ids of call_idsFind("editAssign","*","*")){
+            if(dataEditAssign[ids]==1){
+                document.getElementById(ids.slice(0,1)+"assign_icon0").click();
+            }else if(dataEditAssign[ids]==2){
+                document.getElementById(ids.slice(0,1)+"assign_icon0").click();
+                document.getElementById(ids.slice(0,1)+"assign_icon0").click();
+            };//endelse
+        };//endfor
+    };//endif
+};
+
+function call_tempStudent(){
+    var parent=""; var html_student="";
+    names = document.getElementById("edit_students").value.split("\n") ?? "";
+    
+    parent = document.getElementById("call_tempStudent");
+    try{parent.removeChild(parent.firstElementChild)}catch{};
+   
+    html_student += '<table style="background-color:azure; box-shadow:0 0 5px 1px grey; border:5px solid transparent; border-radius:2px;">';
+    for(let i=0;i<names.length;i++){
+        html_student += '<tr>';
+        html_student += `<td><input type="checkbox" id="${i}checkbox" onchange="(()=>document.getElementById('clickAudio').play())()"></td>`;
+        html_student += `<td><label id="${i}!index" class="btn_index" data-name="${i}" data-type="index" style="width:30px; text-align:center; border: 2px solid transparent" for="checkbox_editStudent" onclick="func_openWindow(this)">${i + 1}</label></td>`;
+        html_student += `<td><input type="text" id="${i}!name" data-name="${i}" value="${names[i].replaceAll("_"," ")}" style="width:140px;" onchange="func_inputChange()" placeholder="Input Name" disabled></td>`;
+        html_student += `<td><input type="text" id="${i}miss" data-name="${i}" style="width:4ch; text-align:center;" disabled></td>`;
+        html_student += `<td><input type="text" id="${i}!avg" data-name="${i}" style="width:4ch; text-align:center;" disabled></td>`;
+        html_student += `<td style="font-size:small; width:100%">%</td>`;
+        html_student += '</tr>';
+    };//endfor_i
+    html_student += '</table>'
+    parent.innerHTML = html_student;
+
+    call_bugFix(10) // enable name input there are no student on the list
+};
+
+function call_tempAssignment(){
+    var parentAssign="";var blockAssign="";var html_advanced=''; var parentAdvanced=""; 
+    var html_type=''; var html_cat=''; var weightList=""; var weightTotal=""; var temp=""; var clon="";
+
+    assignments = document.getElementById("edit_assignments").value.split("\n") ?? "";
+    assessments = document.getElementById("edit_assessments").value.split("\n") ?? "";
+    categories = document.getElementById("edit_categories").value.split("\n") ?? "";
+    weights = document.getElementById("edit_weights").value.split("\n") ?? "";
+
+    parentAssign = document.getElementById("container_assignment");
+    try{parentAssign.removeChild(document.getElementById("blockAssign"))}catch{};
+    blockAssign = document.createElement("div");
+    blockAssign.id = "blockAssign";
+    
+    parentAdvanced = document.getElementById("advancedParent");
+    try{parentAdvanced.removeChild(parentAdvanced.firstElementChild)}catch{};
+
+    html_advanced = '<div>';
+    html_advanced += '<tr>';
+    html_advanced += '<td></td>';
+    for(let k=0;k<categories.length;k++){html_advanced += `<td style="font-size:x-small;text-align:center">${categories[k].slice(0,4)}</td>`};//endfor_k
+    html_advanced += '</tr>';
+
+    for(let j=0;j<assignments.length;j++){
+        html_type = `<select id="${j}select_type" style="overflow:hidden; width:100%;" onchange="call_updateGrades('4'); func_inputChange()">`;
+        for(let p=0;p<assessments.length;p++){html_type += `<option value="${p}">${assessments[p]}</option>`;};//endfor_p
+        html_type += '</select>';
+
+        html_cat = `<div style="width:4ch; overflow:hidden; display:block;">`;
+        html_cat += `<div style="text-align:center; font-size:x-small;">%Avg</div>`;
+        html_cat += `<input id="${j}total!" type="text" style="width:100%; text-align:center;" disabled>`;
+        html_cat += `</div>`;
+
+        html_advanced += '<tr>';
+        html_advanced += `<td>${assignments[j]}</td>`;
+        for(let k=0;k<categories.length;k++){
+            html_cat += `<div style="width:4ch; margin:0 1px; overflow:hidden; display:none">`;
+            html_cat += `<div style="text-align:center; font-size:x-small;" title="${categories[k]}">${categories[k].slice(0,4)}</div>`;
+            html_cat += `<input id="${j}total${k}" type="text" style="width:100%; text-align:center;" data-assign="${j}" data-cat="${k}" onchange="call_updateGrades('5')">`;
+            html_cat += `</div>`;
+            html_cat += `<div style="width:4ch; margin:0 1px; overflow:hidden; display:none">`;
+            html_cat += `<div style="text-align:center; font-size:x-small;">%${categories[k].slice(0,3)}</div>`;
+            html_cat += `<input id="${j}%avg${k}" type="text" style="width:100%; text-align:center;" disabled>`;
+            html_cat += `</div>`;
+            html_advanced += `<td><input type="text" value="${weights[k]}" id="${j+'adv'+k}" style="width:4ch; text-align:center" onclick="func_inputChange()"></td>`;
+        };//endfor_k
+        html_advanced += '</tr>';
+
+        temp = document.getElementById("temp_assignment");
+        clon = temp.content.cloneNode(true);
+
+        clon.querySelector(".td_select").innerHTML = html_type;
+        clon.querySelector(".assign_title").id = j+"title";
+        clon.querySelector(".cat_row").innerHTML = html_cat;
+        clon.querySelector(".insertGrades").id = j+"insertGrades";
+        clon.querySelector(".subcontainer_assignment").id = j+"assignment";
+        clon.querySelector(".hddn_numInput").id = j+"checkbox_editAssign";
+        clon.querySelectorAll(".assign_icons")[0].dataset.assign = j;
+        clon.querySelectorAll(".assign_icons")[0].id = j+"assign_icon0";
+        clon.querySelectorAll(".assign_icons")[1].dataset.assign = j;
+        clon.querySelectorAll(".assign_icons")[1].id = j+"assign_icon1";
+        clon.querySelectorAll(".assign_icons")[2].dataset.assign = j;
+        clon.querySelectorAll(".assign_icons")[2].id = j+"assign_icon2";
+        clon.querySelector(".factorDisplay").id = j+"factorDisplay";
+        clon.querySelector(".factorInput").id = j+"factorInput";
+        blockAssign.appendChild(clon);
+    };//endfor_j
+    parentAssign.appendChild(blockAssign);
+    
+    html_advanced += '</div>';
+    parentAdvanced.innerHTML = html_advanced;
+};
+
+function call_tempGrades(){
+    var html_grades='';
+
+    assignments = document.getElementById("edit_assignments").value.split("\n") ?? "";
+    names = document.getElementById("edit_students").value.split("\n") ?? "";
+    categories = document.getElementById("edit_categories").value.split("\n") ?? "";
+
+    for(let j=0;j<assignments.length;j++){
+        html_grades = '';
+        for(let i=0;i<names.length;i++){
+            html_grades += '<table style="width:0px; margin:auto">';
+            html_grades += '<tr>'
+            html_grades += `<td><input id="${j}assign${i}name!cat" data-name="${i}" data-assign="${j}" data-cat="!" type="text" style="width:4ch; text-align:center; display:block;" disabled></td>`;
+            for(let k=0;k<categories.length;k++){
+                html_grades += `<td><input id="${j}assign${i}name${k}cat" data-name="${i}" data-assign="${j}" data-cat="${k}" type="text" style="width:4ch; text-align:center; display:none;" onchange="call_updateGrades('6')"></td>`;
+            };//endfor_k
+            for(let k=0;k<categories.length;k++){
+                html_grades += `<td><input id="${j}assign${i}name${k}%cat" data-name="${i}" data-assign="${j}" data-cat="${k}" type="text" style="width:4ch; text-align:center; display:none;" disabled></td>`;
+            };//endfor_k
+            html_grades += '</tr>';
+            html_grades += '</table>';
+        };//endfor_i
+        document.getElementById(j+"insertGrades").innerHTML += html_grades;
+        
+        call_bugFix(6,j); // cannot be done call_tempAssignment for some reason
+
+    };//endfor_j
+};
+
+function call_idsFind(assignVal,nameVal,catVal){
+    var idsList = [];
+
+    if(assignVal=="$" && nameVal=="$" && catVal=="$"){
+        for(let j=0;j<assignments.length;j++){for(let i=0;i<names.length;i++){for(let k=0;k<categories.length;k++){idsList.push(`${j}assign${i}name${k}cat`);};};};//endfor_jik
+    }else if(assignVal!="$" && nameVal=="$" && catVal=="$"){
+        for(let i=0;i<names.length;i++){for(let k=0;k<categories.length;k++){idsList.push(`${assignVal}assign${i}name${k}cat`);};};//endfor_ik
+    }else if(assignVal=="$" && nameVal!="$" && catVal=="$"){
+        for(let j=0;j<assignments.length;j++){for(let k=0;k<categories.length;k++){idsList.push(`${j}assign${nameVal}name${k}cat`);};};//endfor_jk
+    }else if(assignVal=="$" && nameVal=="$" && catVal!="$"){
+        for(let j=0;j<assignments.length;j++){for(let i=0;i<names.length;i++){idsList.push(`${j}assign${i}name${catVal}cat`);};};//endfor_ji
+    }else if(assignVal!="$" && nameVal=="$" && catVal!="$"){
+        for(let i=0;i<names.length;i++){idsList.push(`${assignVal}assign${i}name${catVal}cat`);};//endfor_i
+    }else if(assignVal!="$" && nameVal!="$" && catVal=="$"){
+        for(let k=0;k<categories.length;k++){idsList.push(`${assignVal}assign${nameVal}name${k}cat`);};//endfor_k
+    }else if(assignVal=="$" && nameVal!="$" && catVal!="$"){
+        for(let j=0;j<assignments.length;j++){idsList.push(`${j}assign${nameVal}name${catVal}cat`);};//endfor_j
+   
+
+    }else if(assignVal !="*" && nameVal == "*" && catVal == "!"){
+        for(let i=0;i<names.length;i++){idsList.push(`${assignVal}assign${i}name!cat`)};//endfor_i
+    }else if(assignVal =="*" && nameVal != "*" && catVal == "!"){
+        for(let j=0;j<assignments.length;j++){idsList.push(`${j}assign${nameVal}name!cat`)};//endfor_j
+    }else if(assignVal =="*" && nameVal == "*" && catVal == "!"){
+        for(let j=0;j<assignments.length;j++){for(let i=0;i<names.length;i++){idsList.push(`${j}assign${i}name!cat`)};};//endfor_ij
+    
+    }else if(assignVal =="*" && nameVal=="total" && catVal =="*"){
+        for(let j=0;j<assignments.length;j++){for(let k=0;k<categories.length;k++){idsList.push(`${j}total${k}`)};};//endfor_k endfor_j
+    }else if(assignVal !="*" && nameVal=="total" && catVal =="*"){
+        for(let k=0;k<categories.length;k++){idsList.push(`${assignVal}total${k}`)};//endfor_k
+    }else if(assignVal =="*" && nameVal=="total" && catVal !="*"){
+        for(let j=0;j<assignments.length;j++){idsList.push(`${j}total${catVal}`)};//endfor_j
+    
+    }else if(assignVal=="name" && nameVal=="*" && catVal=="*"){
+        for(let i=0;i<names.length;i++){idsList.push(i+"!name");};//endfor_i
+    }else if(assignVal=="avg" && nameVal=="*" && catVal=="*"){
+        for(let i=0;i<names.length;i++){idsList.push(i+"!avg");};//endfor_i
+    }else if(assignVal=="index" && nameVal=="*" && catVal=="*"){
+        for(let i=0;i<names.length;i++){idsList.push(i+"!index");};//endfor_i
+    }else if(assignVal=="select" && nameVal=="*" && catVal=="*"){
+        for(let j=0;j<assignments.length;j++){idsList.push(j+"select_type");};//endfor_j
+    }else if(assignVal=="title" && nameVal=="*" && catVal=="*"){
+        for(let j=0;j<assignments.length;j++){idsList.push(j+"title");};//endfor_j
+    }else if(assignVal=="editAssign" && nameVal=="*" && catVal=="*"){
+        for(let j=0;j<assignments.length;j++){idsList.push(j+"checkbox_editAssign");};//endfor_j
+    }else if(assignVal=="factor" && nameVal=="*" && catVal=="*"){
+        for(let j=0;j<assignments.length;j++){idsList.push(j+"factorInput");};//endfor_j
+    }else if(assignVal=="miss" && nameVal=="*" && catVal=="*"){
+        for(let i=0;i<names.length;i++){idsList.push(i+"miss");};//endfor_i
+    
+    }else if(assignVal=="%" && nameVal=="%" && catVal=="%"){
+        for(let j=0;j<assignments.length;j++){for(let i=0;i<names.length;i++){for(let k=0;k<categories.length;k++){idsList.push(`${j}assign${i}name${k}%cat`);};};};//endfor_jik
+    }else if(assignVal!="%" && nameVal=="%" && catVal=="%"){
+        for(let i=0;i<names.length;i++){for(let k=0;k<categories.length;k++){idsList.push(`${assignVal}assign${i}name${k}%cat`);};};//endfor_ik
+    }else if(assignVal=="%" && nameVal!="%" && catVal=="%"){
+        for(let j=0;j<assignments.length;j++){for(let k=0;k<categories.length;k++){idsList.push(`${j}assign${nameVal}name${k}%cat`);};};//endfor_jk
+    }else if(assignVal=="%" && nameVal=="%" && catVal!="%"){
+        for(let j=0;j<assignments.length;j++){for(let i=0;i<names.length;i++){idsList.push(`${j}assign${i}name${catVal}%cat`);};};//endfor_ji
+    }else if(assignVal!="%" && nameVal=="%" && catVal!="%"){
+        for(let i=0;i<names.length;i++){idsList.push(`${assignVal}assign${i}name${catVal}%cat`);};//endfor_i
+    }else if(assignVal!="%" && nameVal!="%" && catVal=="%"){
+        for(let k=0;k<categories.length;k++){idsList.push(`${assignVal}assign${nameVal}name${k}%cat`);};//endfor_k
+    }else if(assignVal=="%" && nameVal!="%" && catVal!="%"){
+        for(let j=0;j<assignments.length;j++){idsList.push(`${j}assign${nameVal}name${catVal}%cat`);};//endfor_j
+    
+    }else if(assignVal=="%avg" && nameVal=="%avg" && catVal=="%avg"){
+        for(let j=0;j<assignments.length;j++){for(let k=0;k<categories.length;k++){idsList.push(j+'%avg'+k);};};//endfor_jk
+
+    }else if(assignVal=="&" && nameVal=="adv" && catVal=="&"){
+        for(let j=0;j<assignments.length;j++){for(let k=0;k<categories.length;k++){idsList.push(j+'adv'+k);};};//endfor_jk
+    }else if(assignVal!="&" && nameVal=="adv" && catVal=="&"){
+        for(let k=0;k<categories.length;k++){idsList.push(assignVal+'adv'+k);};//endfor_k
+    }else if(assignVal=="&" && nameVal=="adv" && catVal!="&"){
+        for(let j=0;j<assignments.length;j++){idsList.push(j+'adv'+catVal);};//endfor_j
+
+    }else if(assignVal=="r" && nameVal=="cal" && catVal=="c"){
+        for(let r=0;r<6;r++){for(let c=0;c<7;c++){idsList.push(r+"td"+c);};};//endfor_cr
+    };//endelse
+    
+    return idsList
+};
+
+function call_updateGrades(a){
+    worth = document.getElementById("edit_worth").value.split("\n") ?? "";
+
+    var mark=""; var markPercent=""; var reduce=""; var assignAvg=""; var advTotal="";var factor="";
+    var map; var assignList; var advList; var markList;  var assignMark;
+    var assig=""; var wort=""; var titl=""; var type=""; var coarseGrade=""; var courseGr="";
+    var assignmentList; var worthList; var itemList; var numType; var totalWorth; var courseGrList;
+
+    for(let j=0;j<assignments.length;j++){
+        // ### calculate all the category averages
+        for(let k=0;k<categories.length;k++){
+            map = []; 
+            for(let i=0;i<names.length;i++){
+                mark = document.getElementById(`${j}assign${i}name${k}cat`).value;
+                try{markPercent = (mark / document.getElementById(j+'total'+k).value * 100).toFixed(0)}catch{markPercent=""};
+                document.getElementById(`${j}assign${i}name${k}%cat`).value = isFinite(markPercent)?markPercent:"";
+                map.push(Number(document.getElementById(`${j}assign${i}name${k}%cat`).value));
+            };//endfor_i
+            if(document.getElementById(j+"total"+k).value!=""){
+                try{reduce = (map.reduce((accum,val)=>accum + val)/map.length).toFixed(0)}catch{reduce=""};
+                document.getElementById(j+"%avg"+k).value = isFinite(reduce)?reduce:"";
+            }else{document.getElementById(j+"%avg"+k).value = ""};//endelse
+            
+        };//endfor_k
+
+        // ### calculate the student grade for each assignment ###
+        assignList = [];
+        factor = Number(document.getElementById(j+"factorInput").value)
+        for(let i=0;i<names.length;i++){
+            advList = []; markList = []; assignMark = [];
+            for(let k=0;k<categories.length;k++){
+                if(document.getElementById(`${j}assign${i}name${k}%cat`).value!=""){
+                    markList.push(Number(document.getElementById(`${j}assign${i}name${k}%cat`).value));
+                    advList.push(Number(document.getElementById(j+'adv'+k).value));
+                };//endif
+            };//endfor_k
+            try{advTotal = advList.reduce((accum,val)=>accum+val)}catch{};
+            for(let m=0;m<markList.length;m++){assignMark.push(markList[m]*advList[m]/advTotal)};//endfor
+            try{assignMark = (assignMark.reduce((accum,val)=>accum+val)).toFixed(0)}catch{};
+            document.getElementById(`${j}assign${i}name!cat`).value = isFinite(assignMark)?assignMark:"";
+            
+            // ### calculate the class average for each assignment (Part 1)###
+            if(document.getElementById(`${j}assign${i}name!cat`).value!=""){assignList.push(Number(document.getElementById(`${j}assign${i}name!cat`).value));};//endif
+        };//endfor_i
+
+        // ### calculate the class average for each assignment (Part 2)###
+        try{assignAvg = ((assignList.reduce((accum,val)=>accum+val))/assignList.length).toFixed(0)}catch{assignAvg=""};
+        document.getElementById(j+"total!").value = isFinite(assignAvg)?assignAvg:"";
+
+    };//endfor_j
+
+     // ### calculate the course grade ###
+    for(let i=0;i<names.length;i++){
+        assignmentList = []; worthList = []; itemList = [];
+        for(let j=0;j<assignments.length;j++){
+            if(document.getElementById(`${j}assign${i}name!cat`).value!=""){
+                assig = Number(document.getElementById(`${j}assign${i}name!cat`).value);
+                wort = Number(worth[Number(document.getElementById(j+"select_type").value)]);
+                type = document.getElementById(j+"select_type").value
+                titl = document.getElementById(j+"title").value
+                assignmentList.push(Number(document.getElementById(`${j}assign${i}name!cat`).value));
+                worthList.push(Number(worth[Number(document.getElementById(j+"select_type").value)]));
+                itemList.push([titl,assig,wort,type])
+            };//endif
+        };//endfor_j
+        
+        numType = {};
+        totalWorth = [];
+        for(t in worth){numType[t] = 0;
+            for(item of itemList){if(item[3]==t){
+                if(totalWorth.findIndex(type=>type==String(t))==-1){totalWorth.push(String(t))};//endif
+                numType[t]++};};//endif_endfor_item 
+        };//endfor_t
+        totalWorth = totalWorth.map(item=>Number(worth[item]));
+        try{totalWorth = totalWorth.reduce((accum,val)=>accum+val)}catch{totalWorth=0};
+        itemList = itemList.map(item=>[item[0],item[1],item[2],numType[item[3]],totalWorth]);
+
+        //item[0]=title; item[1]=grade; item[2]=worth; item[3]=how many types; item[4]=total types worth;
+        itemList = itemList.map(item=>item[1]*item[2]/item[3]/item[4])
+        try{coarseGrade = (itemList.reduce((accum,val)=>accum+val)).toFixed(0)}catch{coarseGrade=""};
+        document.getElementById(i+"!avg").value = isFinite(coarseGrade)?coarseGrade:"";
+     };//endfor_i
+
+    // ### calculate the course average ###
+    courseGrList = [];
+    for(let i=0;i<names.length;i++){
+        courseGr = document.getElementById(i+"!avg").value
+        if(courseGr!=""){courseGrList.push(Number(courseGr))};//endif
+    };//endfor_i
+    try{courseGr = (courseGrList.reduce((accum,val)=>accum+val)/courseGrList.length).toFixed(0)}catch{courseGr=""};
+    document.getElementById("classAvg").value = isFinite(courseGr)? courseGr:"";
+
+    (function IIFE_highlight(){ // highlight numbers under certain conditions
+        var elem="";
+        var redList = document.getElementById("redGrades").value.split("-");
+        var orangeList = document.getElementById("orangeGrades").value.split("-");
+        var greenList = document.getElementById("greenGrades").value.split("-");
+        var blueList = document.getElementById("blueGrades").value.split("-");
+        for(ids of call_idsFind("*","*","!").concat(call_idsFind("avg","*","*"),call_idsFind("%","%","%"),call_idsFind("%avg","%avg","%avg"))){
+            elem = document.getElementById(ids);
+            if(Number(elem.value)>=Number(redList[0]) && Number(elem.value)<=Number(redList[1])){
+                elem.style.color = redList[2];
+            }else if(Number(elem.value)>=Number(orangeList[0]) && Number(elem.value)<=Number(orangeList[1])){
+                elem.style.color = orangeList[2];
+            }else if(Number(elem.value)>=Number(greenList[0]) && Number(elem.value)<=Number(greenList[1])){
+                elem.style.color = greenList[2];
+            }else if(Number(elem.value)>=Number(blueList[0]) && Number(elem.value)<=Number(blueList[1])){
+                elem.style.color = blueList[2];
+            };//endelse
+        };//endfor
+    })();
+
+    (function IIFE_missAssign(){ // ### calculate missing assignments ###
+        var missList = []; var missSum="";
+        for(let i=0;i<names.length;i++){var n=0;
+            for(let j=0;j<assignments.length;j++){
+                if(document.getElementById(`${j}assign${i}name!cat`).value==""){n++}};//endif_endfor_j
+            document.getElementById(i+"miss").value = n!=0?`(${n})`:"";
+            missList.push(Number(document.getElementById(i+"miss").value.replace("(","").replace(")","")));
+        };//endfor_i
+        try{missSum = missList.reduce((accum,val)=>accum+val)}catch{missSum=""};
+        document.getElementById("miss").value = missSum!=0?`(${missSum})`:"";
+    })();
+
+    (function IIFE_focusDown(){ // ### Listen for keypress so focus can move downwards ###
+        for(let j=0;j<assignments.length;j++){
+            for(let i=0;i<names.length;i++){
+                for(let k=0;k<categories.length;k++){
+                    document.getElementById(`${j}assign${i}name${k}cat`).addEventListener("keypress",
+                        function(){if(i<names.length-1){document.getElementById(`${j}assign${i+1}name${k}cat`).focus()};//endif
+                        }//endfunction
+                    );//endlistener
+                };//endfor_k
+            };//end_fori
+        };//endfor_j
+    })();
+
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function func_inputChange(){
+    var titleList = []; var nameList = []; var stringAssignments = ""; var stringNames = "";
+
+    for(let j=0;j<assignments.length;j++){titleList.push(document.getElementById(j+"title").value.trim().replaceAll(" ","_"))};//endfor_j
+    stringAssignments = titleList.join("\n");
+    document.getElementById("edit_assignments").value = stringAssignments;
+
+    for(let i=0;i<names.length;i++){nameList.push(document.getElementById(i+"!name").value.trim().replaceAll(" ","_"))};//endfor_i
+    stringNames = nameList.join("\n");
+    document.getElementById("edit_students").value = stringNames;
+    
+    call_dataSaveLoad("sessionSave","");
+    call_dataSaveLoad("sessionSaveAssign","")
+    func_updateAll();
+    call_dataSaveLoad("sessionLoadNoUpdate");
+    call_dataSaveLoad("sessionLoadAssign");
+    
+    call_bugFix(7);// enables/disable the name space if nothing is written
+    
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function call_displayStudentInfo(e){
+    document.getElementById("infoName").value = names[e.dataset.name].replaceAll("_"," ");
+    document.getElementById("infoCurrent").value = document.getElementById(e.dataset.name+"!avg").value;
+    
+    var parentInfoCatAvg = document.getElementById("infoCatAvg");
+    try{parentInfoCatAvg.removeChild(parentInfoCatAvg.firstElementChild)}catch{};
+
+    var html_infoStudent = '';
+    for(let k=0;k<categories.length;k++){
+        html_infoStudent += `<tr><th>${categories[k]}:&nbsp</th><td><span><input type="text" id="info${e.dataset.name}%cat${k}" style="width:4ch; text-align:center" disabled>% Overall</span></td></tr>`;
+    };//endfor_k
+    parentInfoCatAvg.innerHTML = html_infoStudent;
+
+    var parentInfoAssign = document.getElementById("infoAssign");
+    try{parentInfoAssign.removeChild(parentInfoAssign.firstElementChild)}catch{};
+
+    var html_infoAssign = '';
+    html_infoAssign += '<tr>';
+    html_infoAssign += '<th>Assignments:</th>';
+    html_infoAssign += '<th>Gr%</th>';
+    
+    for(let k=0;k<categories.length;k++){
+        html_infoAssign += `<th style="font-size:small;">${categories[k].slice(0,4)}</th>`;
+    };//end_k
+
+    html_infoAssign += '</tr>';
+    var grade = ""; var color = "";
+    for(let j=0;j<assignments.length;j++){
+        grade = (document.getElementById(`${j}assign${e.dataset.name}name!cat`).value != "")? document.getElementById(`${j}assign${e.dataset.name}name!cat`).value : "";
+        color = Number(grade)<20?"black":Number(grade)<30?"gray":Number(grade)<40?"red":Number(grade)<50?"tomato":Number(grade)<70?"yellow":Number(grade)<80?"green":Number(grade)<90?"palegreen":"greenyellow";
+        html_infoAssign += '<tr>';
+        html_infoAssign += `<td nowrap><input type="text" value="${assignments[j]}" style="width:140px;" disabled></td>`;
+        html_infoAssign += `<td nowrap><span><input type="text" id="info${j}assign${e.dataset.name}name!cat" value="${grade}" style="width:4ch; text-align:center;" disabled></span>% &nbsp &nbsp</td>`;
+        for(let k=0;k<categories.length;k++){
+            html_infoAssign += `<td nowrap><span><input type="text" id="info${j}assign${e.dataset.name}name${k}%cat" style="width:4ch; text-align:center;" disabled></span>%&nbsp</td>`;
+        };//endfor_k
+        
+        html_infoAssign += '</tr>';
+        html_infoAssign += '<tr style="border: 2px solid blue;">';
+        html_infoAssign += `<td colspan="${2+categories.length}" style="background-color:gainsboro;">`; 
+        html_infoAssign += `<div style="background-color:${color}; width:${grade}%; height:5px">&nbsp</div>`;
+        html_infoAssign += '</td>';
+        html_infoAssign += '</tr>';  
+    };//endfor_j
+    parentInfoAssign.innerHTML = html_infoAssign;
+    
+    // ### Transfer Grades ###
+    for(let j=0;j<assignments.length;j++){
+        for(let k=0;k<categories.length;k++){
+        document.getElementById(`info${j}assign${e.dataset.name}name${k}%cat`).value = document.getElementById(`${j}assign${e.dataset.name}name${k}%cat`).value;
+        };//endfor_k
+    };//endfor_j
+
+    var catAverge="";
+    for(let k=0;k<categories.length;k++){
+        var catAvgList = [];
+        for(let j=0;j<assignments.length;j++){
+            if(document.getElementById(`info${j}assign${e.dataset.name}name${k}%cat`).value!=""){
+                catAvgList.push(Number(document.getElementById(`info${j}assign${e.dataset.name}name${k}%cat`).value))
+            };//endif
+            
+        };//endfor_j
+        try{catAverge = (catAvgList.reduce((accum,val)=>accum+val)/catAvgList.length).toFixed(0)}catch{catAverge=""};
+        document.getElementById(`info${e.dataset.name}%cat${k}`).value = isFinite(catAverge)?catAverge:"";
+    };//endfor_k
+
+    // ### Transfer Data to the button ###
+    document.querySelector("label[data-type='comment']").dataset.name = e.dataset.name;
+    document.querySelector("label[data-type='comment']").dataset.current = document.getElementById(e.dataset.name+"!avg").value;
+    
+    var catValList = [];
+    for(let k=0;k<categories.length;k++){
+        if(document.getElementById(`info${e.dataset.name}%cat${k}`).value!=""){
+            catValList.push(Number(document.getElementById(`info${e.dataset.name}%cat${k}`).value));
+        };//endif
+    };//endfor_k
+    var minVal = Math.min(...catValList);
+    var maxVal = Math.max(...catValList);
+    document.querySelector("label[data-type='comment']").dataset.minVal = minVal;
+    document.querySelector("label[data-type='comment']").dataset.maxVal = maxVal;
+    document.querySelector("label[data-type='comment']").dataset.minIndex = catValList.findIndex(val=>val==minVal);
+    document.querySelector("label[data-type='comment']").dataset.maxIndex = catValList.findIndex(val=>val==maxVal);
+};
+
+function call_displayStudentComment(e){
+    // ### Give Button data-name ###
+    document.getElementById("backComment").dataset.name = e.dataset.name;
+    document.getElementById("emailComment").dataset.name = e.dataset.name;
+
+    // ### Load Student info ###
+    document.getElementById("nameComment").value = names[e.dataset.name];
+    document.getElementById("currentComment").value = e.dataset.current ?? "";
+    document.getElementById("minComment").value = isFinite(e.dataset.minVal)?e.dataset.minVal:"";
+    document.getElementById("maxComment").value = isFinite(e.dataset.maxVal)?e.dataset.maxVal:"";
+    document.getElementById("minCat").innerHTML = categories[e.dataset.minIndex]??"";
+    document.getElementById("maxCat").innerHTML = categories[e.dataset.maxIndex]??"";
+    
+    // ### Load Select Dropdown Items ###
+    var parent = document.getElementById("selectCategory");
+    try{parent.removeChild(parent.firstElementChild)}catch{};
+    var html_comment = '';
+    html_comment += '<div>';
+    html_comment += '<option value="blank"></option>';
+    html_comment += '<option value="auto">Auto</option>';
+    for(let k=0;k<categories.length;k++){html_comment += `<option value="${k}">${categories[k]}</option>`;};//endfor_k
+    html_comment += '</div>';
+    parent.innerHTML = html_comment;
+    func_commentFilter();
+};
+
+function func_commentFilter(){
+    var minCat = document.getElementById("minCat").innerHTML!=""?document.getElementById("minCat").innerHTML.toLowerCase():"none";
+    var maxCat = document.getElementById("maxCat").innerHTML!=""?document.getElementById("maxCat").innerHTML.toLowerCase():"none";
+    var minComment = document.getElementById("minComment").value==""?"none":Number(document.getElementById("minComment").value);
+    var maxComment = document.getElementById("maxComment").value==""?"none":Number(document.getElementById("maxComment").value);
+    var selGenDict = {0:"Strength",1:"Improve",2:"Next",3:"Change",4:"Graduate",5:"Behavior",6:"General",7:"Final",8:"Favorite"};
+    var selStrDict = {0:"SpecEdRes",1:"Career",2:"Coop",3:"BusCom",4:"Science",5:"PhyEd",6:"Math",7:"English",8:"History",9:"Civics",10:"Geography",11:"Language",12:"Visual",13:"Music",14:"Drama",15:"Tech",16:"Religion"};
+
+    // ### Retrieve Comments and Associations ###
+    var preList = document.getElementById("boxComment").value.trim().split("\n");
+    var selPro = document.getElementById("selectPronoun").value;
+    var selCat = document.getElementById("selectCategory").value;
+    var selGen = document.getElementById("selectGeneral").value;
+    var selLevel = document.getElementById("selectLevel").value;
+    var selStrand = document.getElementById("selectStrand").value;
+
+    // ### parsing the comment list(i.e. preList) for specific infomation
+    var ref = {};
+    for(let p=0;p<preList.length;p++){
+        ref[p] = {};
+        ref[p]['info'] = preList[p].slice(1+preList[p].indexOf("{"), preList[p].indexOf("}"));
+        ref[p]['category'] = preList[p].slice(3+ref[p]['info'].indexOf("C("), ref[p]['info'].indexOf(")C")+1).toLowerCase();
+        ref[p]['max'] = Number(preList[p].slice(3+ref[p]['info'].indexOf("M("), ref[p]['info'].indexOf(")M")+1));
+        ref[p]['min'] = Number(preList[p].slice(3+ref[p]['info'].indexOf("m("), ref[p]['info'].indexOf(")m")+1));
+        ref[p]['general'] = preList[p].slice(3+ref[p]['info'].indexOf("G("), ref[p]['info'].indexOf(")G")+1).toLowerCase();
+        ref[p]['strand'] = preList[p].slice(3+ref[p]['info'].indexOf("S("), ref[p]['info'].indexOf(")S")+1).toLowerCase();
+        ref[p]['number'] = preList[p].slice(3+ref[p]['info'].indexOf("N("), ref[p]['info'].indexOf(")N")+1).toLowerCase();
+    };//endfor_p
+    
+    //### Adding to the commentList if the criteria is met ###
+
+    var commentList = new Set();
+
+    if(isFinite(selCat)){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(categories[selCat].toLowerCase()==ref[p]['category']){
+                    commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+    
+    }else if(selCat=="auto"){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(minCat==ref[p]['category']){commentList.add(p);};//endif
+                if(maxCat==ref[p]['category']){commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+        
+    };//endelse
+
+    if(isFinite(selStrand)){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(selStrDict[selStrand].toLowerCase()==ref[p]['strand']){
+                    commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+    };//endif
+
+    if(isFinite(selLevel.split("-")[0])){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if( selLevel.split("-")[0]<=ref[p]['min'] &&
+                    selLevel.split("-")[1]>=ref[p]['max']){
+                        commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+
+    }else if(selLevel=="auto"&&selCat=="auto"&&(minComment!="none"||maxComment!="none")){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(minCat==ref[p]['category'] && ref[p]['min'] <= minComment && minComment <= ref[p]['max']){commentList.add(p);};//endif
+                if(maxCat==ref[p]['category'] && ref[p]['min'] <= maxComment && maxComment <= ref[p]['max']){commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+    
+    }else if(selLevel=="auto"&&(minComment!="none"||maxComment!="none")){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(ref[p]['min'] <= minComment && minComment <= ref[p]['max']){commentList.add(p);};//endif
+                if(ref[p]['min'] <= maxComment && maxComment <= ref[p]['max']){commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+    };//elseif
+
+    if(isFinite(selGen)){
+        for(let p=0;p<preList.length;p++){
+            try{
+                if(selGenDict[selGen].toLowerCase()==ref[p]['general']){
+                    commentList.add(p);};//endif
+            }catch{};
+        };//endfor_p
+    };//endif
+
+    for(c of commentList){ //### removing removing from commentList that don't meet the criteria ###
+
+        if(isFinite(selCat)){
+            try{
+                if(categories[selCat].toLowerCase()!=ref[c]['category']){commentList.delete(c)};//endif
+            }catch{};
+        };//endif
+
+        if(isFinite(selStrand)){
+            try{
+                if(selStrDict[selStrand].toLowerCase()!=ref[c]['strand']){commentList.delete(c)};//endif
+            }catch{};
+        };//endif
+
+        if(isFinite(selGen)){
+            try{
+                if(selGenDict[selGen].toLowerCase()!=ref[c]['general']){commentList.delete(c);};//endif
+            }catch{};
+        };//endif
+
+        if(selLevel!="blank"){
+            try{
+                if(ref[c]['min']==""){commentList.delete(c);};//endif
+                if(ref[c]['max']==""){commentList.delete(c);};//endif
+            }catch{};
+        };//endif
+
+        if(isFinite(selLevel.split("-")[0])){
+            try{
+                if(selLevel.split("-")[0]>ref[c]['min']){commentList.delete(c);};//endif
+                if(selLevel.split("-")[1]<ref[c]['max']){commentList.delete(c);};//endif
+            }catch{};
+        };//endif
+
+        if(selCat=="auto"){
+            try{
+                if(minCat!=ref[c]['category'] && maxCat!=ref[c]['category']){commentList.delete(c);};//endif
+            }catch{};
+        };//endif
+
+        if(selLevel=="auto"&&selCat=="auto"&&(minComment!="none"||maxComment!="none")){
+            try{
+                if(minCat==ref[c]['category'] && !(ref[c]['min'] <= minComment && minComment <= ref[c]['max'])){commentList.delete(c);};//endif
+                if(maxCat==ref[c]['category'] && !(ref[c]['min'] <= maxComment && maxComment <= ref[c]['max'])){commentList.delete(c);};//endif
+            }catch{};
+        
+        }else if(selLevel=="auto"&&selCat!="auto"&&(minComment!="none"||maxComment!="none")){
+            try{
+                if(!(ref[c]['min'] <= minComment && minComment <= ref[c]['max'])){commentList.delete(c);};//endif
+                if(!(ref[c]['min'] <= maxComment && maxComment <= ref[c]['max'])){commentList.delete(c);};//endif
+            }catch{};
+        };//endif
+
+   };//endfor_c
+
+    if(selGenDict[selGen]=="Favorite"){
+        if(document.getElementById("commentOutput").value.trim()==""){
+            document.getElementById("commentOutput").placeholder = "<<<ENTER THE CODES HERE AND TRY AGAIN>>>";
+        }else{
+            var codeNum = document.getElementById("commentOutput").value.replaceAll("\n"," ").trim();
+            codeNum = codeNum.split(" ");
+            commentList = new Set();
+            for(let p=0;p<preList.length;p++){
+                for(code of codeNum){
+                    if(ref[p]['number']==Number(code.trim())){commentList.add(p)};//endif
+                };//endfor_code
+            };//endfor_p
+        };//endelse
+    }else{document.getElementById("commentOutput").placeholder = ""};
+
+    commentList = [...commentList];
+    commentList = commentList.map(c=>preList[c]);
+    
+    var name; var name1; var name2; 
+    try{
+        name = document.getElementById("nameComment").value.split("_");
+        name1 = name[0].charAt(0).toUpperCase() + name[0].slice(1,);
+        name2 = (name.length>1)?name[name.length - 1]:name[0].charAt(0).toUpperCase() + name[0].slice(1,);
+    }catch{
+        name1 = document.getElementById("nameComment").value.replaceAll("_"," ");
+        name2 = name1;
+    };//endcatch
+
+    if(document.getElementById("nameComment").value.split(" ").length>1){
+        try{
+            name = document.getElementById("nameComment").value.split(" "); 
+            name1 = name[0].charAt(0).toUpperCase() + name[0].slice(1,);
+            name2 = (name.length>1)?name[name.length - 1]:name[0].charAt(0).toUpperCase() + name[0].slice(1,);
+        }catch{
+            name1 = document.getElementById("nameComment").value.replaceAll("_"," ");
+            name2 = name1;
+        };//endcatch
+    };//endif
+   
+    if(selPro=="0"){
+        commentList = commentList.map(comment=>comment.replaceAll("he/she",name1).replaceAll("He/she",name1).replaceAll("him/her",name1).replaceAll("Him/her",name1).replaceAll("his/her",name1+"'s").replaceAll("His/her",name1+"'s"));
+    }else if(selPro=="1"){
+        commentList = commentList.map(comment=>comment.replaceAll("he/she",name2).replaceAll("He/she",name2).replaceAll("him/her",name2).replaceAll("Him/her",name2).replaceAll("his/her",name2+"'s").replaceAll("His/her",name2+"'s"));
+        commentList = commentList.map(comment=>call_rebuildParagraph(comment));
+    }else if(selPro=="2"){
+        commentList = commentList.map(comment=>comment.replaceAll("he/she","he").replaceAll("He/she","He").replaceAll("him/her","him").replaceAll("Him/her","Him").replaceAll("his/her","his").replaceAll("His/her","His"));
+        commentList = commentList.map(comment=>call_rebuildParagraph(comment));
+    }else if(selPro=="3"){
+        commentList = commentList.map(comment=>comment.replaceAll("he/she","she").replaceAll("He/she","She").replaceAll("him/her","her").replaceAll("Him/her","Her").replaceAll("his/her","her").replaceAll("His/her","Her"));
+        commentList = commentList.map(comment=>call_rebuildParagraph(comment));
+    }else if(selPro=="4"){
+        commentList = commentList.map(comment=>comment.replaceAll("he/she","").replaceAll("He/she","").replaceAll("him/her","").replaceAll("Him/her","").replaceAll("his/her","").replaceAll("His/her",""));
+        commentList = commentList.map(comment=>call_rebuildParagraph(comment));
+    };//endelse
+
+    if(document.getElementById("selectPronoun").value !="tags"){
+        commentList = commentList.map(comment=>comment.slice(comment.indexOf("}")+1,).trim());
+    };//endif
+
+    var parent = document.getElementById("commentInsert");
+    try{parent.removeChild(firstElementChild)}catch{};
+    html_comment = '<div>';
+    for(let c=0;c<commentList.length;c++){
+        html_comment += '<div style="display:flex; margin:5px 0; align-items:center;">';
+        html_comment += `<span data-comment="${commentList[c]}" data-type="remove"; onclick="call_builtComment(this)"><img src="{{url_for('static',filename='img/minusSquare.png')}}" alt="minusSquare" style="max-height:25px; width:auto;filter:drop-shadow(1px 1px 0px black);cursor:pointer"></span>`;      
+        html_comment += `<span data-comment="${commentList[c]}" data-type="add"; onclick="call_builtComment(this)"><img src="{{url_for('static',filename='img/plusSquare.png')}}" alt="plusSquare" style="max-height:25px; width:auto;filter:drop-shadow(1px 1px 0px black);cursor:pointer"></span>`;      
+        html_comment += `<div style="margin:0 5px; background-color:whitesmoke; box-shadow:0 0 2px 1px grey; width:100%; border-radius:2px; padding:2px;">${commentList[c]}</div>`;       
+        html_comment += '</div>';
+    };//endfor_c
+    html_comment += '</div>';    
+    parent.innerHTML = html_comment;
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function call_rebuildParagraph(paragraph){
+    paragraph1Slice = paragraph.slice(0,paragraph.indexOf('}')+1).trim();
+    paragraph2Slice = paragraph.slice(paragraph.indexOf('}')+1,).trim();
+
+    var charList = paragraph2Slice.split("");
+    var exclaimList=[]; var questList=[]; var periodList=[];
+    for(let char=0;char<charList.length;char++){
+        if(charList[char].indexOf("!")!=-1){exclaimList.push(char);
+        }else if(charList[char].indexOf("?")!=-1){questList.push(char);
+        }else if(charList[char].indexOf(".")!=-1){periodList.push(char)};//endelse
+    };//endfor
+
+    var combined = exclaimList.concat(questList,periodList);
+    combined.push(0)
+    combined.sort(function(a, b){return a - b});
+    
+    var tupList = []; var sliceList = [];
+    for(let i=0;i<combined.length - 1;i++){
+        tupList.push([combined[i],combined[i+1]])};//endfor_i
+        
+    for(let i=0;i<tupList.length;i++){
+        sliceList.push(paragraph2Slice.slice(tupList[i][0],tupList[i][1]+1).trim());
+    };//endfor_i
+
+    sliceList = sliceList.map(item=>item[0].toUpperCase()+item.slice(1,));
+    paragraph = paragraph1Slice+" "+ sliceList.join("  ");
+    
+    return paragraph
+};
+
+call_rebuildParagraph("{N(1201)N S(BusCom)S G(Next)G} He/she needs to learn how to work with peers in an appropriate manner.")
+
+function call_builtComment(e){
+    commentList = JSON.parse(sessionStorage.getItem("buildComment"))??[];
+    sessionStorage.setItem("buildComment",JSON.stringify(commentList));
+    if(e.dataset.type=="add"){
+        commentList.push(e.dataset.comment);
+    }else if(e.dataset.type=="remove"){
+        var find = commentList.findIndex(comment=>comment==e.dataset.comment);
+        if(find!=-1){commentList.splice(find,1)};//endif
+    };//endelse
+    sessionStorage.setItem("buildComment",JSON.stringify(commentList));
+    document.getElementById("commentOutput").value = commentList.join("  ");
+    try{document.getElementById("clickAudio").play()}catch{};
+};
+
+function call_bugFix(num,e){
+    if(num==0){// (func_editAssign) alignment issue with the grades bfore pressing button
+        document.getElementById(e.dataset.assign+"insertGrades").style.marginLeft = "5px";
+    }else if(num==1){// (func_editAssign) alignment issue with the grades after pressing button once
+        document.getElementById(e.dataset.assign+"insertGrades").style.marginLeft = "-8px";
+    }else if(num==2){// (func_editAssign) alignment issue with the grades after pressing button twice
+        document.getElementById(e.dataset.assign+"insertGrades").style.marginLeft = "15px";
+    
+    }else if(num==3){// (func_addRemoveStudent) all enables input of name if "" is present
+        for(ids of call_idsFind("name","*","*")){
+            if(document.getElementById(ids).value == " "){document.getElementById(ids).disabled = false};//endif
+        };//endfor_i
+
+    }else if(num==4){// (func_addRemoveStudent) prevent undefine values in grades
+        for(ids of call_idsFind("$","$","$")){ 
+            if(!isFinite(document.getElementById(ids).value)){document.getElementById(ids).value = ""};//endif
+        };//endfor_ids
+    }else if(num==5){// (func_addRemoveAssignment) removes 'undefined' from grades 
+        for(let j=0;j<assignments.length;j++){if(document.getElementById(j+"title").value=="undefined"){document.getElementById(j+"title").value = ""};};//endif_endfor
+        for(ids of call_idsFind("$","$","$")){if(document.getElementById(ids).value=="undefined"){document.getElementById(ids).value = ""};};//endif_endfor
+        for(ids of call_idsFind("*","total","*")){if(document.getElementById(ids).value=="undefined"){document.getElementById(ids).value = ""};};//endif_endfor
+    
+    }else if(num==6){// (call_tempGrades) cannot be done call_tempAssignment for some reason
+        document.getElementById(e+"title").value = assignments[e];
+    
+    }else if(num==7){// (func_inputChange) enables/disable the name space if nothing is written
+        for(let i=0;i<names.length;i++){ 
+            if(document.getElementById(i+"!name").value == ""){document.getElementById(i+"!name").disabled = false;}
+            else{document.getElementById(i+"!name").disabled = true};//endif
+        };//endfor_i
+    
+    }else if(num==8){// (func_addRemoveAssignment) turns 'undefined' into '1' in factorInput
+        if(e=="add"){document.getElementById(assignments.length - 1 + "factorInput").value = 1;};//endif
+
+    }else if(num==9){// (func_addRemoveAssignment) turns 'undefined' from advanced to default category weights
+        if(e=="add"){
+            for(let k=0;k<categories.length;k++){document.getElementById(assignments.length - 1 +"adv"+k).value = weights[k];};//endfor_k
+        };//endif
+    
+    }else if(num==10){ //(call_tempStudent) enable name input there are no student on the list
+        if(names.length<2){document.getElementById(0+"!name").disabled = false};//endif
+    
+    };//endelse
+};
+
+function call_styleBorders(){
+    var indexSpot = call_idsFind("index","*","*");
+    var avgSpot = call_idsFind("avg","*","*");
+    var nameSpot = call_idsFind("name","*","*");
+    var catGrades = call_idsFind("$","$","$");
+    var avgGrades = call_idsFind("*","*","!");
+    var gradesCat = call_idsFind("%","%","%");
+    var miss = call_idsFind("miss","*","*");
+    var combined = catGrades.concat(indexSpot,avgSpot,nameSpot,avgGrades,gradesCat,miss);
+    for(ids of combined){
+        if(document.getElementById(ids).dataset.name % 2 == 0){
+            document.getElementById(ids).style.borderColor = "rgba(0,0,0,0.2)";
+        }else{document.getElementById(ids).style.borderColor = "rgba(0,0,0,0.1)";};//endelse
+    };//endfor_ids    
+};
+
+</script>
+
+{% endblock content %}

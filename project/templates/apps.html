@@ -1,0 +1,81 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/apps.css')}}">{% endblock stylesheet %}
+{% set Apps = "active" %}
+{% extends "layout.html" %}
+{% block title %} Apps {% endblock title %}
+
+{% block content %}
+<div class="body_container">
+
+    <center>
+        <div style="
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: monospace;
+        text-shadow:0 1px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 5px 0px grey;
+        position: relative;
+        margin-bottom: 5px;">
+
+            <img src="{{url_for('static',filename='img/apps.png')}}" alt="apps.png" style="max-height:50px; width:auto; margin:5px 0px;">
+            
+        </div>
+    </center>
+
+    <!--start donate-->
+    <div class="donate" style="
+    background-color:ghostwhite;
+    display: flex; 
+    flex-wrap:wrap; 
+    width:100%; 
+    margin:auto;
+    box-shadow: 0 0 5px 1px grey;
+    padding: 5px 10px;
+    position: sticky;
+    top: 5px;
+    margin-bottom: 5px;">
+
+        <!--start new_donate_data-->
+        {% for abbr, title, content, link in donate_data %}
+            <table style="min-width: fit-content; flex-grow: 1;">
+                <tr style="font-size:x-small">
+                    <td style="background-color:floralwhite;">
+                        <a href="{{link}}" style="color:red; text-decoration:none; font-style:none;">
+                            <abbr title="{{title}}" style="cursor:pointer">{{abbr}}</abbr>
+                        </a>
+                        <span style="color: initial;">{{content}}</span>
+                    </td>
+                </tr>
+            </table>
+        {% endfor %}
+        <!--end new_donate_data-->
+
+    </div><!--end donate-->
+
+    {% for title, content, link, pic in apps_data%}
+        <div class="item" style="display:flex; flex-wrap:wrap-reverse; width:95%;box-shadow: 0px 0px 5px 1px black;margin:auto; padding:5px 5px; border-radius:2px;">
+            
+            <table style="width:350px; margin: 5px 5px;">
+                <tr><th><span style="background-color:azure; border-radius: 2px; padding:2px 5px; box-shadow: 0 0 2px 1px black;">{{title}}</span></th></tr>
+                <tr>
+                    <td>
+                        <a href={{link}}>
+                            <img src="{{pic}}" style="max-width:300px; height:auto; border:5px solid black;border-radius:5px;margin-top:10px;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="flex-grow:1; width:min-content; min-width:200px; margin:5px 5px;">
+                <tr><th><span style="background-color:azure; border-radius: 2px; padding:2px 5px; box-shadow: 0 0 2px 1px black;">Description:</span></th></tr>
+                <tr><td>&nbsp</td></tr>
+                <tr><td>{{content}}</td></tr>
+                <tr><td>&nbsp</td></tr>
+            </table>
+
+        </div>
+        <br>
+    {% endfor %}
+    
+</div>
+
+{% endblock content %}

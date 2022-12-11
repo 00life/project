@@ -1,0 +1,119 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/ptq.css')}}">{% endblock stylesheet %}
+{% set featured = "active" %}
+{% extends "layout.html" %}
+{% block title %} Periodic Table Quiz {% endblock %}
+
+{% block content %}
+
+    <div class="statusbar">
+        <label for="result_btn">Results</label>
+        <div class="nav_stat">
+            You Scored:
+            {%if score%}
+                {{score[0]}}/{{score[1]}}
+            {%endif%}
+        </div>
+        <div class="nav_stat">
+            Elapsed Time:
+            {%if elapse_time%}
+                {{elapse_time}}
+            {%endif%}
+        </div>
+        <div id="title">Periodic Table Quiz</div> 
+    </div>
+
+    {% include 'snippets/accordion.html' %}
+
+    <div class="userdata">
+
+        {% if get_flashed_messages() %}
+            <div class="alert alert-warning" role="alert">
+                {% for message in get_flashed_messages() %}
+                    {{message}} <br>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        
+        <form method="POST" action="">
+            <div class="user_input">
+                <div>
+                    <table>
+                        <tr><td>Username:</td><td><input type="text" name="username" placeholder="{{DV_un}}"></td></tr>
+                        <tr><td>Email:</td><td><input type="text" name="email" placeholder="{{DV_em}}"></td></tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr><td>Atomic# Starts:</td><td><input type="number" name="atomic_start" placeholder="{{DV_as}}"></td></tr>
+                        <tr><td>Atomic# Ends:</td><td><input type="number" name="atomic_end" placeholder="{{DV_ae}}"></td></tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr><td>Questions:</td><td><input type="number" name="questions" placeholder="{{DV_nq}}"></td></tr>
+                        <tr><td>Group#:</td><td><input type="number" name="group" placeholder="{{DV_gr}}"></td></tr>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <tr><td><input style="width:190px;" id="submit" name="start_reset" type="submit" value="Start / Reset"></td></tr>
+                        <tr><td><center>>>Email Delay {{delay}}>></center></td></tr>
+                    </table>
+                </div>
+            </div>
+        </form> 
+
+    </div>
+
+    <hr>
+
+    <form method="POST" class="QA_form" action="">
+        
+        {% for num,ques1,correct_ans,given1,given2,ques2 in chem_ques %}
+            <div class="card">
+                <div class="card-header">
+                    Question #{{num}}
+                </div>
+                <div class="card-body">
+                    <p class="card-title">{{given2}}: {{given1}}</p>
+                    <h6 class="card-text">{{ques1}}</h6>
+                    <p class="input_txt"><input type="text" name="input_ans" onkeydown="return event.key != 'Enter';"></p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div id="card" class="card">
+            <div class="card-header">
+               Complete Quiz
+            </div>
+            <div class="card-body">
+                <input  class="last_card" id="finish" name="end_time" type="submit" value="Finish">
+                <input  class="last_card" id="reset" type="reset" value="Reset">
+            </div>
+        </div>
+
+    <!-- Hidden Data Starts -->
+    <br><br>
+    {%for N, Q, A, G1, G2, S in chem_ques%}
+    <input type="number" name="N" style="display:none" value="{{N}}">
+    <input type="text"   name="Q" style="display:none" value="{{Q}}">
+    <input type="text"   name="A" style="display:none" value="{{A}}">
+    <input type="text"   name="G"  style="display:none" value="{{G2}}: {{G1}}"><br>
+    {%endfor%}
+    <input type="number" name="time_out" style="display:none" value="{{time_in}}">
+    <!-- Hidden Data Ends -->
+
+    </form>
+    
+    </div>
+
+    {%if not chem_ques %}<style>#card{display:none;}</style>{% endif%}
+
+<script type="text/javascript" language="javascript">
+   function close_result_func(){
+        document.getElementById("result_btn").style.display = "none";
+   }; 
+</script>
+
+{% endblock content%}

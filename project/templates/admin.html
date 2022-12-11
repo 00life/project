@@ -1,0 +1,304 @@
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/admin.css')}}">{% endblock stylesheet %}
+{% extends "layout.html" %}
+{% block title %} Admin {% endblock title %}
+
+{% block content %}
+<div class="body_container">
+
+    <center>
+        <div style="
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: monospace;
+        text-shadow:0 1px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 5px 0px grey;
+        position: relative;
+        margin-bottom: 5px;">
+
+            <div id="hidden_checkboxes" style="display:block;">
+                <input type="radio" name="menu_radio" id="home_page_radio">
+                <input type="radio" name="menu_radio" id="apps_page_radio">
+                <input type="radio" name="menu_radio" id="ideas_page_radio">
+                <input type="radio" name="menu_radio" id="donate_page_radio">
+                <input type="radio" name="menu_radio" id="contact_page_radio">
+            </div>
+
+            <img class="menu_select" src="{{url_for('static',filename='img/admin.png')}}">
+            <img class="menu_select" id="home_page" src="{{url_for('static',filename='img/home_admin.png')}}">
+            <img class="menu_select" id="apps_page" src="{{url_for('static',filename='img/apps_admin.png')}}">
+            <img class="menu_select" id="ideas_page" src="{{url_for('static',filename='img/ideas_admin.png')}}">
+            <img class="menu_select" id="donate_page" src="{{url_for('static',filename='img/donate_admin.png')}}">
+            <img class="menu_select" id="contact_page" src="{{url_for('static',filename='img/contact_admin.png')}}">
+
+        </div>
+    </center>
+
+    <form method="POST">
+        <div class="specOpt" style="
+        display:flex;
+        align-items: center;
+        background-color:whitesmoke; 
+        box-shadow:0 0 5px 0 grey; 
+        padding: 5px 0; 
+        width: 100%;
+        margin-bottom: 5px;
+        flex-wrap: wrap;">
+            
+            <div style="background-color: azure; padding:2px 5px; margin-left: 5px; border-radius: 2px; box-shadow: 0 0 5px 0 grey;">
+                <input type="checkbox" id="confirmAct" value="Confirm">
+                <label for="confirmAct">Confirm</label>
+            </div>
+
+            <!--start delete_databases-->
+            <input type="button" value="Delete DB" style="margin-left:5px;" onclick="delSpecOpt_func('delDB')">
+            <select id="sel_db" style="margin-left: 5px; padding: 3px;">
+                {% for database in databases %}
+                    <option value="{{database}}">{{database}}</option>
+                {% endfor %}
+            </select>
+            <!--end delete_databases-->
+
+            <!--start tabNames-->
+            <input type="button" value="Delete Tab" style="margin-left:5px;" onclick="delSpecOpt_func('delTab')">
+            <select id="sel_tab" style="margin-left: 5px; padding: 3px;">
+                {% for tab in tabNames %}
+                    <option value="{{tab}}">{{tab}}</option>
+                {% endfor %}
+            </select>
+            <!--end tabNames-->
+
+        </div><!--endspecOpt-->
+
+        <!--start input_data-->
+        <div class="input_data" style="
+        display:flex;
+        align-items: center;
+        background-color:whitesmoke; 
+        box-shadow:0 0 5px 0 grey; 
+        padding: 5px 0; 
+        width: 100%;
+        margin-bottom: 5px;
+        flex-wrap: wrap;">
+
+            <input type="submit" id="add" name="add" value="ADD">
+            <input type="text" name="radio" id="radio" value="home" style="display:none">
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="content" placeholder="Content" cols="30" rows="1" style="padding: 2px 0; resize:none;"></textarea>
+            <input type="text" name="link" placeholder="link">
+
+            <input type="button" value="PIC1" id=pic_path1>
+            <input type="file" id="hddn_path1" style="display: none;">
+            <input type="text" name="show_path1" id="show_path1">
+
+            <input type="button" value="PIC2" id=pic_path2>
+            <input type="file" id="hddn_path2" style="display: none;">
+            <input type="text" name="show_path2" id="show_path2">
+
+            <input type="submit" id="del" name="del" style="display: none;">
+            <input type="submit" id="del_spec" name="del_spec" style="display: none;">
+
+        </div><!--end input_data-->
+    </form>
+    
+    <div style="display:flex; align-items: center; text-align: center;">
+        <div style="width: 30px;"><input type="button" value="x" onclick="delete_func()"></div>
+        <div class="output_data" style="background-color: hotpink;width:20px;font-weight: bolder;">ID</div>
+        <div class="output_data" style="background-color: gold; width:11%;font-weight: bolder;">DATE</div>
+        <div class="output_data" style="background-color: lightgreen; width:20%; font-weight: bolder;">TITLE</div>
+        <div class="output_data" style="background-color:gainsboro; width:40%; font-weight: bolder;">CONTENT</div>
+        <div class="output_data" style="background-color:aqua; width:15%; font-weight: bolder;">LINK</div>
+        <div class="output_data" style="background-color:deepskyblue; width:15%; font-weight: bolder;">PICTURE</div>
+    </div>
+
+    <div id="data_home_page" style="display: none;">
+
+        {% for idNum, date, title, content, link, img1, img2 in home_data %}
+        {% set homeDataLen = home_data|length %}
+            <span id="homeDataLen" style="display:none">{{homeDataLen}}</span><!--hidden span-->
+            <div style="display:flex; align-items: center; justify-content:center;text-align: center; flex-wrap: nowrap; margin-top: 5px;">
+                <div class="output_data" style="width: 30px;">&nbsp<input type="checkbox" class="homeItemDel" id="{{idNum}}"></div>
+                <div class="output_data" style="background-color: hotpink; width:20px;">{{idNum}}</div>
+                <div class="output_data" style="background-color: gold; width:11%; overflow: hidden;;">{{date}}</div>
+                <div class="output_data" style="background-color: lightgreen; width:20%;">{{title}}</div>
+                <div class="output_data" style="background-color:gainsboro; width:40%;">{{content}}</div>
+    
+                <div class="output_data" style="background-color:aqua; width:15%">{{link}}</div>
+                <div style="background-color:deepskyblue; width:15%;">
+                    <img src="{{img1}}" style="max-height: 20px; width:auto;">
+                    <img src="{{img2}}" style="max-height: 20px; width:auto;">
+                </div>
+            </div>
+        {% endfor %}<!--end home_output-->
+
+    </div><!--end data_home_page-->
+
+    <div id="data_apps_page" style="display: none;">
+
+        {% for idNum, date, title, content, link, img1, img2 in apps_data %}
+        {% set appsDataLen = apps_data|length %}
+            <span id="appsDataLen" style="display:none">{{appsDataLen}}</span><!--hidden span-->
+            <div style="display:flex; align-items: center; justify-content:center;text-align: center; flex-wrap: nowrap; margin-top: 2px;">
+                <div class="output_data" style="width: 30px;">&nbsp<input type="checkbox" class="appsItemDel" id="{{idNum}}"></div>
+                <div class="output_data" style="background-color: hotpink; width:20px;">{{idNum}}</div>
+                <div class="output_data" style="background-color: gold; width:11%;">{{date}}</div>
+                <div class="output_data" style="background-color: lightgreen; width:20%;">{{title}}</div>
+                <div class="output_data" style="background-color:gainsboro; width:40%;">{{content}}</div>
+    
+                <div class="output_data" style="background-color:aqua; width:15%">{{link}}</div>
+                <div style="background-color:deepskyblue; width:15%;">
+                    <img src="{{img1}}" style="max-height: 20px; width:auto;">
+                    <img src="{{img2}}" style="max-height: 20px; width:auto;">
+                </div>
+            </div>
+        {% endfor %}<!--end new_apps_output-->
+
+    </div><!--end data_app_page-->
+
+    <div id="data_ideas_page" style="display: none;">
+
+        {% for idNum, date, title, content, link, img1, img2 in ideas_data %}
+        {% set ideasDataLen = ideas_data|length %}
+            <span id="ideasDataLen" style="display:none">{{ideasDataLen}}</span><!--hidden span-->
+            <div style="display:flex; align-items: center; justify-content:center;text-align: center; flex-wrap: nowrap; margin-top: 5px;">
+                <div class="output_data" style="width: 30px;">&nbsp<input type="checkbox" class="ideasItemDel" id="{{idNum}}"></div>
+                <div class="output_data" style="background-color: hotpink; width:20px;">{{idNum}}</div>
+                <div class="output_data" style="background-color: gold; width:11%;">{{date}}</div>
+                <div class="output_data" style="background-color: lightgreen; width:20%;">{{title}}</div>
+                <div class="output_data" style="background-color:gainsboro; width:40%;">{{content}}</div>
+    
+                <div class="output_data" style="background-color:aqua; width:15%">{{link}}</div>
+                <div style="background-color:deepskyblue; width:15%;">
+                    <img src="{{img1}}" style="max-height: 20px; width:auto;">
+                    <img src="{{img2}}" style="max-height: 20px; width:auto;">
+                </div>
+            </div>
+        {% endfor %}<!--end new_ideas_output-->
+
+    </div><!--end data_ideas_page-->
+
+    <div id="data_donate_page" style="display: none;">
+
+        {% for idNum, date, title, content, link, img1, img2 in donate_data %}
+        {% set donateDataLen = donate_data|length %}
+            <span id="donateDataLen" style="display:none">{{donateDataLen}}</span><!--hidden span-->
+            <div style="display:flex; align-items: center; justify-content:center;text-align: center; flex-wrap: nowrap; margin-top: 5px;">
+                <div class="output_data" style="width: 30px;">&nbsp<input type="checkbox" class="donateItemDel" id="{{idNum}}"></div>
+                <div class="output_data" style="background-color: hotpink; width:20px;">{{idNum}}</div>
+                <div class="output_data" style="background-color: gold; width:11%;">{{date}}</div>
+                <div class="output_data" style="background-color: lightgreen; width:20%;">{{title}}</div>
+                <div class="output_data" style="background-color:gainsboro; width:40%;">{{content}}</div>
+    
+                <div class="output_data" style="background-color:aqua; width:15%">{{link}}</div>
+                <div style="background-color:deepskyblue; width:15%;">
+                    <img src="{{img1}}" style="max-height: 20px; width:auto;">
+                    <img src="{{img2}}" style="max-height: 20px; width:auto;">
+                </div>
+            </div>
+        {% endfor %}<!--end new_donate_output-->
+
+    </div><!--end data_donate_page-->
+
+    <div id="data_contact_page" style="display: none;">
+
+        {% for idNum, date, title, content, link, img1, img2 in contact_data %}
+        {% set contactDataLen = contact_data|length %}
+            <span id="contactDataLen" style="display:none">{{contactDataLen}}</span><!--hidden span-->
+            <div style="display:flex; align-items: center; justify-content:center;text-align: center; flex-wrap: nowrap; margin-top: 5px;">
+                <div class="output_data" style="width: 30px;">&nbsp<input type="checkbox" class="contactItemDel" id="{{idNum}}"></div>
+                <div class="output_data" style="background-color: hotpink; width:20px;">{{idNum}}</div>
+                <div class="output_data" style="background-color: gold; width:11%;">{{date}}</div>
+                <div class="output_data" style="background-color: lightgreen; width:20%;">{{title}}</div>
+                <div class="output_data" style="background-color:gainsboro; width:40%;">{{content}}</div>
+    
+                <div class="output_data" style="background-color:aqua; width:15%">{{link}}</div>
+                <div style="background-color:deepskyblue; width:15%;">
+                    <img src="{{img1}}" style="max-height: 20px; width:auto;">
+                    <img src="{{img2}}" style="max-height: 20px; width:auto;">
+                </div>
+            </div>
+        {% endfor %}<!--end new_contact_output-->
+
+    </div><!--end data_contact_page-->
+    
+<br>
+</div> <!--end body_container-->
+
+<script type="text/javascript" language="javascript">
+
+var radios = ["home","apps","ideas","donate","contact"];
+
+(function loginPermission(){
+    var permission = JSON.parse(sessionStorage.getItem('pwdAdmin')) ?? "false";
+    if(permission.value != "true" || permission.expire > new Date().getTime()*1000){
+        sessionStorage.removeItem('pwdAdmin')
+        var anchor = document.createElement("a");
+        anchor.href = "{{url_for('home.home')}}";
+        anchor.click();};//endif
+}());//endIIFE
+
+(function startup(){
+    try{document.getElementById("data_{{radio}}_page").style.display = "block"}catch{};
+    try{document.getElementById("{{radio}}_page_radio").checked = true}catch{};
+    try{document.getElementById("{{radio}}_page").classList.add("menu_selected")}catch{};
+    for(radio of radios){
+        if(document.getElementById(radio+"_page_radio").checked == true){
+            try{document.getElementById(radio+"DelTable").style.display = 'block'}catch{};};//endif
+    };//endfor
+}());//endIIFE
+
+document.getElementById("home_page").addEventListener("click",select_func);
+document.getElementById("apps_page").addEventListener("click",select_func);
+document.getElementById("ideas_page").addEventListener("click",select_func);
+document.getElementById("donate_page").addEventListener("click",select_func);
+document.getElementById("contact_page").addEventListener("click",select_func);
+document.getElementById("pic_path1").addEventListener("click",()=>document.getElementById("hddn_path1").click());
+document.getElementById("pic_path2").addEventListener("click",()=>document.getElementById("hddn_path2").click());
+document.getElementById("hddn_path1").addEventListener("change",()=>document.getElementById("show_path1").value = document.getElementById("hddn_path1").value);
+document.getElementById("hddn_path2").addEventListener("change",()=>document.getElementById("show_path2").value = document.getElementById("hddn_path2").value);
+
+function select_func(){
+    var page = String(this.id.slice(0,-5));
+    document.getElementById(page+"_page_radio").click();
+    if(document.getElementById(page+"_page_radio").checked == true){
+        document.getElementById(page+"_page").classList.add("menu_selected");
+        document.getElementById("radio").value = page;
+        try{document.getElementById("data_"+page+"_page").style.display = "block"}catch{};
+        try{document.getElementById(page+"DelTable").style.display = "block"}catch{};};//endif
+
+    for(radio of radios){
+        if(document.getElementById(radio+"_page_radio").checked == false){
+        document.getElementById(radio+"_page").classList.remove("menu_selected");
+        try{document.getElementById("data_"+radio+"_page").style.display = "none"}catch{};
+        try{document.getElementById(radio+"DelTable").style.display = "none"}catch{};};//endif
+    };//endfor
+};
+
+function delete_func(){
+    for(radio of radios){
+        if(document.getElementById(radio+"_page_radio").checked == true){
+            var page = radio;
+            var IDnum = [];
+            var len = Number(document.getElementById(page+"DataLen").innerHTML);
+            for(var i=0; i < len; i++){
+                if(document.getElementsByClassName(page+"ItemDel")[i].checked == true){
+                    IDnum.push(document.getElementsByClassName(page+"ItemDel")[i].id)};//endif
+            };//endfor
+            break;
+        };//endif
+    };//endfor
+    document.getElementById("del").value = IDnum
+    document.getElementById("del").click();
+};
+
+function delSpecOpt_func(btn){
+    if(document.getElementById("confirmAct").checked == true){
+        if(btn == "delDB"){document.getElementById("del_spec").value = document.getElementById("sel_db").value}
+        else if(btn == "delTab"){document.getElementById("del_spec").value = document.getElementById("sel_tab").value}
+        else{alert('Something Went Wrong')};//endif
+        document.getElementById("del_spec").click();
+    };//endif
+};
+
+</script>
+
+{% endblock content %}
